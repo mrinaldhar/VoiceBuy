@@ -1,5 +1,6 @@
-SSAD Project 20 - Team 6
-Mrinal Dhar; Bhavesh Goyal; Rohith Reddy; Karthik Reddy
+
+# SSAD Project 20 - Team 6
+# Mrinal Dhar; Bhavesh Goyal; Rohith Reddy; Karthik Reddy
 
 HOW TO USE THIS REPO:
 1. Fork this repository. Do not push changes directly to this repo.
