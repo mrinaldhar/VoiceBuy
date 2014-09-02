@@ -56,9 +56,9 @@ public class MainActivity extends Activity {
 		
 		
 		TextView txt = (TextView) findViewById(R.id.roboto);
-		Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-ThinItalic.ttf");
+		Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Thin.ttf");
 		txt.setTypeface(font);
-		txt.setTextColor(Color.BLACK);
+		txt.setTextColor(Color.WHITE);
 		return true;
 	}
 
