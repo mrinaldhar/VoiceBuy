@@ -9,5 +9,5 @@
     <string name="title_activity_screen_slide_pager">ScreenSlidePagerActivity</string>
     <string name="title_activity_screen_slide_page_fragment">ScreenSlidePageFragment</string>
     <string name="search_main">Search Products</string>
-	<string name="title_activity_search">SearchActivity</string>
+
 </resources>
