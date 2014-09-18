@@ -1,6 +1,7 @@
 package com.example.gui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,7 +11,11 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
@@ -18,16 +23,19 @@ public class MainActivity extends Activity {
 
 	private ViewFlipper viewFlipper;
 	private float lastX;
-
-	
+    public ListView l;
+    public String stores[]={"Puma","Levis","Spykar","Wrangler","Allen Solly"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		viewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
-		final EditText search = (EditText) findViewById(R.id.search_main);
-		search.addTextChangedListener(new TextWatcher() {
+		l=(ListView)findViewById(R.id.listview);
+		ArrayAdapter<String> adapter1=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,stores);
+		l.setAdapter(adapter1);
+		final EditText search = (EditText) findViewById(R.id.search_bar);
+/*		search.addTextChangedListener(new TextWatcher() {
 
 	          public void afterTextChanged(Editable s) {
 //	        	  search.setEllipsize(TruncateAt.MARQUEE);
@@ -46,9 +54,17 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				
 			}
-		});
+		});*/
+		l.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> a, View v, int position,
+                long id) {
+     Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+    startActivity(intent);
+            }
+        
+    });
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

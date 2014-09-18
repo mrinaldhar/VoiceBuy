@@ -30,6 +30,10 @@
             android:name=".ScreenSlidePageFragment"
             android:label="@string/title_activity_screen_slide_page_fragment" >
         </activity>
+         <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
     </application>
 
 </manifest>

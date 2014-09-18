@@ -1,18 +1,19 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     
-    <ViewFlipper
+  <ViewFlipper
             android:id="@+id/view_flipper"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
             
         <!--  The child Views/Layout to flip -->
         
-        <!--  Layout 1 for 1st Screen -->
+        <!--  Layout  1st Screen -->
+       
 	<RelativeLayout
-    android:id="@+id/RelativeLayout1"
+    android:id="@+id/Layout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="0.9"
@@ -42,43 +43,30 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="bold"
         android:visibility="visible" />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/roboto"
-        android:layout_alignLeft="@+id/roboto"
-        android:layout_marginBottom="35dp"
-        android:background="@drawable/shape2"
-        android:orientation="vertical" >
-        <ProgressBar
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"></ProgressBar>
-        <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Loading Content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="italic"
-                        android:layout_marginLeft="85dp">
-                        </TextView>
-    </LinearLayout>
     </RelativeLayout>
             
-             <!--  Layout 2 for 2nd Screen -->
-            
+        
+                <!--  Layout  for 2nd Screen -->
             <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:orientation="vertical" >
-    <EditText
-    android:layout_marginTop="10dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="15dp"
-    android:id="@+id/search_main"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:hint="@string/search_main" />
+                    android:orientation="vertical" 
+                    android:id="@+id/Layout2">
+    				<ListView 
+    				    android:layout_height="wrap_content"
+    				    android:layout_width="wrap_content"
+    				    android:id="@+id/listview"
+    				    android:layout_alignParentTop="True"
+    				    android:layout_alignParentLeft="True">
+    				</ListView>
+    	<!--  		<EditText
+    				android:layout_marginTop="10dp"
+    				android:layout_marginLeft="10dp"
+    				android:layout_marginRight="15dp"
+    				android:layout_width="fill_parent"
+    				android:layout_height="wrap_content"
+    				android:id="@+id/search_bar"
+    				android:hint="@string/search_main" />-->
                   <!--   <TextView
                         android:layout_marginTop="15dp"
                         android:layout_width="wrap_content"
@@ -88,9 +76,7 @@
                         android:textSize="25dp"
                         android:textStyle="bold" >
                     </TextView> -->
-                    
             </LinearLayout>
-
 
         </ViewFlipper>
     
