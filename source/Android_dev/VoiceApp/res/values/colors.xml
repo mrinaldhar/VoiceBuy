@@ -6,4 +6,6 @@
     <color name="briezel_blue">#2980e1</color>
     <color name="alizarin">#712a15</color>
     <color name="pomegranate">#f0392b</color>
+	<color name="mdblue">#3b5998</color>
+    <color name="mdblue2">#8b9dc3</color>
 </resources>

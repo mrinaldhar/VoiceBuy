@@ -71,10 +71,13 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		
 		
-		TextView txt = (TextView) findViewById(R.id.roboto);
-		Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Thin.ttf");
-		txt.setTypeface(font);
-		txt.setTextColor(Color.WHITE);
+		TextView logintxt = (TextView) findViewById(R.id.login);
+		Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
+		logintxt.setTypeface(font);
+		logintxt.setTextColor(Color.WHITE);
+		TextView signuptxt = (TextView) findViewById(R.id.signup);
+		signuptxt.setTypeface(font);
+		signuptxt.setTextColor(Color.WHITE);
 		return true;
 	}
 
