@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
         @Override
         public void onItemClick(AdapterView<?> a, View v, int position,
                 long id) {
-     Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+     Intent intent = new Intent(getApplicationContext(), VoiceRecognitionActivity.class);
     startActivity(intent);
             }
         
