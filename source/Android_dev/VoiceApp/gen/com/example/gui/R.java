@@ -19,6 +19,8 @@ public final class R {
     public static final class color {
         public static final int alizarin=0x7f050004;
         public static final int briezel_blue=0x7f050003;
+        public static final int mdblue=0x7f050006;
+        public static final int mdblue2=0x7f050007;
         public static final int pomegranate=0x7f050005;
         public static final int sea_blue=0x7f050000;
         public static final int sea_blue_dark=0x7f050001;
@@ -43,12 +45,14 @@ public final class R {
     }
     public static final class id {
         public static final int Layout1=0x7f0a0001;
-        public static final int Layout2=0x7f0a0003;
-        public static final int action_settings=0x7f0a0007;
-        public static final int listview=0x7f0a0004;
-        public static final int roboto=0x7f0a0002;
-        public static final int search=0x7f0a0005;
-        public static final int search_bar=0x7f0a0006;
+        public static final int Layout2=0x7f0a0005;
+        public static final int action_settings=0x7f0a0009;
+        public static final int btnbar=0x7f0a0002;
+        public static final int listview=0x7f0a0006;
+        public static final int login=0x7f0a0003;
+        public static final int search=0x7f0a0007;
+        public static final int search_bar=0x7f0a0008;
+        public static final int signup=0x7f0a0004;
         public static final int view_flipper=0x7f0a0000;
     }
     public static final class layout {
@@ -66,7 +70,9 @@ public final class R {
         public static final int app_name=0x7f070000;
         public static final int description=0x7f070004;
         public static final int hello_world=0x7f070001;
+        public static final int login=0x7f07000a;
         public static final int search_main=0x7f070007;
+        public static final int signup=0x7f070009;
         public static final int start=0x7f070003;
         public static final int title_activity_screen_slide_page_fragment=0x7f070006;
         public static final int title_activity_screen_slide_pager=0x7f070005;
