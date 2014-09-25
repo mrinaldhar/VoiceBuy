@@ -70,8 +70,7 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		
-//		TextView button = (TextView)findViewById(R.id.roboto);
-//		button.setTextColor(Color.WHITE);
+		
 		TextView logintxt = (TextView) findViewById(R.id.login);
 		Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
 		logintxt.setTypeface(font);
