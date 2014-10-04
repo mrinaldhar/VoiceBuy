@@ -29,6 +29,7 @@ public class VoiceRecognitionActivity extends Activity {
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_voice_recognition);
+  
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (Button) findViewById(R.id.btSpeak);
   checkVoiceRecognition();

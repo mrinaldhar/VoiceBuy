@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -35,6 +38,22 @@ public class MainActivity extends Activity {
 		ArrayAdapter<String> adapter1=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,stores);
 		l.setAdapter(adapter1);
 		final EditText search = (EditText) findViewById(R.id.search_bar);
+		
+		 final Animation animTranslate = AnimationUtils.loadAnimation(this, R.anim.in_from_bottom);
+		 Button btnTranslate = (Button)findViewById(R.id.login);
+		 btnTranslate.setOnClickListener(new Button.OnClickListener(){
+
+			  @Override
+			  public void onClick(View arg0) {
+			   arg0.startAnimation(animTranslate);
+			  }});
+		 Button btnTranslate2 = (Button)findViewById(R.id.signup);
+		 btnTranslate2.setOnClickListener(new Button.OnClickListener(){
+
+			  @Override
+			  public void onClick(View arg0) {
+			   arg0.startAnimation(animTranslate);
+			  }}); 
 /*		search.addTextChangedListener(new TextWatcher() {
 
 	          public void afterTextChanged(Editable s) {
@@ -78,6 +97,8 @@ public class MainActivity extends Activity {
 		TextView signuptxt = (TextView) findViewById(R.id.signup);
 		signuptxt.setTypeface(font);
 		signuptxt.setTextColor(Color.WHITE);
+		View btnBar = (View) findViewById(R.id.btnbar);
+	
 		return true;
 	}
 
