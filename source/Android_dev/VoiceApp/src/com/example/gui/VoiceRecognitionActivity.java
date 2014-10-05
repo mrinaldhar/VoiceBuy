@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -23,14 +24,15 @@ public class VoiceRecognitionActivity extends Activity {
  private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
  
  private EditText metTextSearch;
- private Button mbtSpeak;
+ private ImageButton mbtSpeak;
  
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_voice_recognition);
+  
   metTextSearch = (EditText) findViewById(R.id.search_bar);
-  mbtSpeak = (Button) findViewById(R.id.btSpeak);
+  mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
   checkVoiceRecognition();
  }
  
@@ -41,7 +43,6 @@ public class VoiceRecognitionActivity extends Activity {
     RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);
   if (activities.size() == 0) {
    mbtSpeak.setEnabled(false);
-   mbtSpeak.setText("Voice recognizer not present");
    Toast.makeText(this, "Voice recognizer not present",
      Toast.LENGTH_SHORT).show();
   }

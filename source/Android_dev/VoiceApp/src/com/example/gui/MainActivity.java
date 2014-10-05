@@ -1,40 +1,54 @@
 package com.example.gui;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextUtils.TruncateAt;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
 
 	private ViewFlipper viewFlipper;
 	private float lastX;
-    public ListView l;
-    public String stores[]={"Puma","Levis","Spykar","Wrangler","Allen Solly"};
+	public static List<String> stores = new ArrayList<String>();
+	
+	public static ArrayAdapter<String> adapter;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		viewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
-		l=(ListView)findViewById(R.id.listview);
-		ArrayAdapter<String> adapter1=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,stores);
-		l.setAdapter(adapter1);
-		final EditText search = (EditText) findViewById(R.id.search_bar);
+		String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/clothes-info.xml";
+		System.out.println("about to");
+		new RetrieveBrandsTask(MainActivity.this).execute(url1);
+
 /*		search.addTextChangedListener(new TextWatcher() {
 
 	          public void afterTextChanged(Editable s) {
@@ -55,15 +69,7 @@ public class MainActivity extends Activity {
 				
 			}
 		});*/
-		l.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> a, View v, int position,
-                long id) {
-     Intent intent = new Intent(getApplicationContext(), VoiceRecognitionActivity.class);
-    startActivity(intent);
-            }
-        
-    });
+		
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -78,6 +84,8 @@ public class MainActivity extends Activity {
 		TextView signuptxt = (TextView) findViewById(R.id.signup);
 		signuptxt.setTypeface(font);
 		signuptxt.setTextColor(Color.WHITE);
+		View btnBar = (View) findViewById(R.id.btnbar);
+	
 		return true;
 	}
 
@@ -139,5 +147,84 @@ public class MainActivity extends Activity {
                  }
                  return false;
     }
+
+}
+class RetrieveBrandsTask extends AsyncTask<String, Void, Boolean> {
+
+	String[] simpleArray = new String[ MainActivity.stores.size() ];
+    private ProgressDialog dialog;
+    List<String> titles;
+    private MainActivity activity;
+	
+    public RetrieveBrandsTask(MainActivity activity) {
+        this.activity = activity;
+        context = activity;
+        dialog = new ProgressDialog(context);
+    }
+    
+    private Context context;
+    
+    protected void onPreExecute() {
+        this.dialog.setMessage("Loading Stores");
+        this.dialog.show();
+    }
+    protected Boolean doInBackground(String... urls) {
+    	Document doc;
+		try {
+	 
+			// need http protocol
+			doc = Jsoup.connect(urls[0]).get();
+
+
+			// get all links
+			Elements brands = doc.select("Brand");
+			
+			for (Element link : brands) {
+	 
+				if (MainActivity.stores.contains("" + link.attr("text")) == false){
+					MainActivity.stores.add("" + link.attr("text"));
+//					System.out.println("" + link.attr("text"));
+				}
+	
+			}
+			return true;
+	 
+		} catch (IOException e) {
+			return false;
+		}
+    }
+    
+    protected void onPostExecute(final Boolean success) {
+
+		MainActivity.stores.toArray( simpleArray );
+		System.out.println("Size" + MainActivity.stores.size());
+        MainActivity.adapter = new ArrayAdapter<String>(this.activity,android.R.layout.simple_list_item_1,MainActivity.stores);
+
+        MainActivity.adapter.notifyDataSetChanged();
+        ListView list = (ListView)this.activity.findViewById(R.id.listview);
+        MainActivity.adapter.sort(null);
+        list.setAdapter(MainActivity.adapter);
+        if (dialog.isShowing()) {
+        dialog.dismiss();
+        }
+        
+        list.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+
+        	@Override
+            public void onItemClick(AdapterView<?> a, View v, int position,
+                    long id) {
+         Intent intent = new Intent(activity.getApplicationContext(), VoiceRecognitionActivity.class);
+        activity.startActivity(intent);
+                }
+            
+        });
+        
+        if (success) {
+            Toast.makeText(context, "Stores Loaded", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(context, "Error Loading Stores", Toast.LENGTH_LONG).show();
+        }
+
+}
 
 }
