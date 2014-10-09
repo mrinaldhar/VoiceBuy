@@ -5,6 +5,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="/Users/sankaul/Documents/ssad20/source/Android_dev/VoiceApp/libs/jsoup-1.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/bhavesh/GIT_SSAD/ssad20/source/Android_dev/VoiceApp/libs/jsoup-1.8.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
