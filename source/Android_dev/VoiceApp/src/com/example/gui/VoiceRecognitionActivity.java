@@ -14,9 +14,13 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -59,6 +63,28 @@ public class VoiceRecognitionActivity extends Activity {
 		}
 		});
  }
+ 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+ 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_cart) {
+			Intent intent = new Intent(getApplicationContext(), ShoppingCart.class);
+	        startActivity(intent);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
  public String loadJSONFromAsset() {
 	    String json = null;
 	    try {
@@ -135,19 +161,19 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
     if (!textMatchList.isEmpty()) {
      // If first Match contains the 'search' word
      // Then start web search.
-     if (textMatchList.get(0).contains("search")) {
+//     if (textMatchList.get(0).contains("search")) {
  
-        String searchQuery = textMatchList.get(0);
-                                           searchQuery = searchQuery.replace("search","");
-        Intent search = new Intent(Intent.ACTION_WEB_SEARCH);
-        search.putExtra(SearchManager.QUERY, searchQuery);
-        startActivity(search);
-     } else {
+//        String searchQuery = textMatchList.get(0);
+//                                           searchQuery = searchQuery.replace("search","");
+//        Intent search = new Intent(Intent.ACTION_WEB_SEARCH);
+//        search.putExtra(SearchManager.QUERY, searchQuery);
+//        startActivity(search);
+//     } else {
     	  metTextSearch.setText(textMatchList.get(0));
     	  showToastMessage("Searching " + textMatchList.get(0));
     	  getsearchres(textMatchList.get(0));
          // populate the Matches
-     }
+//     }
  
     }
    //Result code for various error.
