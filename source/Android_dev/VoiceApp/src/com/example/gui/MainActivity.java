@@ -3,7 +3,6 @@ package com.example.gui;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -21,9 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -45,7 +41,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		viewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
-		String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/clothes-info.xml";
+		String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/Clothes-info.xml";
 		System.out.println("about to");
 		new RetrieveBrandsTask(MainActivity.this).execute(url1);
 
@@ -96,6 +92,11 @@ public class MainActivity extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			return true;
+		}
+		else if (id == R.id.action_update) {
+			String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/Clothes-info.xml";
+			new RetrieveBrandsTask(MainActivity.this).execute(url1);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -151,7 +152,6 @@ public class MainActivity extends Activity {
 }
 class RetrieveBrandsTask extends AsyncTask<String, Void, Boolean> {
 
-	String[] simpleArray = new String[ MainActivity.stores.size() ];
     private ProgressDialog dialog;
     List<String> titles;
     private MainActivity activity;
@@ -171,7 +171,9 @@ class RetrieveBrandsTask extends AsyncTask<String, Void, Boolean> {
     protected Boolean doInBackground(String... urls) {
     	Document doc;
 		try {
-	 
+			for (String each : MainActivity.stores){
+				each = null;
+			}
 			// need http protocol
 			doc = Jsoup.connect(urls[0]).get();
 
@@ -185,7 +187,6 @@ class RetrieveBrandsTask extends AsyncTask<String, Void, Boolean> {
 					MainActivity.stores.add("" + link.attr("text"));
 //					System.out.println("" + link.attr("text"));
 				}
-	
 			}
 			return true;
 	 
@@ -196,10 +197,9 @@ class RetrieveBrandsTask extends AsyncTask<String, Void, Boolean> {
     
     protected void onPostExecute(final Boolean success) {
 
-		MainActivity.stores.toArray( simpleArray );
+    	MainActivity.stores.add("The Store");
 		System.out.println("Size" + MainActivity.stores.size());
         MainActivity.adapter = new ArrayAdapter<String>(this.activity,android.R.layout.simple_list_item_1,MainActivity.stores);
-
         MainActivity.adapter.notifyDataSetChanged();
         ListView list = (ListView)this.activity.findViewById(R.id.listview);
         MainActivity.adapter.sort(null);

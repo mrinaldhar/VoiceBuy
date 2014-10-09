@@ -144,7 +144,7 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
         startActivity(search);
      } else {
     	  metTextSearch.setText(textMatchList.get(0));
-    	  
+    	  showToastMessage("Searching " + textMatchList.get(0));
     	  getsearchres(textMatchList.get(0));
          // populate the Matches
      }
@@ -168,13 +168,19 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  * Helper method to show the toast message
  **/
  void getsearchres(String query) {
-	 try{ 
+	 try{
+		 
 	 JSONObject obj = new JSONObject(loadJSONFromAsset());
      JSONArray m_jArry = obj.getJSONArray(query);
      JSONObject jo_inside = m_jArry.getJSONObject(0);
        String searchval = jo_inside.getString(query);
-       searchresults.setText(searchval); 
-       } catch (JSONException ex) {
+       if (searchval != ""){
+    	   searchresults.setText(searchval); 
+       }
+       else
+    	   showToastMessage("No Result Found");   
+       } 
+	 catch (JSONException ex) {
        
        }
  }
