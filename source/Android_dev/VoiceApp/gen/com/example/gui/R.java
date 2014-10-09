@@ -817,6 +817,34 @@ containing a value of this type.
         public static final int activity_vertical_margin=0x7f080010;
     }
     public static final class drawable {
+<<<<<<< HEAD
+        public static final int ic_action=0x7f020000;
+        public static final int ic_action_cart=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int mic=0x7f020003;
+        public static final int roundedbuttons=0x7f020004;
+        public static final int shape2=0x7f020005;
+        public static final int shapes=0x7f020006;
+    }
+    public static final class id {
+        public static final int Layout1=0x7f0b0001;
+        public static final int Layout2=0x7f0b0007;
+        public static final int action_cart=0x7f0b0010;
+        public static final int action_settings=0x7f0b000e;
+        public static final int action_update=0x7f0b000f;
+        public static final int btSpeak=0x7f0b000c;
+        public static final int btnbar=0x7f0b0002;
+        public static final int button1=0x7f0b000b;
+        public static final int listview=0x7f0b0008;
+        public static final int login=0x7f0b0003;
+        public static final int search_bar=0x7f0b0009;
+        public static final int searchresults=0x7f0b000d;
+        public static final int signup=0x7f0b0004;
+        public static final int text1=0x7f0b000a;
+        public static final int textView1=0x7f0b0006;
+        public static final int textView2=0x7f0b0005;
+        public static final int view_flipper=0x7f0b0000;
+=======
         public static final int abs__ab_bottom_solid_dark_holo=0x7f020000;
         public static final int abs__ab_bottom_solid_inverse_holo=0x7f020001;
         public static final int abs__ab_bottom_solid_light_holo=0x7f020002;
@@ -1006,6 +1034,7 @@ containing a value of this type.
     }
     public static final class integer {
         public static final int abs__max_action_buttons=0x7f090000;
+>>>>>>> 382d40d9914bf3a082f6d31e3161572a5f1aad1a
     }
     public static final class layout {
         public static final int abs__action_bar_home=0x7f030000;
@@ -1044,6 +1073,31 @@ containing a value of this type.
         public static final int shopping_cart=0x7f0d0003;
     }
     public static final class string {
+<<<<<<< HEAD
+        public static final int action_cart=0x7f070010;
+        public static final int action_settings=0x7f070002;
+        public static final int action_update=0x7f07000f;
+        public static final int app_name=0x7f070000;
+        public static final int btSpeak=0x7f070009;
+        public static final int description=0x7f070004;
+        public static final int etSearchHint=0x7f07000e;
+        public static final int hello_world=0x7f070001;
+        public static final int introstr=0x7f070013;
+        public static final int login=0x7f070012;
+        public static final int menu_settings=0x7f07000a;
+        public static final int sNoOfMatches=0x7f07000d;
+        public static final int search_main=0x7f070007;
+        public static final int searchres=0x7f070015;
+        public static final int signup=0x7f070011;
+        public static final int start=0x7f070003;
+        public static final int swipe=0x7f070014;
+        public static final int title_activity_screen_slide_page_fragment=0x7f070006;
+        public static final int title_activity_screen_slide_pager=0x7f070005;
+        public static final int title_activity_search=0x7f070008;
+        public static final int title_activity_shopping_cart=0x7f070016;
+        public static final int title_activity_voice_recognition=0x7f07000b;
+        public static final int tvTextMatches=0x7f07000c;
+=======
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abs__action_bar_home_description=0x7f0a0000;
@@ -1105,6 +1159,7 @@ containing a value of this type.
         public static final int title_activity_shopping_cart=0x7f0a0022;
         public static final int title_activity_voice_recognition=0x7f0a0018;
         public static final int tvTextMatches=0x7f0a0019;
+>>>>>>> 382d40d9914bf3a082f6d31e3161572a5f1aad1a
     }
     public static final class style {
         public static final int ActionBar=0x7f0b005b;
