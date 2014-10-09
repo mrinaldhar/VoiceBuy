@@ -168,12 +168,47 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  * Helper method to show the toast message
  **/
  void getsearchres(String query) {
+	 searchresults.setText("What did you mean by that?");
+	 query = query.toLowerCase();
 	 try{ 
 	 JSONObject obj = new JSONObject(loadJSONFromAsset());
-     JSONArray m_jArry = obj.getJSONArray(query);
-     JSONObject jo_inside = m_jArry.getJSONObject(0);
-       String searchval = jo_inside.getString(query);
-       searchresults.setText(searchval); 
+//     String result = obj.getJSONArray(query);
+//     JSONObject jo_inside = m_jArry.getJSONObject(0);
+	 	String prod_cat = "";
+	 	String prod_brand = "";
+	 	String prod_subcat = "";
+	 	String prod_gender = "";
+	 	String prod_type = "";
+	 	for (String token: query.split(" ")) {
+	 		try {
+	 			
+	 		String searchval = obj.getString(token);
+	 		if (searchval.equals("brand")) {
+	 			prod_brand = token;
+	 		}
+	 		else if (searchval.equals("cat")) {
+	 			prod_cat = token;
+	 		}
+	 		else if (searchval.equals("gender")) {
+	 			prod_gender = token;
+	 		}
+	 		else if (searchval.equals("type")) {
+	 			prod_type = token;
+	 		}
+	 		else if (searchval.equals("subcat")) {
+	 			prod_subcat = token;
+	 		}
+
+	 		System.out.println(searchval);
+	 		}
+	 		catch (JSONException exce) {
+	 			
+	 		}
+	 		
+	 	}
+       String printthis;
+       printthis = "The user wants brand: "+prod_brand+", category: "+prod_cat+", for: "+prod_gender+", of type: "+prod_type+", and subcategory: "+prod_subcat;
+       searchresults.setText(printthis); 
        } catch (JSONException ex) {
        
        }

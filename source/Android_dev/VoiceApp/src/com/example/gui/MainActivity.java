@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		viewFlipper = (ViewFlipper) findViewById(R.id.view_flipper);
-		String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/clothes-info.xml";
+		String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/Clothes-info.xml";
 		System.out.println("about to");
 		new RetrieveBrandsTask(MainActivity.this).execute(url1);
 
