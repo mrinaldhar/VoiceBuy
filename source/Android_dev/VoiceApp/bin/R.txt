@@ -302,7 +302,7 @@ int id abs__submit_area 0x7f05002f
 int id abs__textButton 0x7f050013
 int id abs__title 0x7f05001b
 int id abs__up 0x7f05000b
-int id action_settings 0x7f05003f
+int id action_settings 0x7f050040
 int id btSpeak 0x7f05003e
 int id btnbar 0x7f050034
 int id button1 0x7f05003d
@@ -314,6 +314,7 @@ int id listview 0x7f05003a
 int id login 0x7f050035
 int id normal 0x7f050001
 int id search_bar 0x7f05003b
+int id searchresults 0x7f05003f
 int id showCustom 0x7f050008
 int id showHome 0x7f050005
 int id showTitle 0x7f050007
@@ -380,6 +381,7 @@ int string login 0x7f0a001d
 int string menu_settings 0x7f0a0017
 int string sNoOfMatches 0x7f0a001a
 int string search_main 0x7f0a0014
+int string searchres 0x7f0a0020
 int string signup 0x7f0a001c
 int string start 0x7f0a0010
 int string swipe 0x7f0a001f

@@ -978,7 +978,7 @@ containing a value of this type.
         public static final int abs__textButton=0x7f050013;
         public static final int abs__title=0x7f05001b;
         public static final int abs__up=0x7f05000b;
-        public static final int action_settings=0x7f05003f;
+        public static final int action_settings=0x7f050040;
         public static final int btSpeak=0x7f05003e;
         public static final int btnbar=0x7f050034;
         public static final int button1=0x7f05003d;
@@ -990,6 +990,7 @@ containing a value of this type.
         public static final int login=0x7f050035;
         public static final int normal=0x7f050001;
         public static final int search_bar=0x7f05003b;
+        public static final int searchresults=0x7f05003f;
         public static final int showCustom=0x7f050008;
         public static final int showHome=0x7f050005;
         public static final int showTitle=0x7f050007;
@@ -1090,6 +1091,7 @@ containing a value of this type.
         public static final int menu_settings=0x7f0a0017;
         public static final int sNoOfMatches=0x7f0a001a;
         public static final int search_main=0x7f0a0014;
+        public static final int searchres=0x7f0a0020;
         public static final int signup=0x7f0a001c;
         public static final int start=0x7f0a0010;
         public static final int swipe=0x7f0a001f;

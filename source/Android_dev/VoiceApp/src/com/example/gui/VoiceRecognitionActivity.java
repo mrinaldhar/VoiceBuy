@@ -1,8 +1,14 @@
 package com.example.gui;
  
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
- 
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
@@ -10,14 +16,12 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
  
 public class VoiceRecognitionActivity extends Activity {
@@ -25,6 +29,7 @@ public class VoiceRecognitionActivity extends Activity {
  
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
+ private TextView searchresults;
  
  @Override
  public void onCreate(Bundle savedInstanceState) {
@@ -33,8 +38,51 @@ public class VoiceRecognitionActivity extends Activity {
   
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
+  searchresults = (TextView) findViewById(R.id.searchresults);
   checkVoiceRecognition();
+
+ metTextSearch.setOnEditorActionListener(
+		    new EditText.OnEditorActionListener() {
+		@Override
+		public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+		    if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+		            actionId == EditorInfo.IME_ACTION_DONE ||
+		            event.getAction() == KeyEvent.ACTION_DOWN &&
+		            event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+		        if (!event.isShiftPressed()) {
+		           // the user is done typing. 
+		        	getsearchres(metTextSearch.getText().toString());
+		           return true; // consume.
+		        }                
+		    }
+		    return false; // pass on to other listeners. 
+		}
+		});
  }
+ public String loadJSONFromAsset() {
+	    String json = null;
+	    try {
+
+	        InputStream is = getAssets().open("localjson.json");
+
+	        int size = is.available();
+
+	        byte[] buffer = new byte[size];
+
+	        is.read(buffer);
+
+	        is.close();
+
+	        json = new String(buffer, "UTF-8");
+
+
+	    } catch (IOException ex) {
+	        ex.printStackTrace();
+	        return null;
+	    }
+	    return json;
+
+	}
  
  public void checkVoiceRecognition() {
   // Check if voice recognition is present
@@ -96,6 +144,8 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
         startActivity(search);
      } else {
     	  metTextSearch.setText(textMatchList.get(0));
+    	  
+    	  getsearchres(textMatchList.get(0));
          // populate the Matches
      }
  
@@ -117,6 +167,17 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  /**
  * Helper method to show the toast message
  **/
+ void getsearchres(String query) {
+	 try{ 
+	 JSONObject obj = new JSONObject(loadJSONFromAsset());
+     JSONArray m_jArry = obj.getJSONArray(query);
+     JSONObject jo_inside = m_jArry.getJSONObject(0);
+       String searchval = jo_inside.getString(query);
+       searchresults.setText(searchval); 
+       } catch (JSONException ex) {
+       
+       }
+ }
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
  }
