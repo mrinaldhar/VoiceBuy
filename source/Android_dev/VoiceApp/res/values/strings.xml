@@ -18,8 +18,7 @@
     <string name="etSearchHint">Speech hint here</string>
     <string name="action_update">Update</string>
     <string name="action_cart">Cart</string>
-    
-    
+
     <string-array name="saNoOfMatches">
         <item>1</item>
         <item>2</item>
@@ -39,5 +38,7 @@
     <string name="swipe">Swipe to begin!</string>
     <string name="searchres">Search Results will appear here...</string>
     <string name="title_activity_shopping_cart">ShoppingCart</string>
+    <string name="title_activity_home_screen">VoiceBuy</string>
+    <string name="title_activity_stores_list">Stores List</string>
 
 </resources>

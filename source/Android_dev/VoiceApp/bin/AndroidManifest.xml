@@ -44,6 +44,14 @@
             android:name=".ShoppingCart"
             android:label="@string/title_activity_shopping_cart" >
         </activity>
+        <activity
+            android:name=".HomeScreen"
+            android:label="@string/title_activity_home_screen" >
+        </activity>
+        <activity
+            android:name=".StoresList"
+            android:label="@string/title_activity_stores_list" >
+        </activity>
     </application>
 
 </manifest>
