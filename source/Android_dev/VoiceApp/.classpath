@@ -6,6 +6,5 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="lib" path="/home/bhavesh/GIT_SSAD/ssad20/source/Android_dev/VoiceApp/libs/jsoup-1.8.1.jar"/>
-	<classpathentry kind="lib" path="/home/bhavesh/GIT_SSAD/ssad20/source/Android_dev/VoiceApp/libs/android-support-v4_patched.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

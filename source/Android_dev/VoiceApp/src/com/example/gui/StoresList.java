@@ -16,15 +16,15 @@ public class StoresList extends Fragment {
 @Override
 public void onActivityCreated(Bundle savedInstanceState) {
 	super.onActivityCreated(savedInstanceState);
-	String[] stores = {"Flipkart","Myntra","Amazon","eBay","SnapDeal","Jabong","Yebhi"};
+	String[] stores = {"Flipkart","Myntra","Amazon","eBay","SnapDeal","Jabong","Yebhi","FutureBazaar","Homeshop18"};
 
 	 ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,stores);
      adapter.sort(null);
      ListView list = (ListView)getActivity().findViewById(R.id.listview);
      list.setAdapter(adapter);
    list.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
-
-   	@Override
+ 
+	@Override
        public void onItemClick(AdapterView<?> a, View v, int position,
                long id) {
     Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
@@ -39,7 +39,8 @@ public void onActivityCreated(Bundle savedInstanceState) {
 
 
 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    View v = inflater.inflate(R.layout.activity_stores_list, container, false);
+//	getActivity().getActionBar().show();
+	View v = inflater.inflate(R.layout.activity_stores_list, container, false);
 	
     
     return v;

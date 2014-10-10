@@ -12,8 +12,11 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import com.viewpagerindicator.CirclePageIndicator;
 
 public class MainActivity extends FragmentActivity{
+	
+	CirclePageIndicator mIndicator;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +26,9 @@ public class MainActivity extends FragmentActivity{
 		setContentView(R.layout.activity_main);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+//        getActionBar().hide();
+        mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
+        mIndicator.setViewPager(pager);
 		
 	}
 
@@ -33,6 +39,7 @@ public class MainActivity extends FragmentActivity{
 		getMenuInflater().inflate(R.menu.main, menu);
 		MenuItem item = menu.findItem(R.id.action_cart);
 		item.setVisible(false);
+		
 		
 		TextView logintxt = (TextView) findViewById(R.id.login);
 		Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
