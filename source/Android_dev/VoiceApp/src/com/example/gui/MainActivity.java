@@ -23,7 +23,7 @@ public class MainActivity extends FragmentActivity{
 		setContentView(R.layout.activity_main);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-		
+
 	}
 
 	
