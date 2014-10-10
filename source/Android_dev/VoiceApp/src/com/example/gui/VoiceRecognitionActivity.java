@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
@@ -24,19 +25,29 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
- 
+import com.tooleap.sdk.*;
+
 public class VoiceRecognitionActivity extends Activity {
  private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
  
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
  private TextView searchresults;
- 
+
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_voice_recognition);
-	
+//  Intent intent = new Intent(getApplicationContext(), MyTooleapActivity.class);
+//
+//  TooleapNotificationMiniApp miniApp = new TooleapNotificationMiniApp(getApplicationContext(), intent);
+//   
+//  // An example for some customizations of a mini app. You can use your own...
+//  miniApp.notificationText = "I'm right here to help you out. Always.";
+//  miniApp.contentTitle = "VoiceBuy Search Bubble";
+//  Tooleap tooleap = Tooleap.getInstance(getApplicationContext());
+//  tooleap.addMiniApp(miniApp);
+  
   Bundle extras = getIntent().getExtras();
 	String value = new String();
   if (extras != null){
@@ -48,6 +59,9 @@ public class VoiceRecognitionActivity extends Activity {
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
   searchresults = (TextView) findViewById(R.id.searchresults);
   checkVoiceRecognition();
+	Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
+	metTextSearch.setTypeface(font);
+	searchresults.setTypeface(font);
 
  metTextSearch.setOnEditorActionListener(
 		    new EditText.OnEditorActionListener() {
@@ -135,7 +149,7 @@ public class VoiceRecognitionActivity extends Activity {
     .getPackage().getName());
  
   // Display an hint to the user about what he should say.
-  intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Search For Items Or Say a Command");
+  intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "What would you like to search for?");
  
   // Given an hint to the recognizer about what the user is going to say
   //There are two form of language model available
@@ -200,7 +214,9 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  **/
  void getsearchres(String query) {
 	 searchresults.setText("What did you mean by that?");
+	 List<String> split_query = new ArrayList<String>();
 	 	 query = query.toLowerCase();
+	 	
 	 	 try{ 
 	 	 JSONObject obj = new JSONObject(loadJSONFromAsset());
 	 //     String result = obj.getJSONArray(query);
@@ -211,6 +227,8 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 	String prod_gender = "";
 	 	 	String prod_type = "";
 	 	 	for (String token: query.split(" ")) {
+	 	 		if(!split_query.contains(token)){  //to avoid duplicates
+		 			split_query.add(token);
 	 	 		try {
 	 	 			
 	 	 		String searchval = obj.getString(token);
@@ -235,14 +253,13 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 		catch (JSONException exce) {
 	 	 			
 	 	 		}
-	 	 		
+	 	 	}
 	 	 	}
 	        String printthis;
 	        printthis = "The user wants brand: "+prod_brand+", category: "+prod_cat+", for: "+prod_gender+", of type: "+prod_type+", and subcategory: "+prod_subcat;
 	        searchresults.setText(printthis);
 	        } catch (JSONException ex) {
-	 }
-	 }
+	 }}
  
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();

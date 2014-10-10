@@ -26,10 +26,14 @@ public class MainActivity extends FragmentActivity{
 		setContentView(R.layout.activity_main);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+<<<<<<< HEAD
 //        getActionBar().hide();
         mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setViewPager(pager);
 		
+=======
+
+>>>>>>> 31d6d4a026ce20683ede443c425663975e272206
 	}
 
 	
