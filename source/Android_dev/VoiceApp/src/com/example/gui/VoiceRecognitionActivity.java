@@ -5,17 +5,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ActionBar;
 import android.app.Activity;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
@@ -39,7 +36,14 @@ public class VoiceRecognitionActivity extends Activity {
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_voice_recognition);
-  
+	
+  Bundle extras = getIntent().getExtras();
+	String value = new String();
+  if (extras != null){
+		value = extras.getString("getstore");
+	}
+	ActionBar action = getActionBar();
+	action.setTitle(value + " Products");
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
   searchresults = (TextView) findViewById(R.id.searchresults);
@@ -68,6 +72,7 @@ public class VoiceRecognitionActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+
 		return true;
 	}
  
@@ -234,7 +239,7 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 	}
 	        String printthis;
 	        printthis = "The user wants brand: "+prod_brand+", category: "+prod_cat+", for: "+prod_gender+", of type: "+prod_type+", and subcategory: "+prod_subcat;
-	        searchresults.setText(printthis); 
+	        searchresults.setText(printthis);
 	        } catch (JSONException ex) {
 	 }
 	 }
