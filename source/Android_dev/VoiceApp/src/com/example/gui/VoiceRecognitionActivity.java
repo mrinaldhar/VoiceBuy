@@ -256,7 +256,7 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 	}
 	 	 	}
 	        String printthis;
-	        printthis = "The user wants brand: "+prod_brand+", category: "+prod_cat+", for: "+prod_gender+", of type: "+prod_type+", and subcategory: "+prod_subcat;
+	        printthis = "The user wants \nbrand: "+prod_brand+", \ncategory: "+prod_cat+", \nfor: "+prod_gender+", \nof type: "+prod_type+", \nand subcategory: "+prod_subcat;
 	        searchresults.setText(printthis);
 	        } catch (JSONException ex) {
 	 }}
