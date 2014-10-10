@@ -3,6 +3,7 @@ package com.example.gui;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -95,8 +96,8 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		else if (id == R.id.action_update) {
-			String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/Clothes-info.xml";
-			new RetrieveBrandsTask(MainActivity.this).execute(url1);
+//			String url1 = "http://web.iiit.ac.in/~bhavesh.goyal/ssad_project/Clothes-info.xml";
+//			new RetrieveBrandsTask(MainActivity.this).execute(url1);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
