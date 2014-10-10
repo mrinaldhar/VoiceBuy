@@ -5,18 +5,19 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ActionBar;
 import android.app.Activity;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -35,7 +36,14 @@ public class VoiceRecognitionActivity extends Activity {
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_voice_recognition);
-  
+	
+  Bundle extras = getIntent().getExtras();
+	String value = new String();
+  if (extras != null){
+		value = extras.getString("getstore");
+	}
+	ActionBar action = getActionBar();
+	action.setTitle(value + " Products");
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
   searchresults = (TextView) findViewById(R.id.searchresults);
@@ -59,6 +67,29 @@ public class VoiceRecognitionActivity extends Activity {
 		}
 		});
  }
+ 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+
+		return true;
+	}
+ 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_cart) {
+			Intent intent = new Intent(getApplicationContext(), ShoppingCart.class);
+	        startActivity(intent);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
  public String loadJSONFromAsset() {
 	    String json = null;
 	    try {
@@ -135,19 +166,19 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
     if (!textMatchList.isEmpty()) {
      // If first Match contains the 'search' word
      // Then start web search.
-     if (textMatchList.get(0).contains("search")) {
+//     if (textMatchList.get(0).contains("search")) {
  
-        String searchQuery = textMatchList.get(0);
-                                           searchQuery = searchQuery.replace("search","");
-        Intent search = new Intent(Intent.ACTION_WEB_SEARCH);
-        search.putExtra(SearchManager.QUERY, searchQuery);
-        startActivity(search);
-     } else {
+//        String searchQuery = textMatchList.get(0);
+//                                           searchQuery = searchQuery.replace("search","");
+//        Intent search = new Intent(Intent.ACTION_WEB_SEARCH);
+//        search.putExtra(SearchManager.QUERY, searchQuery);
+//        startActivity(search);
+//     } else {
     	  metTextSearch.setText(textMatchList.get(0));
     	  
     	  getsearchres(textMatchList.get(0));
          // populate the Matches
-     }
+//     }
  
     }
    //Result code for various error.
@@ -169,7 +200,9 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  **/
  void getsearchres(String query) {
 	 searchresults.setText("What did you mean by that?");
+	 List<String> split_query = new ArrayList<String>();
 	 	 query = query.toLowerCase();
+	 	
 	 	 try{ 
 	 	 JSONObject obj = new JSONObject(loadJSONFromAsset());
 	 //     String result = obj.getJSONArray(query);
@@ -180,6 +213,8 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 	String prod_gender = "";
 	 	 	String prod_type = "";
 	 	 	for (String token: query.split(" ")) {
+	 	 		if(!split_query.contains(token)){  //to avoid duplicates
+		 			split_query.add(token);
 	 	 		try {
 	 	 			
 	 	 		String searchval = obj.getString(token);
@@ -204,14 +239,13 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 		catch (JSONException exce) {
 	 	 			
 	 	 		}
-	 	 		
+	 	 	}
 	 	 	}
 	        String printthis;
 	        printthis = "The user wants brand: "+prod_brand+", category: "+prod_cat+", for: "+prod_gender+", of type: "+prod_type+", and subcategory: "+prod_subcat;
-	        searchresults.setText(printthis); 
+	        searchresults.setText(printthis);
 	        } catch (JSONException ex) {
-	 }
-	 }
+	 }}
  
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
