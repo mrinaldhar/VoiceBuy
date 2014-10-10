@@ -35,7 +35,7 @@
     <string name="signup">Sign Up</string>
     <string name="login">Log In</string>
     <string name="introstr">VoiceBuy lets you purchase clothing accessories across a wide variery of brands online. </string>
-    <string name="swipe">Swipe to begin!</string>
+    <string name="swipe">Swipe to pick a store and start shopping!</string>
     <string name="searchres">Search Results will appear here...</string>
     <string name="title_activity_shopping_cart">ShoppingCart</string>
     <string name="title_activity_home_screen">VoiceBuy</string>
