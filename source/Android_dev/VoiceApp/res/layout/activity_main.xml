@@ -15,10 +15,12 @@
         android:padding="5dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
-        app:radius="5dp"
-        app:fillColor="#712a15"
-        app:pageColor="#FF888888"
-        app:strokeColor="#FFFFFF"
+        app:radius="4dp"
+            android:background = "#812a15"
+        
+        app:fillColor="#BBFFFFFF"
+        app:pageColor="#888a8a8a"
+        app:strokeColor="#812a15"
  />
  
 </LinearLayout>

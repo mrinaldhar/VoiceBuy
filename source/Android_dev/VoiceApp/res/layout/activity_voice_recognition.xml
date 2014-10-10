@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_height="fill_parent"
+        android:background = "#fdf7ef"
+    
     android:layout_width="fill_parent">
     
 <LinearLayout 
@@ -11,11 +13,10 @@
  
     <ImageButton
         android:id="@+id/btSpeak"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:onClick="speak"
-        android:src="@drawable/mic"
-        android:padding="7dp"
+        android:src="@drawable/appicon"
         android:scaleType="fitCenter"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
@@ -62,10 +63,10 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="50dp"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:gravity="center"
-    
+    style="?android:attr/buttonBarButtonStyle"
     android:text="@string/searchres" />
 
     </LinearLayout>

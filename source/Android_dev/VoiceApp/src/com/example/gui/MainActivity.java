@@ -1,8 +1,10 @@
 package com.example.gui;
 
 
+import android.app.ActionBar;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,7 +13,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
+
 import com.viewpagerindicator.CirclePageIndicator;
 
 public class MainActivity extends FragmentActivity{
@@ -26,14 +31,12 @@ public class MainActivity extends FragmentActivity{
 		setContentView(R.layout.activity_main);
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-<<<<<<< HEAD
+
 //        getActionBar().hide();
         mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setViewPager(pager);
 		
-=======
 
->>>>>>> 31d6d4a026ce20683ede443c425663975e272206
 	}
 
 	
@@ -43,8 +46,8 @@ public class MainActivity extends FragmentActivity{
 		getMenuInflater().inflate(R.menu.main, menu);
 		MenuItem item = menu.findItem(R.id.action_cart);
 		item.setVisible(false);
-		
-		
+		getActionBar().hide();
+	
 		TextView logintxt = (TextView) findViewById(R.id.login);
 		Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
 		logintxt.setTypeface(font);
