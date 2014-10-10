@@ -200,7 +200,9 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  **/
  void getsearchres(String query) {
 	 searchresults.setText("What did you mean by that?");
+	 List<String> split_query = new ArrayList<String>();
 	 	 query = query.toLowerCase();
+	 	
 	 	 try{ 
 	 	 JSONObject obj = new JSONObject(loadJSONFromAsset());
 	 //     String result = obj.getJSONArray(query);
@@ -211,6 +213,8 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 	String prod_gender = "";
 	 	 	String prod_type = "";
 	 	 	for (String token: query.split(" ")) {
+	 	 		if(!split_query.contains(token)){  //to avoid duplicates
+		 			split_query.add(token);
 	 	 		try {
 	 	 			
 	 	 		String searchval = obj.getString(token);
@@ -235,14 +239,13 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 		catch (JSONException exce) {
 	 	 			
 	 	 		}
-	 	 		
+	 	 	}
 	 	 	}
 	        String printthis;
 	        printthis = "The user wants brand: "+prod_brand+", category: "+prod_cat+", for: "+prod_gender+", of type: "+prod_type+", and subcategory: "+prod_subcat;
 	        searchresults.setText(printthis);
 	        } catch (JSONException ex) {
-	 }
-	 }
+	 }}
  
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
