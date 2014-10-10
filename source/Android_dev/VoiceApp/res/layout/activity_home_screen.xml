@@ -55,24 +55,37 @@
 	            android:visibility="visible" />
 	    </LinearLayout>
 
+	   
 	    <TextView
 	        android:id="@+id/textView2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignParentTop="true"
-	        android:layout_centerHorizontal="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/applogo"
 	        android:layout_marginTop="50dp"
-	        android:text="@string/introstr"
 	        android:gravity="top|center"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:text="@string/introstr"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-	    <TextView
+ <TextView
 	        android:id="@+id/textView1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/textView2"
 	        android:layout_centerHorizontal="true"
-	        android:layout_marginTop="146dp"
+	        android:layout_marginTop="50dp"
+	        
+	        android:layout_above="@+id/btnbar"
 	        android:text="@string/swipe"
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+	    <ImageView
+	        android:id="@+id/applogo"
+	        android:layout_width="160dp"
+	        android:layout_height="160dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:src="@drawable/appicon" />
+
 	</RelativeLayout>
