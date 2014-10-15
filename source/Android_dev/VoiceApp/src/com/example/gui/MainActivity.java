@@ -33,6 +33,14 @@ public class MainActivity extends FragmentActivity{
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 
 //        getActionBar().hide();
+        TextView logintxt = (TextView) findViewById(R.id.login);
+		Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
+		logintxt.setTypeface(font);
+		logintxt.setTextColor(Color.WHITE);
+		TextView signuptxt = (TextView) findViewById(R.id.signup);
+		signuptxt.setTypeface(font);
+		signuptxt.setTextColor(Color.WHITE);
+	
         mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setViewPager(pager);
 		
@@ -48,14 +56,7 @@ public class MainActivity extends FragmentActivity{
 		item.setVisible(false);
 		getActionBar().hide();
 	
-		TextView logintxt = (TextView) findViewById(R.id.login);
-		Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
-		logintxt.setTypeface(font);
-		logintxt.setTextColor(Color.WHITE);
-		TextView signuptxt = (TextView) findViewById(R.id.signup);
-		signuptxt.setTypeface(font);
-		signuptxt.setTextColor(Color.WHITE);
-	
+		
 		return true;
 	}
 	

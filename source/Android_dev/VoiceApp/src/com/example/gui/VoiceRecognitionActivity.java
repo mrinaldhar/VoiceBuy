@@ -49,12 +49,12 @@ public class VoiceRecognitionActivity extends Activity {
 //  tooleap.addMiniApp(miniApp);
   
   Bundle extras = getIntent().getExtras();
-	String value = new String();
+  String value = new String();
   if (extras != null){
-		value = extras.getString("getstore");
-	}
-	ActionBar action = getActionBar();
-	action.setTitle(value + " Products");
+	  value = extras.getString("getstore");
+  }
+  ActionBar action = getActionBar();
+  action.setTitle(value + " Products");
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
   searchresults = (TextView) findViewById(R.id.searchresults);
@@ -63,23 +63,23 @@ public class VoiceRecognitionActivity extends Activity {
 	metTextSearch.setTypeface(font);
 	searchresults.setTypeface(font);
 
- metTextSearch.setOnEditorActionListener(
-		    new EditText.OnEditorActionListener() {
-		@Override
-		public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-		    if (actionId == EditorInfo.IME_ACTION_SEARCH ||
+	metTextSearch.setOnEditorActionListener(
+			new EditText.OnEditorActionListener() {
+				@Override
+				public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+					if (actionId == EditorInfo.IME_ACTION_SEARCH ||
 		            actionId == EditorInfo.IME_ACTION_DONE ||
 		            event.getAction() == KeyEvent.ACTION_DOWN &&
 		            event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-		        if (!event.isShiftPressed()) {
-		           // the user is done typing. 
-		        	getsearchres(metTextSearch.getText().toString());
-		           return true; // consume.
-		        }                
-		    }
-		    return false; // pass on to other listeners. 
-		}
-		});
+						if (!event.isShiftPressed()) {
+							// the user is done typing. 
+							getsearchres(metTextSearch.getText().toString());
+							return true; // consume.
+						}                
+					}
+					return false; // pass on to other listeners. 
+				}
+			});
  }
  
 	@Override

@@ -523,31 +523,29 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int stores_list=0x7f0d0005;
     }
     public static final class string {
-        public static final int action_cart=0x7f0b0010;
-        public static final int action_settings=0x7f0b0002;
-        public static final int action_update=0x7f0b000f;
+        public static final int action_cart=0x7f0b000e;
+        public static final int action_settings=0x7f0b0001;
+        public static final int action_update=0x7f0b000d;
         public static final int app_name=0x7f0b0000;
-        public static final int btSpeak=0x7f0b0009;
-        public static final int description=0x7f0b0004;
-        public static final int etSearchHint=0x7f0b000e;
-        public static final int hello_world=0x7f0b0001;
-        public static final int introstr=0x7f0b0013;
-        public static final int login=0x7f0b0012;
-        public static final int menu_settings=0x7f0b000a;
-        public static final int sNoOfMatches=0x7f0b000d;
-        public static final int search_main=0x7f0b0007;
-        public static final int searchres=0x7f0b0015;
-        public static final int signup=0x7f0b0011;
-        public static final int start=0x7f0b0003;
-        public static final int swipe=0x7f0b0014;
-        public static final int title_activity_home_screen=0x7f0b0017;
-        public static final int title_activity_screen_slide_page_fragment=0x7f0b0006;
-        public static final int title_activity_screen_slide_pager=0x7f0b0005;
-        public static final int title_activity_search=0x7f0b0008;
-        public static final int title_activity_shopping_cart=0x7f0b0016;
-        public static final int title_activity_stores_list=0x7f0b0018;
-        public static final int title_activity_voice_recognition=0x7f0b000b;
-        public static final int tvTextMatches=0x7f0b000c;
+        public static final int btSpeak=0x7f0b0007;
+        public static final int etSearchHint=0x7f0b000c;
+        public static final int introstr=0x7f0b0011;
+        public static final int login=0x7f0b0010;
+        public static final int menu_settings=0x7f0b0008;
+        public static final int sNoOfMatches=0x7f0b000b;
+        public static final int search_main=0x7f0b0005;
+        public static final int searchres=0x7f0b0013;
+        public static final int signup=0x7f0b000f;
+        public static final int start=0x7f0b0002;
+        public static final int swipe=0x7f0b0012;
+        public static final int title_activity_home_screen=0x7f0b0015;
+        public static final int title_activity_screen_slide_page_fragment=0x7f0b0004;
+        public static final int title_activity_screen_slide_pager=0x7f0b0003;
+        public static final int title_activity_search=0x7f0b0006;
+        public static final int title_activity_shopping_cart=0x7f0b0014;
+        public static final int title_activity_stores_list=0x7f0b0016;
+        public static final int title_activity_voice_recognition=0x7f0b0009;
+        public static final int tvTextMatches=0x7f0b000a;
     }
     public static final class style {
         public static final int ActionBar=0x7f0a0007;
