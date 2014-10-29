@@ -8,16 +8,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 public class HomeScreen extends Fragment {
-		Button log,sign;
+		Button log_main,sign_main,log_in,sign_in;
+		AutoCompleteTextView country;
 		View logv;
+		EditText log_email,log_pass,sign_fname,sign_mobile,sign_email,sign_pass,sign_pass_conf;
 	   @Override
 	    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	        View v = inflater.inflate(R.layout.activity_home_screen, container, false);
-	        Spinner spin_gender = (Spinner) v.findViewById(R.id.gender);
+	        final Spinner spin_gender = (Spinner) v.findViewById(R.id.gender);
 	        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(),
 	                R.array.gender_array, android.R.layout.simple_spinner_item);
 	        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -29,25 +32,52 @@ public class HomeScreen extends Fragment {
 	     ArrayAdapter<String> adapter2 = 
 	             new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, countries);
 	     textView.setAdapter(adapter2);
-	     log=(Button) v.findViewById(R.id.login);
+	     log_main=(Button) v.findViewById(R.id.login);
 	     logv=v.findViewById(R.id.login);
-	     View log1 = (View)log;
-	     sign=(Button) v.findViewById(R.id.signup);
-	     log.setOnClickListener(new View.OnClickListener() {
-			
+	     sign_main=(Button) v.findViewById(R.id.signup);
+	     log_in=(Button) v.findViewById(R.id.login_button);
+	     sign_in=(Button) v.findViewById(R.id.signup_button);
+	     country=(AutoCompleteTextView) v.findViewById(R.id.autocomplete_country);
+	     log_email=(EditText) v.findViewById(R.id.login_email);
+	     log_pass=(EditText) v.findViewById(R.id.login_password);
+	     sign_fname=(EditText) v.findViewById(R.id.signup_fname);
+	     sign_mobile=(EditText) v.findViewById(R.id.signup_mobno);
+	     sign_email=(EditText) v.findViewById(R.id.signup_email);
+	     sign_pass=(EditText) v.findViewById(R.id.signup_password);
+	     sign_pass_conf=(EditText) v.findViewById(R.id.signup_password_confirm);
+	     log_main.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				
-				
+				sign_fname.setVisibility(View.GONE);
+				sign_mobile.setVisibility(View.GONE);
+				sign_email.setVisibility(View.GONE);
+				sign_pass.setVisibility(View.GONE);
+				sign_pass_conf.setVisibility(View.GONE);
+				country.setVisibility(View.GONE);
+				spin_gender.setVisibility(View.GONE);
+				sign_in.setVisibility(View.GONE);
+				log_email.setVisibility(View.VISIBLE);
+				log_pass.setVisibility(View.VISIBLE);
+				log_in.setVisibility(View.VISIBLE);
 			}
 		});
-	     sign.setOnClickListener(new View.OnClickListener() {
+	     sign_main.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					
+					log_email.setVisibility(View.GONE);
+					log_pass.setVisibility(View.GONE);
+					log_in.setVisibility(View.GONE);
+					sign_fname.setVisibility(View.VISIBLE);
+					sign_mobile.setVisibility(View.VISIBLE);
+					sign_email.setVisibility(View.VISIBLE);
+					sign_pass.setVisibility(View.VISIBLE);
+					sign_pass_conf.setVisibility(View.VISIBLE);
+					sign_in.setVisibility(View.VISIBLE);
+					country.setVisibility(View.VISIBLE);
+					spin_gender.setVisibility(View.VISIBLE);
 					
 				}
 			});

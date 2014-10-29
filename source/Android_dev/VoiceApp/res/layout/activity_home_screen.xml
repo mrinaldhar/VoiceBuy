@@ -28,7 +28,7 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_below="@+id/applogo"
 	        android:layout_marginTop="50dp"
-	        android:gravity="top|center"
+	        android:gravity="center"
 	        android:layout_marginLeft="5dp"
 	        android:layout_marginRight="5dp"
 	        android:text="@string/app_name"
@@ -112,7 +112,7 @@
             android:hint="Email Address"
             android:textColor="#fff"
             android:inputType="textEmailAddress"
-            android:visibility="gone" >
+            android:visibility="visible" >
         </EditText>
 
         <EditText
@@ -122,7 +122,7 @@
             android:hint="Password"    
             android:textColor="#fff"
             android:inputType="textPassword"
-             android:visibility="gone"/>
+             android:visibility="visible"/>
 
         <Button
             android:id="@+id/login_button"
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Login" 
-            android:visibility="gone"/>
+            android:visibility="visible"/>
         <!-- signup form -->
        <!--      <TextView 
            android:layout_width="wrap_content"
@@ -143,7 +143,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Fullname" 
-        android:visibility="visible"/>
+        android:visibility="gone"/>
         <!--  <EditText android:id="@+id/signup_lname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,24 +152,26 @@
    <Spinner
   	    android:id="@+id/gender"
    		android:layout_width="match_parent"
-    	android:layout_height="wrap_content" />
+    	android:layout_height="wrap_content"
+    	android:visibility="gone" />
     <AutoCompleteTextView  
     android:id="@+id/autocomplete_country"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:visibility="gone"
      />
     <EditText android:id="@+id/signup_mobno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mobile Number" 
         android:inputType="phone" 
-        android:visibility="visible"/>
+        android:visibility="gone"/>
     <EditText android:id="@+id/signup_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email Address"
         android:inputType="textEmailAddress" 
-        android:visibility="visible"/>
+        android:visibility="gone"/>
     <EditText
             android:id="@+id/signup_password"
             android:layout_width="match_parent"
@@ -177,7 +179,7 @@
             android:hint="Type Password"    
             android:textColor="#fff"
             android:inputType="textPassword"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
     <EditText
             android:id="@+id/signup_password_confirm"
             android:layout_width="match_parent"
@@ -185,13 +187,14 @@
             android:hint="Retype Password"    
             android:textColor="#fff"
             android:inputType="textPassword"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
         <Button 
             android:id="@+id/signup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Signup"/>
+            android:text="Signup"
+            android:visibility="gone"/>
         
 </LinearLayout>	
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
