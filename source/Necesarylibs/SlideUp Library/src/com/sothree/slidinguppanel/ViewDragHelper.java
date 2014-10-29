@@ -17,14 +17,19 @@
 
 package com.sothree.slidinguppanel;
 
-import android.graphics.Interpolator;
+import android.content.Context;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.VelocityTrackerCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ScrollerCompat;
+import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.animation.Interpolator;
+
+import java.util.Arrays;
 
 /**
  * ViewDragHelper is a utility class for writing custom ViewGroups. It offers a number
@@ -108,7 +113,7 @@ public class ViewDragHelper {
     private int mTouchSlop;
 
     // Last known position/pointer tracking
-    private static int mActivePointerId = INVALID_POINTER;
+    private int mActivePointerId = INVALID_POINTER;
     private float[] mInitialMotionX;
     private float[] mInitialMotionY;
     private float[] mLastMotionX;
@@ -319,7 +324,7 @@ public class ViewDragHelper {
     /**
      * Interpolator defining the animation curve for mScroller
      */
-    private static final Interpolator sInterpolator = new Interpolator(mActivePointerId) {
+    private static final Interpolator sInterpolator = new Interpolator() {
         public float getInterpolation(float t) {
             t -= 1.0f;
             return t * t * t * t * t + 1.0f;
