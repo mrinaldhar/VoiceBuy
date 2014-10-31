@@ -1,12 +1,20 @@
 package com.example.gui;
  
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -14,6 +22,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
@@ -25,7 +34,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.tooleap.sdk.*;
 
 public class VoiceRecognitionActivity extends Activity {
  private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
@@ -33,7 +41,8 @@ public class VoiceRecognitionActivity extends Activity {
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
  private TextView searchresults;
-
+ public String storename;
+ 
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -50,9 +59,11 @@ public class VoiceRecognitionActivity extends Activity {
   
   Bundle extras = getIntent().getExtras();
 	String value = new String();
+	storename = new String();
   if (extras != null){
 		value = extras.getString("getstore");
 	}
+  storename = value;
 	ActionBar action = getActionBar();
 	action.setTitle(value + " Products");
   metTextSearch = (EditText) findViewById(R.id.search_bar);
@@ -212,7 +223,8 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  /**
  * Helper method to show the toast message
  **/
- void getsearchres(String query) {
+ @SuppressWarnings("deprecation")
+void getsearchres(String query) {
 	 searchresults.setText("What did you mean by that?");
 	 List<String> split_query = new ArrayList<String>();
 	 	 query = query.toLowerCase();
@@ -257,11 +269,114 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
 	 	 	}
 	        String printthis;
 	        printthis = "The user wants \nbrand: "+prod_brand+", \ncategory: "+prod_cat+", \nfor: "+prod_gender+", \nof type: "+prod_type+", \nand subcategory: "+prod_subcat;
-	        searchresults.setText(printthis);
+//	        showToastMessage(storename);
+	   
+	        //Starting Search procedure
+	        
+
+	        new HttpAsyncTask().execute("http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=IIIT38ebc-682e-4421-9e85-afd72d6451e&GLOBAL-ID=EBAY-IN&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords="+URLEncoder.encode(prod_brand+" "+prod_cat+" "+prod_gender+" "+prod_type+" "+prod_subcat)+"&paginationInput.entriesPerPage=30");
+            
+            System.out.println("OKLOOPCLOSE");
+	        
+	        
+	        
+	        
 	        } catch (JSONException ex) {
 	 }}
  
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+ }
+ public static String GET(String url){
+	 System.out.println("entered first func");
+     InputStream inputStream = null;
+     String result = "";
+     try {
+
+         // create HttpClient
+         HttpClient httpclient = new DefaultHttpClient();
+
+         // make GET request to the given URL
+         HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+
+         // receive response as inputStream
+         inputStream = httpResponse.getEntity().getContent();
+
+         // convert inputstream to string
+         if(inputStream != null)
+             result = convertInputStreamToString(inputStream);
+         else
+             result = "Did not work!";
+
+     } catch (Exception e) {
+    	 System.out.println(e);
+//         Log.d("InputStream", e.getLocalizedMessage());
+     }
+
+     return result;
+ }
+
+ // convert inputstream to String
+ private static String convertInputStreamToString(InputStream inputStream) throws IOException{
+	 System.out.println("enteredfunc2");
+     BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+     String line = "";
+     String result = "";
+     while((line = bufferedReader.readLine()) != null)
+         result += line;
+
+     inputStream.close();
+     return result;
+
+ }
+ 
+ private class HttpAsyncTask extends AsyncTask<String, Void, String> {
+     @Override
+     protected String doInBackground(String... urls) {
+
+         return GET(urls[0]);
+     }
+     // onPostExecute displays the results of the AsyncTask.
+     @Override
+     protected void onPostExecute(String result) {
+         Toast.makeText(getBaseContext(), "Received!", Toast.LENGTH_LONG).show();
+//         etResponse.setText(result);
+         String teststring = "";
+         try {
+         final JSONObject obj = new JSONObject(result);
+         System.out.println("1");
+         final JSONArray items1 = obj.getJSONArray("findItemsByKeywordsResponse");
+         System.out.println("2");
+         final JSONObject searchResObj1 = items1.getJSONObject(0);
+         System.out.println("3");
+         final JSONArray searchResObj2 = searchResObj1.getJSONArray("searchResult");
+         System.out.println("4");
+         final JSONObject searchResObj3 = searchResObj2.getJSONObject(0);
+         System.out.println("5");
+         final JSONArray searchResObj = searchResObj3.getJSONArray("item");
+         System.out.println("6");
+         final int n = searchResObj.length();
+         for (int i = 0; i < n; ++i) {
+           final JSONObject searchItem = searchResObj.getJSONObject(i);
+           JSONArray toPrint = searchItem.getJSONArray("title");
+           System.out.println(toPrint.getString(0));
+           teststring += toPrint.getString(0);
+           toPrint = searchItem.getJSONArray("galleryURL");
+           
+           final JSONArray priceDet = searchItem.getJSONArray("sellingStatus");
+           final JSONObject priceDet2 = priceDet.getJSONObject(0);
+           final JSONArray priceDet3 = priceDet2.getJSONArray("convertedCurrentPrice");
+           final JSONObject priceDet4 = priceDet3.getJSONObject(0);
+           teststring += ", ";
+           teststring += priceDet4.getString("@currencyId");
+           teststring += ": ";
+           teststring += priceDet4.getString("__value__");
+           teststring += "\n";
+         }
+         } catch (JSONException ex) {
+        	 System.out.println(ex);
+    	 }
+         searchresults.setText(teststring);
+    }
  }
 }
