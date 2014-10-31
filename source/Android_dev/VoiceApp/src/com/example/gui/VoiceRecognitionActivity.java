@@ -8,14 +8,17 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.Movie;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONArray;
 
+import adapter.CustomListAdapter;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -32,6 +35,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,8 +44,12 @@ public class VoiceRecognitionActivity extends Activity {
  
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
- private TextView searchresults;
+// private TextView searchresults;
  public String storename;
+ 
+ private List<Movie> movieList = new ArrayList<Movie>();
+ private ListView listView;
+ private CustomListAdapter adapter;
  
  @Override
  public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +64,9 @@ public class VoiceRecognitionActivity extends Activity {
 //  miniApp.contentTitle = "VoiceBuy Search Bubble";
 //  Tooleap tooleap = Tooleap.getInstance(getApplicationContext());
 //  tooleap.addMiniApp(miniApp);
-  
+  listView = (ListView) findViewById(R.id.list);
+  adapter = new CustomListAdapter(this, movieList);
+  listView.setAdapter(adapter);
   Bundle extras = getIntent().getExtras();
 	String value = new String();
 	storename = new String();
@@ -68,11 +78,11 @@ public class VoiceRecognitionActivity extends Activity {
 	action.setTitle(value + " Products");
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
-  searchresults = (TextView) findViewById(R.id.searchresults);
+//  searchresults = (TextView) findViewById(R.id.searchresults);
   checkVoiceRecognition();
 	Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
 	metTextSearch.setTypeface(font);
-	searchresults.setTypeface(font);
+//	searchresults.setTypeface(font);
 
  metTextSearch.setOnEditorActionListener(
 		    new EditText.OnEditorActionListener() {
@@ -225,7 +235,8 @@ intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
  **/
  @SuppressWarnings("deprecation")
 void getsearchres(String query) {
-	 searchresults.setText("What did you mean by that?");
+//	 searchresults.setText("What did you mean by that?");
+	 showToastMessage("Searching...");
 	 List<String> split_query = new ArrayList<String>();
 	 	 query = query.toLowerCase();
 	 	
@@ -360,23 +371,32 @@ void getsearchres(String query) {
            final JSONObject searchItem = searchResObj.getJSONObject(i);
            JSONArray toPrint = searchItem.getJSONArray("title");
            System.out.println(toPrint.getString(0));
-           teststring += toPrint.getString(0);
+           final String prodTitle = toPrint.getString(0);
            toPrint = searchItem.getJSONArray("galleryURL");
-           
+           final String prodPic = toPrint.getString(0);
            final JSONArray priceDet = searchItem.getJSONArray("sellingStatus");
            final JSONObject priceDet2 = priceDet.getJSONObject(0);
            final JSONArray priceDet3 = priceDet2.getJSONArray("convertedCurrentPrice");
            final JSONObject priceDet4 = priceDet3.getJSONObject(0);
-           teststring += ", ";
-           teststring += priceDet4.getString("@currencyId");
-           teststring += ": ";
-           teststring += priceDet4.getString("__value__");
-           teststring += "\n";
+           final String prodCurr = priceDet4.getString("@currencyId");
+           String prodPrice = priceDet4.getString("__value__");
+           
+           Movie movie = new Movie();
+           movie.setTitle(prodTitle);
+           movie.setThumbnailUrl(prodPic);
+           movie.setRating(Double.valueOf(prodPrice).doubleValue());
+           movie.setYear(prodCurr);
+
+           // adding movie to movies array
+           movieList.add(movie);
+           
+           
          }
          } catch (JSONException ex) {
         	 System.out.println(ex);
     	 }
-         searchresults.setText(teststring);
+         adapter.notifyDataSetChanged();
+//         searchresults.setText(teststring);
     }
  }
 }
