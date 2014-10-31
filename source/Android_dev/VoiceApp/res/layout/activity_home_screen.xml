@@ -28,10 +28,10 @@
 	        android:layout_alignParentLeft="true"
 	        android:layout_below="@+id/applogo"
 	        android:layout_marginTop="50dp"
-	        android:gravity="top|center"
+	        android:gravity="center"
 	        android:layout_marginLeft="5dp"
 	        android:layout_marginRight="5dp"
-	        android:text="@string/introstr"
+	        android:text="@string/app_name"
 	        android:textAppearance="?android:attr/textAppearanceLarge" />
  <TextView
 	        android:id="@+id/textView1"
@@ -68,7 +68,7 @@
 	        android:gravity="bottom|center"
 	        android:orientation="horizontal"
 	        android:padding="2dp"
-	        android:layout_weight="2" >
+	        android:layout_weight="3" >
 
 	         <Button
 	            android:id="@+id/login"
@@ -84,7 +84,8 @@
 	            android:paddingRight="50dp"
 	            android:text="@string/login"
 	            android:textStyle="bold"
-	            android:visibility="visible" />
+	            android:visibility="visible"
+	            android:onClick="display_login" />
 
 	        <Button
 	            android:id="@+id/signup"
@@ -100,15 +101,100 @@
 	            android:paddingRight="50dp"
 	            android:text="@string/signup"
 	            android:textStyle="bold"
-	            android:visibility="visible" />
-
-
+	            android:visibility="visible"
+	            android:onClick="display_signup" />
 </LinearLayout> 
-<TextView 
-    android:layout_width="fill_parent"
-    android:layout_height="300dp"
-    android:text = "Sign up and Login forms will come here"
-    />
+<!-- login fields-->
+		<EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:textColor="#fff"
+            android:inputType="textEmailAddress"
+            android:visibility="visible" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"    
+            android:textColor="#fff"
+            android:inputType="textPassword"
+             android:visibility="visible"/>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Login" 
+            android:visibility="visible"/>
+        <!-- signup form -->
+       <!--      <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome to Voice Buy!!!!"/>-->
+         
+        <EditText 
+        android:id="@+id/signup_fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fullname" 
+        android:visibility="gone"/>
+        <!--  <EditText android:id="@+id/signup_lname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lastname" 
+         android:visibility="visible"/>-->
+   <Spinner
+  	    android:id="@+id/gender"
+   		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:visibility="gone" />
+    <AutoCompleteTextView  
+    android:id="@+id/autocomplete_country"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+     />
+    <EditText android:id="@+id/signup_mobno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number" 
+        android:inputType="phone" 
+        android:visibility="gone"/>
+    <EditText android:id="@+id/signup_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress" 
+        android:visibility="gone"/>
+    <EditText
+            android:id="@+id/signup_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type Password"    
+            android:textColor="#fff"
+            android:inputType="textPassword"
+            android:visibility="gone"/>
+    <EditText
+            android:id="@+id/signup_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Retype Password"    
+            android:textColor="#fff"
+            android:inputType="textPassword"
+            android:visibility="gone"/>
+        <Button 
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Signup"
+            android:visibility="gone"/>
+        
 </LinearLayout>	
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
-
