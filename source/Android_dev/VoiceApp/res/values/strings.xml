@@ -31,6 +31,28 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+     <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item >Other</item>
+        
+    </string-array>
+    <string-array name="countries_array">
+        <item>Afghanistan</item>um
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>American Samoa</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Anguilla</item>
+        <item>Antarctica</item>
+        <item >India</item>
+        <item>Belgium</item>
+        <item>Denmark</item>
+        
+    </string-array>
+     
+    
 
     <string name="signup">Sign Up</string>
     <string name="login">Log In</string>
