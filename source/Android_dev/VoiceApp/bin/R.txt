@@ -126,30 +126,65 @@ int drawable vpi__tab_unselected_focused_holo 0x7f020012
 int drawable vpi__tab_unselected_holo 0x7f020013
 int drawable vpi__tab_unselected_pressed_holo 0x7f020014
 int id Layout1 0x7f05000a
+<<<<<<< HEAD
+int id Layout2 0x7f050024
+int id action_cart 0x7f050029
+int id action_settings 0x7f050028
+=======
 int id Layout2 0x7f050023
 int id action_cart 0x7f05002d
 int id action_settings 0x7f05002c
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
 int id anchored 0x7f050002
 int id applogo 0x7f05000c
 int id autocomplete_country 0x7f050017
 int id bottom 0x7f050007
+<<<<<<< HEAD
+int id btSpeak 0x7f050026
+int id btnbar 0x7f05000f
+int id button1 0x7f050022
+=======
 int id btSpeak 0x7f050025
 int id btnbar 0x7f05000f
 int id button1 0x7f050021
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
 int id collapsed 0x7f050001
+int id error_textfield 0x7f050015
 int id expanded 0x7f050000
+<<<<<<< HEAD
+int id gender 0x7f050018
+int id hidden 0x7f050003
+int id indicator 0x7f05001f
+int id listview 0x7f050025
+=======
 int id gender 0x7f050016
 int id genre 0x7f05002a
 int id hidden 0x7f050003
 int id indicator 0x7f05001e
 int id list 0x7f050026
 int id listview 0x7f050024
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
 int id login 0x7f050010
 int id login_button 0x7f050014
 int id login_email 0x7f050012
 int id login_password 0x7f050013
 int id none 0x7f050004
 int id panel 0x7f05000e
+<<<<<<< HEAD
+int id search_bar 0x7f050020
+int id searchresults 0x7f050027
+int id signup 0x7f050011
+int id signup_button 0x7f05001d
+int id signup_email 0x7f05001a
+int id signup_fname 0x7f050016
+int id signup_lname 0x7f050017
+int id signup_mobno 0x7f050019
+int id signup_password 0x7f05001b
+int id signup_password_confirm 0x7f05001c
+int id sliding_layout 0x7f050009
+int id table 0x7f050023
+int id text1 0x7f050021
+=======
 int id rating 0x7f050029
 int id releaseYear 0x7f05002b
 int id search_bar 0x7f05001f
@@ -163,6 +198,7 @@ int id signup_password_confirm 0x7f05001b
 int id sliding_layout 0x7f050009
 int id table 0x7f050022
 int id text1 0x7f050020
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
 int id textView1 0x7f05000d
 int id textView2 0x7f05000b
 int id thumbnail 0x7f050027
@@ -170,7 +206,11 @@ int id title 0x7f050028
 int id top 0x7f050008
 int id triangle 0x7f050005
 int id underline 0x7f050006
+<<<<<<< HEAD
+int id viewPager 0x7f05001e
+=======
 int id viewPager 0x7f05001d
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
 int integer default_circle_indicator_orientation 0x7f080000
 int integer default_title_indicator_footer_indicator_style 0x7f080001
 int integer default_title_indicator_line_position 0x7f080002
