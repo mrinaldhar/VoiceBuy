@@ -484,53 +484,33 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class id {
         public static final int Layout1=0x7f05000a;
-<<<<<<< HEAD
         public static final int Layout2=0x7f050024;
-        public static final int action_cart=0x7f050029;
-        public static final int action_settings=0x7f050028;
-=======
-        public static final int Layout2=0x7f050023;
-        public static final int action_cart=0x7f05002d;
-        public static final int action_settings=0x7f05002c;
->>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
+        public static final int action_cart=0x7f05002e;
+        public static final int action_settings=0x7f05002d;
         public static final int anchored=0x7f050002;
         public static final int applogo=0x7f05000c;
-        public static final int autocomplete_country=0x7f050017;
         public static final int bottom=0x7f050007;
-<<<<<<< HEAD
         public static final int btSpeak=0x7f050026;
         public static final int btnbar=0x7f05000f;
         public static final int button1=0x7f050022;
-=======
-        public static final int btSpeak=0x7f050025;
-        public static final int btnbar=0x7f05000f;
-        public static final int button1=0x7f050021;
->>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
         public static final int collapsed=0x7f050001;
         public static final int error_textfield=0x7f050015;
         public static final int expanded=0x7f050000;
-<<<<<<< HEAD
         public static final int gender=0x7f050018;
+        public static final int genre=0x7f05002b;
         public static final int hidden=0x7f050003;
         public static final int indicator=0x7f05001f;
+        public static final int list=0x7f050027;
         public static final int listview=0x7f050025;
-=======
-        public static final int gender=0x7f050016;
-        public static final int genre=0x7f05002a;
-        public static final int hidden=0x7f050003;
-        public static final int indicator=0x7f05001e;
-        public static final int list=0x7f050026;
-        public static final int listview=0x7f050024;
->>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
         public static final int login=0x7f050010;
         public static final int login_button=0x7f050014;
         public static final int login_email=0x7f050012;
         public static final int login_password=0x7f050013;
         public static final int none=0x7f050004;
         public static final int panel=0x7f05000e;
-<<<<<<< HEAD
+        public static final int rating=0x7f05002a;
+        public static final int releaseYear=0x7f05002c;
         public static final int search_bar=0x7f050020;
-        public static final int searchresults=0x7f050027;
         public static final int signup=0x7f050011;
         public static final int signup_button=0x7f05001d;
         public static final int signup_email=0x7f05001a;
@@ -542,33 +522,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int sliding_layout=0x7f050009;
         public static final int table=0x7f050023;
         public static final int text1=0x7f050021;
-=======
-        public static final int rating=0x7f050029;
-        public static final int releaseYear=0x7f05002b;
-        public static final int search_bar=0x7f05001f;
-        public static final int signup=0x7f050011;
-        public static final int signup_button=0x7f05001c;
-        public static final int signup_email=0x7f050019;
-        public static final int signup_fname=0x7f050015;
-        public static final int signup_mobno=0x7f050018;
-        public static final int signup_password=0x7f05001a;
-        public static final int signup_password_confirm=0x7f05001b;
-        public static final int sliding_layout=0x7f050009;
-        public static final int table=0x7f050022;
-        public static final int text1=0x7f050020;
->>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
         public static final int textView1=0x7f05000d;
         public static final int textView2=0x7f05000b;
-        public static final int thumbnail=0x7f050027;
-        public static final int title=0x7f050028;
+        public static final int thumbnail=0x7f050028;
+        public static final int title=0x7f050029;
         public static final int top=0x7f050008;
         public static final int triangle=0x7f050005;
         public static final int underline=0x7f050006;
-<<<<<<< HEAD
         public static final int viewPager=0x7f05001e;
-=======
-        public static final int viewPager=0x7f05001d;
->>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
     }
     public static final class integer {
         public static final int default_circle_indicator_orientation=0x7f080000;
