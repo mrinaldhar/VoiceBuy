@@ -131,6 +131,13 @@
             android:gravity="center"
             android:text="Login" 
             android:visibility="visible"/>
+           <TextView 
+            android:id="@+id/error_textfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Temp data is displayed!!!"
+           android:visibility="visible" />
         <!-- signup form -->
        <!--      <TextView 
            android:layout_width="wrap_content"
@@ -142,24 +149,24 @@
         android:id="@+id/signup_fname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Fullname" 
+        android:hint="Firstname" 
         android:visibility="gone"/>
-        <!--  <EditText android:id="@+id/signup_lname"
+        <EditText android:id="@+id/signup_lname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Lastname" 
-         android:visibility="visible"/>-->
+        android:visibility="gone"/>
    <Spinner
   	    android:id="@+id/gender"
    		android:layout_width="match_parent"
     	android:layout_height="wrap_content"
     	android:visibility="gone" />
-    <AutoCompleteTextView  
+    <!--  <AutoCompleteTextView  
     android:id="@+id/autocomplete_country"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:visibility="gone"
-     />
+     />-->
     <EditText android:id="@+id/signup_mobno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
