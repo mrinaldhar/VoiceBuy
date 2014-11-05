@@ -493,6 +493,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int btSpeak=0x7f050026;
         public static final int btnbar=0x7f05000f;
         public static final int button1=0x7f050022;
+        public static final int cart_list=0x7f050023;
         public static final int collapsed=0x7f050001;
         public static final int error_textfield=0x7f050015;
         public static final int expanded=0x7f050000;
@@ -520,7 +521,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int signup_password=0x7f05001b;
         public static final int signup_password_confirm=0x7f05001c;
         public static final int sliding_layout=0x7f050009;
-        public static final int table=0x7f050023;
         public static final int text1=0x7f050021;
         public static final int textView1=0x7f05000d;
         public static final int textView2=0x7f05000b;

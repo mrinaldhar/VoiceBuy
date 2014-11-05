@@ -33,6 +33,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -47,7 +48,7 @@ public class VoiceRecognitionActivity extends Activity {
 // private TextView searchresults;
  public String storename;
  
- private List<Movie> movieList = new ArrayList<Movie>();
+ private List<Movie> movieList = new ArrayList<Movie>		 ();
  private ListView listView;
  private CustomListAdapter adapter;
  
@@ -67,13 +68,36 @@ public class VoiceRecognitionActivity extends Activity {
   listView = (ListView) findViewById(R.id.list);
   adapter = new CustomListAdapter(this, movieList);
   listView.setAdapter(adapter);
+
+  listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+	  
+		@Override
+	       public void onItemClick(AdapterView<?> a, View v, int position,
+	               long id) {
+	         Movie select = new Movie();
+	         Movie tid = (Movie)a.getItemAtPosition(position);
+	     
+	          select.setTitle(tid.getTitle());
+	          select.setThumbnailUrl(tid.getThumbnailUrl());
+	          select.setRating(Double.valueOf(tid.getRating()).doubleValue());
+	          select.setYear(tid.getYear());
+	          ShoppingCart.itemList.add(select);
+	          showToastMessage(tid.getTitle() + " Added To Cart");
+//	    Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
+//	    String store_name = a.getItemAtPosition(position).toString();
+//	    System.out.println("Store:" + store_name);
+//	    intent.putExtra("getstore",store_name);
+//	    startActivity(intent);
+	           }
+	       
+	   });
   Bundle extras = getIntent().getExtras();
 	String value = new String();
 	storename = new String();
   if (extras != null){
 		value = extras.getString("getstore");
 	}
-  storename = value;
+  storename = value;	
 	ActionBar action = getActionBar();
 	action.setTitle(value + " Products");
   metTextSearch = (EditText) findViewById(R.id.search_bar);
