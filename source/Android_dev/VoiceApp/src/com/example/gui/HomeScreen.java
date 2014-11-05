@@ -10,7 +10,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 public class HomeScreen extends Fragment {
 		Button log_main,sign_main,log_in,sign_in;

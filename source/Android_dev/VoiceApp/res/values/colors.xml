@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="sea_blue">#08E8DE</color>
-    <color name="sea_blue_dark">#00BFEE</color>
-    <color name="white">#FFFFFF</color>
-    <color name="briezel_blue">#2980e1</color>
-    <color name="alizarin">#712a15</color>
-    <color name="pomegranate">#f0392b</color>
 	<color name="mdblue">#812a15</color>
-    <color name="mdblue2">#8b9dc3</color>
      <color name="genre">#666666</color>
     <color name="year">#888888</color>
     <color name="list_divider">#d9d9d9</color>
@@ -15,4 +8,5 @@
     <color name="list_row_end_color">#fdf7ef</color>
     <color name="list_row_hover_start_color">#ebeef0</color>
     <color name="list_row_hover_end_color">#ebeef0</color>
+    <color name="app_bg">#fbf1e3</color>
 </resources>
