@@ -9,8 +9,14 @@
     
     android:background = "#fbf1e3"
     tools:context="com.example.gui.ShoppingCart" >
-
-
+				<ListView 
+    				    android:layout_height="match_parent"
+    				    android:layout_width="match_parent"
+    				    android:id="@+id/cart_list"
+    				    android:divider="@android:color/transparent"
+  						android:dividerHeight="15dp">
+    				</ListView>
+<!-- 
 
 <TableLayout
     android:id="@+id/table"
@@ -64,5 +70,5 @@
    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Place order"
-    android:layout_below="@id/table" />
+    android:layout_below="@id/table" /> -->
 </RelativeLayout>

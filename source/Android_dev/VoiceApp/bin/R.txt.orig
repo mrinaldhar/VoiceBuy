@@ -111,9 +111,15 @@ int drawable below_shadow 0x7f020003
 int drawable ic_action 0x7f020004
 int drawable ic_action_cart 0x7f020005
 int drawable ic_launcher 0x7f020006
+<<<<<<< HEAD
+int drawable image1 0x7f020007
+int drawable image2 0x7f020008
+int drawable list_divider 0x7f020009
+=======
 int drawable list_row_bg 0x7f020007
 int drawable list_row_bg_hover 0x7f020008
 int drawable list_row_selector 0x7f020009
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int drawable mic 0x7f02000a
 int drawable roundedbuttons 0x7f02000b
 int drawable shape2 0x7f02000c
@@ -125,35 +131,80 @@ int drawable vpi__tab_selected_pressed_holo 0x7f020011
 int drawable vpi__tab_unselected_focused_holo 0x7f020012
 int drawable vpi__tab_unselected_holo 0x7f020013
 int drawable vpi__tab_unselected_pressed_holo 0x7f020014
+<<<<<<< HEAD
+int id Itemname 0x7f050027
 int id Layout1 0x7f05000a
+int id Layout2 0x7f050022
+int id action_cart 0x7f050029
+int id action_settings 0x7f050028
+=======
+int id Layout1 0x7f05000a
+<<<<<<< HEAD
 int id Layout2 0x7f050024
-int id action_cart 0x7f05002e
-int id action_settings 0x7f05002d
+int id action_cart 0x7f050029
+int id action_settings 0x7f050028
+=======
+int id Layout2 0x7f050023
+int id action_cart 0x7f05002d
+int id action_settings 0x7f05002c
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int id anchored 0x7f050002
 int id applogo 0x7f05000c
+int id autocomplete_country 0x7f050017
 int id bottom 0x7f050007
+<<<<<<< HEAD
+int id btSpeak 0x7f050024
+int id btnbar 0x7f05000f
+int id button1 0x7f050021
+=======
+<<<<<<< HEAD
 int id btSpeak 0x7f050026
 int id btnbar 0x7f05000f
 int id button1 0x7f050022
-int id cart_list 0x7f050023
+=======
+int id btSpeak 0x7f050025
+int id btnbar 0x7f05000f
+int id button1 0x7f050021
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int id collapsed 0x7f050001
 int id error_textfield 0x7f050015
 int id expanded 0x7f050000
+<<<<<<< HEAD
+int id gender 0x7f050016
+int id hidden 0x7f050003
+int id icon 0x7f050026
+int id indicator 0x7f05001e
+int id listview 0x7f050023
+=======
+<<<<<<< HEAD
 int id gender 0x7f050018
-int id genre 0x7f05002b
 int id hidden 0x7f050003
 int id indicator 0x7f05001f
-int id list 0x7f050027
 int id listview 0x7f050025
+=======
+int id gender 0x7f050016
+int id genre 0x7f05002a
+int id hidden 0x7f050003
+int id indicator 0x7f05001e
+int id list 0x7f050026
+int id listview 0x7f050024
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int id login 0x7f050010
 int id login_button 0x7f050014
 int id login_email 0x7f050012
 int id login_password 0x7f050013
 int id none 0x7f050004
 int id panel 0x7f05000e
-int id rating 0x7f05002a
-int id releaseYear 0x7f05002c
+<<<<<<< HEAD
+int id search_bar 0x7f05001f
+int id searchresults 0x7f050025
+=======
+<<<<<<< HEAD
 int id search_bar 0x7f050020
+int id searchresults 0x7f050027
 int id signup 0x7f050011
 int id signup_button 0x7f05001d
 int id signup_email 0x7f05001a
@@ -163,15 +214,44 @@ int id signup_mobno 0x7f050019
 int id signup_password 0x7f05001b
 int id signup_password_confirm 0x7f05001c
 int id sliding_layout 0x7f050009
+int id table 0x7f050023
 int id text1 0x7f050021
+=======
+int id rating 0x7f050029
+int id releaseYear 0x7f05002b
+int id search_bar 0x7f05001f
+>>>>>>> b73756af39652f957734048167945d47f57e432f
+int id signup 0x7f050011
+int id signup_button 0x7f05001c
+int id signup_email 0x7f050019
+int id signup_fname 0x7f050015
+int id signup_mobno 0x7f050018
+int id signup_password 0x7f05001a
+int id signup_password_confirm 0x7f05001b
+int id sliding_layout 0x7f050009
+<<<<<<< HEAD
+int id text1 0x7f050020
+=======
+int id table 0x7f050022
+int id text1 0x7f050020
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int id textView1 0x7f05000d
 int id textView2 0x7f05000b
-int id thumbnail 0x7f050028
-int id title 0x7f050029
+int id thumbnail 0x7f050027
+int id title 0x7f050028
 int id top 0x7f050008
 int id triangle 0x7f050005
 int id underline 0x7f050006
+<<<<<<< HEAD
+int id viewPager 0x7f05001d
+=======
+<<<<<<< HEAD
 int id viewPager 0x7f05001e
+=======
+int id viewPager 0x7f05001d
+>>>>>>> 27131c29962a6cbae6e26d50dec5a74ee4251f1f
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int integer default_circle_indicator_orientation 0x7f080000
 int integer default_title_indicator_footer_indicator_style 0x7f080001
 int integer default_title_indicator_line_position 0x7f080002
@@ -183,6 +263,17 @@ int layout activity_search 0x7f030002
 int layout activity_shopping_cart 0x7f030003
 int layout activity_stores_list 0x7f030004
 int layout activity_voice_recognition 0x7f030005
+<<<<<<< HEAD
+int layout list_cart 0x7f030006
+int layout shape2 0x7f030007
+int menu custom_list_items 0x7f0d0000
+int menu home_screen 0x7f0d0001
+int menu main 0x7f0d0002
+int menu screen_slide_page 0x7f0d0003
+int menu screen_slide_pager 0x7f0d0004
+int menu shopping_cart 0x7f0d0005
+int menu stores_list 0x7f0d0006
+=======
 int layout list_row 0x7f030006
 int layout shape2 0x7f030007
 int menu home_screen 0x7f0d0000
@@ -191,6 +282,7 @@ int menu screen_slide_page 0x7f0d0002
 int menu screen_slide_pager 0x7f0d0003
 int menu shopping_cart 0x7f0d0004
 int menu stores_list 0x7f0d0005
+>>>>>>> b73756af39652f957734048167945d47f57e432f
 int string action_cart 0x7f0b0010
 int string action_settings 0x7f0b0002
 int string action_update 0x7f0b000f
@@ -208,6 +300,7 @@ int string searchres 0x7f0b0015
 int string signup 0x7f0b0011
 int string start 0x7f0b0003
 int string swipe 0x7f0b0014
+int string title_activity_custom_list_items 0x7f0b0019
 int string title_activity_home_screen 0x7f0b0017
 int string title_activity_screen_slide_page_fragment 0x7f0b0006
 int string title_activity_screen_slide_pager 0x7f0b0005
