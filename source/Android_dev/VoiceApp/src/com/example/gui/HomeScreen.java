@@ -1,7 +1,6 @@
 package com.example.gui;
 
 import java.io.BufferedReader;
-import com.example.gui.JSONParser;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
