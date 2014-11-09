@@ -18,6 +18,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -64,11 +65,14 @@ public class HomeScreen extends Fragment {
 	     sign_lname=(EditText) v.findViewById(R.id.signup_lname);
 	     log_email=(EditText) v.findViewById(R.id.login_email);
 	     log_pass=(EditText) v.findViewById(R.id.login_password);
+	     log_pass.setTextColor(Color.parseColor("#000000"));
 	     sign_fname=(EditText) v.findViewById(R.id.signup_fname);
 	     sign_mobile=(EditText) v.findViewById(R.id.signup_mobno);
 	     sign_email=(EditText) v.findViewById(R.id.signup_email);
 	     sign_pass=(EditText) v.findViewById(R.id.signup_password);
 	     sign_pass_conf=(EditText) v.findViewById(R.id.signup_password_confirm);
+	     sign_pass.setTextColor(Color.parseColor("#000000"));
+	     sign_pass_conf.setTextColor(Color.parseColor("#000000"));
 	     log_in.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
