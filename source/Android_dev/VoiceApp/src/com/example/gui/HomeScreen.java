@@ -18,6 +18,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -63,12 +64,17 @@ public class HomeScreen extends Fragment {
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
 	     sign_lname=(EditText) v.findViewById(R.id.signup_lname);
+	     sign_lname.setTextColor(Color.parseColor("#000000"));
 	     log_email=(EditText) v.findViewById(R.id.login_email);
+	     log_email.setTextColor(Color.parseColor("#000000"));
 	     log_pass=(EditText) v.findViewById(R.id.login_password);
 	     log_pass.setTextColor(Color.parseColor("#000000"));
 	     sign_fname=(EditText) v.findViewById(R.id.signup_fname);
+	     sign_fname.setTextColor(Color.parseColor("#000000"));
 	     sign_mobile=(EditText) v.findViewById(R.id.signup_mobno);
+	     sign_mobile.setTextColor(Color.parseColor("#000000"));
 	     sign_email=(EditText) v.findViewById(R.id.signup_email);
+	     sign_email.setTextColor(Color.parseColor("#000000"));
 	     sign_pass=(EditText) v.findViewById(R.id.signup_password);
 	     sign_pass_conf=(EditText) v.findViewById(R.id.signup_password_confirm);
 	     sign_pass.setTextColor(Color.parseColor("#000000"));
@@ -168,33 +174,50 @@ public class HomeScreen extends Fragment {
 	        return home;
 	    }
 	    public void getdata(String usrname,String passwd){
-	    	String url="http://rohithdb.besaba.com/login_app.php";	    	
+	    	String url="http://rohithdb.besaba.com/login_app.php";
+	    	String usrname1=log_email.getText().toString();
 	    	List<NameValuePair> params = new ArrayList<NameValuePair>();
-	    	  params.add(new BasicNameValuePair("username",usrname));
+	    	  params.add(new BasicNameValuePair("username",usrname1));
 	        //  params.add(new BasicNameValuePair("password",passwd));
-	    	JSONArray jarray=JSONParser.getJSONFromUrl(url,params);
-	    	if(jarray!=null){
+	    	String userpass=JSONParser.getJSONFromUrl(url,params);
+	    	String s="";
 	    	try{
-	    		String s="";
-				for(int i = 0;i<jarray.length();i++)
-	    		{   res.setText("entered loop");
-	    			JSONObject json=jarray.getJSONObject(i);
-	    			if(json!=null){
-	    			s=s+json.getString("Password");
-	    			res.setText("ended loop");
-	    			}
-	    		} 
-				if(s.equals(passwd)){
-	    			res.setText("Login successful");
+	    		if(userpass!=null){
+					JSONObject json = new JSONObject(userpass);
+	    			s=json.getString("Password");
+	    			//res.setText("ended loop");
+	    		Log.e("string returned", s+"passs..");	
+	    		if(s.equals(passwd)){
+					int duration = Toast.LENGTH_SHORT;
+					Context context = getActivity().getApplicationContext();
+					CharSequence text = "Login successful";
+					Toast toast = Toast.makeText(context, text, duration);
+		    		toast.show();
+	    			
 				}
 				else{
-					res.setText("Login Failed,please check your username/password!!!!");
-				}
+					int duration = Toast.LENGTH_SHORT;
+					Context context = getActivity().getApplicationContext();
+					CharSequence text = "Login Failed,please check your password!!!!";
+					Toast toast = Toast.makeText(context, text, duration);
+		    		toast.show();
+					
+					}
+	    		}
+	    		else{
+    				int duration = Toast.LENGTH_SHORT;
+    				Context context = getActivity().getApplicationContext();
+    				CharSequence text = "Login Failed,please check your username/singup!!!!";
+    				Toast toast = Toast.makeText(context, text, duration);
+    	    		toast.show();
+    		
+	    			} 
+	    		
 	    	}
 	    	catch(Exception e){
 	    		Log.d("conn","Error to json"+e.toString());
 	    	}
-	    	}
+	    	
 	    }
 	    public void postdata(String url,List<NameValuePair> params){
 	    	try{
@@ -204,8 +227,11 @@ public class HomeScreen extends Fragment {
             HttpResponse httpResponse = httpClient.execute(httpPost);
             HttpEntity httpEntity = httpResponse.getEntity();
             is = httpEntity.getContent();
-            String msg="Data Entered Successfully!!!";
-            res.setText(msg);
+            int duration = Toast.LENGTH_SHORT;
+			Context context = getActivity().getApplicationContext();
+			CharSequence text = "Data Entered Successfully!!!";
+			Toast toast = Toast.makeText(context, text, duration);
+    		toast.show();
 	    	}
 	    	catch(Exception e){
 	    		Log.e("conn",e.toString());
