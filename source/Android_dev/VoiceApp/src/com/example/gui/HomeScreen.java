@@ -78,7 +78,9 @@ public class HomeScreen extends Fragment {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					StrictMode.enableDefaults();
-				//	getdata();
+					String username=log_email.getText().toString();
+					String psswd=log_pass.getText().toString();
+					getdata(username,psswd);
 				}
 			});
 	     sign_in.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +115,7 @@ public class HomeScreen extends Fragment {
 				}
 			});
 	     
+	     
 	     log_main.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -128,7 +131,7 @@ public class HomeScreen extends Fragment {
 				log_email.setVisibility(View.VISIBLE);
 				log_pass.setVisibility(View.VISIBLE);
 				log_in.setVisibility(View.VISIBLE);
-			//	res.setVisibility(View.VISIBLE);
+				res.setVisibility(View.VISIBLE);
 			}
 		});
 	     sign_main.setOnClickListener(new View.OnClickListener() {
@@ -147,7 +150,7 @@ public class HomeScreen extends Fragment {
 					sign_pass.setVisibility(View.VISIBLE);
 					sign_pass_conf.setVisibility(View.VISIBLE);
 					sign_in.setVisibility(View.VISIBLE);
-				//	res.setVisibility(View.VISIBLE);
+					res.setVisibility(View.GONE);
 					spin_gender.setVisibility(View.VISIBLE);
 					
 				}
@@ -164,22 +167,35 @@ public class HomeScreen extends Fragment {
 
 	        return home;
 	    }
-	   /* public void postdata(String url,List<NameValuePair> params){
+	    public void getdata(String usrname,String passwd){
+	    	String url="http://rohithdb.besaba.com/login_app.php";	    	
+	    	List<NameValuePair> params = new ArrayList<NameValuePair>();
+	    	  params.add(new BasicNameValuePair("username",usrname));
+	        //  params.add(new BasicNameValuePair("password",passwd));
 	    	JSONArray jarray=JSONParser.getJSONFromUrl(url,params);
-	    	
+	    	if(jarray!=null){
 	    	try{
 	    		String s="";
 				for(int i = 0;i<jarray.length();i++)
-	    		{
+	    		{   res.setText("entered loop");
 	    			JSONObject json=jarray.getJSONObject(i);
-	    			s=s+"Firstname "+json.getString("Firstname")+"\n"+"Lastname "+json.getString("Lastname")+"\n"+"Email "+json.getString("Email")+'\n';
+	    			if(json!=null){
+	    			s=s+json.getString("Password");
+	    			res.setText("ended loop");
+	    			}
 	    		} 
-	    			res.setText("Signed Up Successfully !!!!!!!");
+				if(s.equals(passwd)){
+	    			res.setText("Login successful");
+				}
+				else{
+					res.setText("Login Failed,please check your username/password!!!!");
+				}
 	    	}
 	    	catch(Exception e){
 	    		Log.d("conn","Error to json"+e.toString());
 	    	}
-	    }*/
+	    	}
+	    }
 	    public void postdata(String url,List<NameValuePair> params){
 	    	try{
 	    	DefaultHttpClient httpClient = new DefaultHttpClient();

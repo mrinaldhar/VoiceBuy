@@ -135,7 +135,10 @@ int id bottom 0x7f050007
 int id btSpeak 0x7f050026
 int id btnbar 0x7f05000f
 int id button1 0x7f050022
+<<<<<<< HEAD
+=======
 int id cart_list 0x7f050023
+>>>>>>> 14cc3abcf2a2abfb24b0374bc41d81f25e3a9bea
 int id collapsed 0x7f050001
 int id error_textfield 0x7f050015
 int id expanded 0x7f050000
