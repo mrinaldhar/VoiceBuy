@@ -31,14 +31,14 @@ public class JSONParser {
  
     }
  
-    public static JSONArray getJSONFromUrl(String url, List<NameValuePair> params) {
+    public static String getJSONFromUrl(String url, List<NameValuePair> params) {
     	  JSONArray jarr = null;
         // Making HTTP request
         try {
             // defaultHttpClient
             DefaultHttpClient httpClient = new DefaultHttpClient();
             HttpPost httpPost = new HttpPost(url);
-         //   httpPost.setEntity(new UrlEncodedFormEntity(params));
+            httpPost.setEntity(new UrlEncodedFormEntity(params));
  
             HttpResponse httpResponse = httpClient.execute(httpPost);
             HttpEntity httpEntity = httpResponse.getEntity();
@@ -51,7 +51,8 @@ public class JSONParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
- 
+
+       
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     is, "iso-8859-1"), 8);
@@ -68,15 +69,19 @@ public class JSONParser {
         }
  
         // try parse the string to a JSON object
-        try {
-            jarr = new JSONArray(json);            
+    /*    try {
+            //jarr = new JSONArray(json);            
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
-        }
+        }*/
  
       
 		// return JSON String
-        return jarr;
+        if(json==null){
+        	return "{'Password',''}";}
+        else{
+        return json;}
+        
  
     }
 }
