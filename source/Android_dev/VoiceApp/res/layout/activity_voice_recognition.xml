@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="fill_parent"
+        android:background = "#fdf7ef"
+    
+    android:layout_width="fill_parent">
+    
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+ 
+    <ImageButton
+        android:id="@+id/btSpeak"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="speak"
+        android:src="@drawable/appicon"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background = "@drawable/roundedbuttons"
+        tools:context=".VoiceRecognitionActivity" />
+
+  
+                     <EditText
+    				android:layout_marginTop="6dp"
+    				android:layout_marginLeft="0dp"
+    				android:layout_marginRight="5dp"
+    				android:paddingRight="12dp"
+    				android:paddingTop="12dp"
+    				android:paddingBottom="12dp"
+    				android:paddingLeft="5dp"
+    				android:layout_width="fill_parent"
+    				android:layout_height="wrap_content"
+    				android:id="@+id/search_bar"
+    				android:hint="@string/search_main" />
+ 
+ 
+    <!--   <Spinner
+        android:id="@+id/sNoOfMatches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/saNoOfMatches"
+        android:prompt="@string/sNoOfMatches"/>-->
+ 
+ <!--    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvTextMatches"
+        android:textStyle="bold" />
+ 
+    <ListView
+        android:id="@+id/lvTextMatches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" /> -->
+ 
+</LinearLayout>
+
+<!-- <TextView
+    android:id="@+id/searchresults"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:gravity="center"
+    style="?android:attr/buttonBarButtonStyle"
+    android:text="@string/searchres" />
+ -->
+<ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/list_divider"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_row_selector" />
+    </LinearLayout>
+    

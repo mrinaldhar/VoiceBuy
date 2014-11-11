@@ -1,0 +1,207 @@
+	<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_layout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:gravity="bottom"
+    sothree:panelHeight="57dp"
+    android:background = "#fbf1e3"
+    sothree:shadowHeight="8dp">
+	
+	<RelativeLayout 
+	    android:id="@+id/Layout1"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:focusable="false"
+	    android:focusableInTouchMode="false"
+	    android:orientation="vertical"
+	    android:paddingTop="@dimen/activity_vertical_margin"
+	    tools:context="com.example.gui.MainActivity" >
+
+	    
+	  
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/applogo"
+	        android:layout_marginTop="50dp"
+	        android:gravity="center"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:text="@string/app_name"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+ <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textView2"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="70dp"
+	        android:text="@string/swipe"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+	    <ImageView
+	        android:id="@+id/applogo"
+	        android:layout_width="160dp"
+	        android:layout_height="160dp"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:src="@drawable/appicon" />
+	</RelativeLayout>
+	
+	<LinearLayout
+	    android:id="@+id/panel"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation ="vertical"
+	    android:baselineAligned="false" >
+	
+	<LinearLayout
+	        android:id="@+id/btnbar"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="0dp"
+	        android:background="@color/mdblue"
+	        android:gravity="bottom|center"
+	        android:orientation="horizontal"
+	        android:padding="2dp"
+	        android:layout_weight="3" >
+
+	         <Button
+	            android:id="@+id/login"
+	            style="?android:attr/buttonBarButtonStyle"
+	            android:layout_width="110dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="15dp"
+	            android:alpha="1"
+	            android:background="@drawable/shapes"
+	            android:gravity="center"
+	            android:padding="15dp"
+	            android:paddingLeft="50dp"
+	            android:paddingRight="50dp"
+	            android:text="@string/login"
+	            android:textStyle="bold"
+	            android:visibility="visible"
+	            android:onClick="display_login" />
+
+	        <Button
+	            android:id="@+id/signup"
+	            style="?android:attr/buttonBarButtonStyle"
+	            android:layout_width="110dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="15dp"
+	            android:alpha="1"
+	            android:background="@drawable/shapes"
+	            android:gravity="center"
+	            android:padding="15dp"
+	            android:paddingLeft="50dp"
+	            android:paddingRight="50dp"
+	            android:text="@string/signup"
+	            android:textStyle="bold"
+	            android:visibility="visible"
+	            android:onClick="display_signup" />
+</LinearLayout> 
+<!-- login fields-->
+		<EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email Address"
+            android:textColor="#fff"
+            android:inputType="textEmailAddress"
+            android:visibility="visible" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"    
+            android:textColor="#fff"
+            android:inputType="textPassword"
+             android:visibility="visible"/>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Login" 
+            android:visibility="visible"/>
+           <TextView 
+            android:id="@+id/error_textfield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Temp data is displayed!!!"
+           android:visibility="visible" />
+        <!-- signup form -->
+       <!--      <TextView 
+           android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome to Voice Buy!!!!"/>-->
+         
+        <EditText 
+        android:id="@+id/signup_fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Firstname" 
+        android:visibility="gone"/>
+        <EditText android:id="@+id/signup_lname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lastname" 
+        android:visibility="gone"/>
+   <Spinner
+  	    android:id="@+id/gender"
+   		android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:visibility="gone" />
+    <!--  <AutoCompleteTextView  
+    android:id="@+id/autocomplete_country"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+     />-->
+    <EditText android:id="@+id/signup_mobno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Number" 
+        android:inputType="phone" 
+        android:visibility="gone"/>
+    <EditText android:id="@+id/signup_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress" 
+        android:visibility="gone"/>
+    <EditText
+            android:id="@+id/signup_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Type Password"    
+            android:textColor="#fff"
+            android:inputType="textPassword"
+            android:visibility="gone"/>
+    <EditText
+            android:id="@+id/signup_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Retype Password"    
+            android:textColor="#fff"
+            android:inputType="textPassword"
+            android:visibility="gone"/>
+        <Button 
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Signup"
+            android:visibility="gone"/>
+        
+</LinearLayout>	
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
