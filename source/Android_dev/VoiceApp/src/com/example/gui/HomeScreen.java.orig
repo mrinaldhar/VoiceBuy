@@ -1,25 +1,23 @@
 package com.example.gui;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+<<<<<<< HEAD
+=======
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.content.Context;
 import android.graphics.Color;
+>>>>>>> aadb2b62321ac5e1eab8f1f88717604032f4cfce
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -28,12 +26,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class HomeScreen extends Fragment {
 		Button log_main,sign_main,log_in,sign_in;
@@ -50,16 +46,8 @@ public class HomeScreen extends Fragment {
 	                R.array.gender_array, android.R.layout.simple_spinner_item);
 	        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	        spin_gender.setAdapter(adapter1);
-	      //  AutoCompleteTextView textView = (AutoCompleteTextView) v.findViewById(R.id.autocomplete_country);
-	     // Get the string array
-	     String[] countries = getResources().getStringArray(R.array.countries_array);
-	     // Create the adapter and set it to the AutoCompleteTextView 
-	     ArrayAdapter<String> adapter2 = 
-	             new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, countries);
-	     //textView.setAdapter(adapter2);
-	     log_main=(Button) v.findViewById(R.id.login);
+	        log_main=(Button) v.findViewById(R.id.login);
 	     res=(TextView) v.findViewById(R.id.error_textfield);
-	     logv=v.findViewById(R.id.login);
 	     sign_main=(Button) v.findViewById(R.id.signup);
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
@@ -116,7 +104,7 @@ public class HomeScreen extends Fragment {
 					}
 					else
 					{
-						res.setText("The passwords you have entered do not match.");
+						res.setText("Passwords did not match !!!!!!");
 					}
 				}
 			});
@@ -173,6 +161,9 @@ public class HomeScreen extends Fragment {
 
 	        return home;
 	    }
+<<<<<<< HEAD
+
+=======
 	    public void getdata(String usrname,String passwd){
 	    	String url="http://rohithdb.besaba.com/login_app.php";
 	    	String usrname1=log_email.getText().toString();
@@ -198,7 +189,7 @@ public class HomeScreen extends Fragment {
 				else{
 					int duration = Toast.LENGTH_SHORT;
 					Context context = getActivity().getApplicationContext();
-					CharSequence text = "Invalid password. Please try again.";
+					CharSequence text = "Login Failed,please check your password!!!!";
 					Toast toast = Toast.makeText(context, text, duration);
 		    		toast.show();
 					
@@ -207,7 +198,7 @@ public class HomeScreen extends Fragment {
 	    		else{
     				int duration = Toast.LENGTH_SHORT;
     				Context context = getActivity().getApplicationContext();
-    				CharSequence text = "Invalid email address. Please try again.";
+    				CharSequence text = "Login Failed,please check your username/singup!!!!";
     				Toast toast = Toast.makeText(context, text, duration);
     	    		toast.show();
     		
@@ -219,6 +210,7 @@ public class HomeScreen extends Fragment {
 	    	}
 	    	
 	    }
+>>>>>>> aadb2b62321ac5e1eab8f1f88717604032f4cfce
 	    public void postdata(String url,List<NameValuePair> params){
 	    	try{
 	    	DefaultHttpClient httpClient = new DefaultHttpClient();
@@ -229,7 +221,7 @@ public class HomeScreen extends Fragment {
             is = httpEntity.getContent();
             int duration = Toast.LENGTH_SHORT;
 			Context context = getActivity().getApplicationContext();
-			CharSequence text = "Processing sign-up request...";
+			CharSequence text = "Data Entered Successfully!!!";
 			Toast toast = Toast.makeText(context, text, duration);
     		toast.show();
 	    	}
