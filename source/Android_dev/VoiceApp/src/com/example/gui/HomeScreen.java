@@ -116,7 +116,7 @@ public class HomeScreen extends Fragment {
 					}
 					else
 					{
-						res.setText("Passwords did not match !!!!!!");
+						res.setText("The passwords you have entered do not match.");
 					}
 				}
 			});
@@ -198,7 +198,7 @@ public class HomeScreen extends Fragment {
 				else{
 					int duration = Toast.LENGTH_SHORT;
 					Context context = getActivity().getApplicationContext();
-					CharSequence text = "Login Failed,please check your password!!!!";
+					CharSequence text = "Invalid password. Please try again.";
 					Toast toast = Toast.makeText(context, text, duration);
 		    		toast.show();
 					
@@ -207,7 +207,7 @@ public class HomeScreen extends Fragment {
 	    		else{
     				int duration = Toast.LENGTH_SHORT;
     				Context context = getActivity().getApplicationContext();
-    				CharSequence text = "Login Failed,please check your username/singup!!!!";
+    				CharSequence text = "Invalid email address. Please try again.";
     				Toast toast = Toast.makeText(context, text, duration);
     	    		toast.show();
     		
@@ -229,7 +229,7 @@ public class HomeScreen extends Fragment {
             is = httpEntity.getContent();
             int duration = Toast.LENGTH_SHORT;
 			Context context = getActivity().getApplicationContext();
-			CharSequence text = "Data Entered Successfully!!!";
+			CharSequence text = "Processing sign-up request...";
 			Toast toast = Toast.makeText(context, text, duration);
     		toast.show();
 	    	}

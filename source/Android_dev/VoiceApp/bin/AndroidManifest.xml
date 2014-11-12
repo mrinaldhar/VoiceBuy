@@ -31,10 +31,12 @@
         </activity>
         <activity
             android:name=".ScreenSlidePagerActivity"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_screen_slide_pager" >
         </activity>
         <activity
             android:name=".ScreenSlidePageFragment"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_screen_slide_page_fragment" >
         </activity>
         <activity
@@ -51,7 +53,8 @@
         </activity>
         <activity
             android:name=".HomeScreen"
-            android:label="@string/title_activity_home_screen" >
+            android:label="@string/title_activity_home_screen"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".StoresList"
