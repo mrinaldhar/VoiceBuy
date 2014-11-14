@@ -39,7 +39,7 @@ public class HomeScreen extends Fragment {
 		Button log_main,sign_main,log_in,sign_in;
 		//AutoCompleteTextView country;
 		View logv;
-		TextView res;
+		TextView res,info;
 		InputStream is;
  		EditText sign_lname,log_email,log_pass,sign_fname,sign_mobile,sign_email,sign_pass,sign_pass_conf;
 	   @Override
@@ -57,6 +57,7 @@ public class HomeScreen extends Fragment {
 	     ArrayAdapter<String> adapter2 = 
 	             new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, countries);
 	     //textView.setAdapter(adapter2);
+	     info=(TextView) v.findViewById(R.id.textView2);
 	     log_main=(Button) v.findViewById(R.id.login);
 	     res=(TextView) v.findViewById(R.id.error_textfield);
 	     logv=v.findViewById(R.id.login);
@@ -116,7 +117,12 @@ public class HomeScreen extends Fragment {
 					}
 					else
 					{
-						res.setText("Passwords did not match !!!!!!");
+						int duration = Toast.LENGTH_SHORT;
+						Context context = getActivity().getApplicationContext();
+						CharSequence text = "The passwords you have entered do not match.";
+						Toast toast = Toast.makeText(context, text, duration);
+			    		toast.show();
+						
 					}
 				}
 			});
@@ -137,7 +143,7 @@ public class HomeScreen extends Fragment {
 				log_email.setVisibility(View.VISIBLE);
 				log_pass.setVisibility(View.VISIBLE);
 				log_in.setVisibility(View.VISIBLE);
-				res.setVisibility(View.VISIBLE);
+				//res.setVisibility(View.VISIBLE);
 			}
 		});
 	     sign_main.setOnClickListener(new View.OnClickListener() {
@@ -182,37 +188,44 @@ public class HomeScreen extends Fragment {
 	    	String userpass=JSONParser.getJSONFromUrl(url,params);
 	    	String s="";
 	    	try{
-	    		if(userpass!=null){
+	    		
 					JSONObject json = new JSONObject(userpass);
-	    			s=json.getString("Password");
+					
+	    			String username=json.getString("Email");
 	    			//res.setText("ended loop");
+	    		if(username.equals("")){
+	    			
+	    				int duration = Toast.LENGTH_SHORT;
+						Context context = getActivity().getApplicationContext();
+						CharSequence text = "Invalid username. Please try again/Signup.";
+						Toast toast = Toast.makeText(context, text, duration);
+			    		toast.show();
+	    			
+	    		}
+	    		else{
+	    			s=json.getString("Password");
 	    		Log.e("string returned", s+"passs..");	
 	    		if(s.equals(passwd)){
 					int duration = Toast.LENGTH_SHORT;
 					Context context = getActivity().getApplicationContext();
-					CharSequence text = "Login successful";
-					Toast toast = Toast.makeText(context, text, duration);
-		    		toast.show();
-	    			
+					CharSequence text1 = "Login successfull";
+					//sign_main.setVisibility(View.GONE);
+					//log_main.setVisibility(View.GONE);
+					String text="Welcome to Voice Buy"+" "+json.getString("Firstname")+" "+json.getString("Lastname")+" !!!!!\n";		
+					info.setText(text);
+					Toast toast = Toast.makeText(context, text1, duration);
+		    		toast.show();	
 				}
 				else{
 					int duration = Toast.LENGTH_SHORT;
 					Context context = getActivity().getApplicationContext();
-					CharSequence text = "Login Failed,please check your password!!!!";
+					CharSequence text = "Invalid password. Please try again.";
 					Toast toast = Toast.makeText(context, text, duration);
 		    		toast.show();
 					
-					}
+					} 
 	    		}
-	    		else{
-    				int duration = Toast.LENGTH_SHORT;
-    				Context context = getActivity().getApplicationContext();
-    				CharSequence text = "Login Failed,please check your username/singup!!!!";
-    				Toast toast = Toast.makeText(context, text, duration);
-    	    		toast.show();
-    		
-	    			} 
-	    		
+	    			
 	    	}
 	    	catch(Exception e){
 	    		Log.d("conn","Error to json"+e.toString());
@@ -229,7 +242,7 @@ public class HomeScreen extends Fragment {
             is = httpEntity.getContent();
             int duration = Toast.LENGTH_SHORT;
 			Context context = getActivity().getApplicationContext();
-			CharSequence text = "Data Entered Successfully!!!";
+			CharSequence text = "Processing sign-up request...";
 			Toast toast = Toast.makeText(context, text, duration);
     		toast.show();
 	    	}

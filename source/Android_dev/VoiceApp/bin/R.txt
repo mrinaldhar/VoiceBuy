@@ -130,7 +130,7 @@ int id Layout2 0x7f050024
 int id action_cart 0x7f05002e
 int id action_settings 0x7f05002d
 int id anchored 0x7f050002
-int id applogo 0x7f05000c
+int id applogo 0x7f05000b
 int id bottom 0x7f050007
 int id btSpeak 0x7f050026
 int id btnbar 0x7f05000f
@@ -165,7 +165,7 @@ int id signup_password_confirm 0x7f05001c
 int id sliding_layout 0x7f050009
 int id text1 0x7f050021
 int id textView1 0x7f05000d
-int id textView2 0x7f05000b
+int id textView2 0x7f05000c
 int id thumbnail 0x7f050028
 int id title 0x7f050029
 int id top 0x7f050008
