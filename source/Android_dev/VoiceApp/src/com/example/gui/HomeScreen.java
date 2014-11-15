@@ -1,21 +1,16 @@
 package com.example.gui;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.content.Context;
@@ -28,7 +23,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -80,6 +74,8 @@ public class HomeScreen extends Fragment {
 	     sign_pass_conf=(EditText) v.findViewById(R.id.signup_password_confirm);
 	     sign_pass.setTextColor(Color.parseColor("#000000"));
 	     sign_pass_conf.setTextColor(Color.parseColor("#000000"));
+	     
+	   
 	     log_in.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -208,11 +204,12 @@ public class HomeScreen extends Fragment {
 	    		if(s.equals(passwd)){
 					int duration = Toast.LENGTH_SHORT;
 					Context context = getActivity().getApplicationContext();
-					CharSequence text1 = "Login successfull";
+					CharSequence text1 = "Login successful";
 					//sign_main.setVisibility(View.GONE);
 					//log_main.setVisibility(View.GONE);
-					String text="Welcome to Voice Buy"+" "+json.getString("Firstname")+" "+json.getString("Lastname")+" !!!!!\n";		
+					String text="Hello there,"+" "+json.getString("Firstname")+" "+json.getString("Lastname")+" \n";		
 					info.setText(text);
+					
 					Toast toast = Toast.makeText(context, text1, duration);
 		    		toast.show();	
 				}
