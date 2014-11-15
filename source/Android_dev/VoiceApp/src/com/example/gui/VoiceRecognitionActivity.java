@@ -8,6 +8,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 import model.Movie;
 
@@ -29,6 +30,7 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,16 +45,15 @@ import android.widget.Toast;
 
 public class VoiceRecognitionActivity extends Activity {
  private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
- 
+ TextToSpeech ttobj;
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
 // private TextView searchresults;
  public String storename;
  
- private List<Movie> movieList = new ArrayList<Movie>		 ();
+ private List<Movie> movieList = new ArrayList<Movie>();
  private ListView listView;
  private CustomListAdapter adapter;
- 
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -69,6 +70,15 @@ public class VoiceRecognitionActivity extends Activity {
   listView = (ListView) findViewById(R.id.list);
   adapter = new CustomListAdapter(this, movieList);
   listView.setAdapter(adapter);
+  ttobj=new TextToSpeech(getApplicationContext(), 
+	      new TextToSpeech.OnInitListener() {
+	      @Override
+	      public void onInit(int status) {
+	         if(status != TextToSpeech.ERROR){
+	             ttobj.setLanguage(Locale.UK);
+	            }				
+	         }
+	      });
 
   listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 	  
@@ -84,6 +94,7 @@ public class VoiceRecognitionActivity extends Activity {
 	          select.setYear(tid.getYear());
 	          ShoppingCart.itemList.add(select);
 	          showToastMessage(tid.getTitle() + " Added To Cart");
+	          saythis("Okay, I'll add this item to your shopping cart.");
 //	    Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
 //	    String store_name = a.getItemAtPosition(position).toString();
 //	    System.out.println("Store:" + store_name);
@@ -132,6 +143,12 @@ public class VoiceRecognitionActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		ttobj.speak("Okay, what should I search for in "+storename+"?", TextToSpeech.QUEUE_FLUSH, null);
+		while (ttobj.isSpeaking())
+		{
+
+		}
+		speak(this.findViewById(R.layout.activity_voice_recognition));
 
 		return true;
 	}
@@ -144,6 +161,7 @@ public class VoiceRecognitionActivity extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_cart) {
 			Intent intent = new Intent(getApplicationContext(), ShoppingCart.class);
+			saythis("Here's your shopping cart so far.");
 	        startActivity(intent);
 			return true;
 		}
@@ -443,9 +461,14 @@ void getsearchres(ArrayList<String> querylist) {
 	        } catch (JSONException ex) {
 	 }}
  
+ void saythis(String toSpeak) {
+	 ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+ }
  void getsearchres(String query) {
+
 //	 searchresults.setText("What did you mean by that?");
 	 showToastMessage("Searching...");
+	 saythis("One moment please. I'm looking for "+query+" for you now.");
 	 List<String> split_query = new ArrayList<String>();
 	
 	 	
@@ -681,7 +704,10 @@ void getsearchres(ArrayList<String> querylist) {
         	 System.out.println(ex);
     	 }
          adapter.notifyDataSetChanged();
+   
+         saythis("Here is what I found.");
 //         searchresults.setText(teststring);
     }
  }
 }
+
