@@ -1,11 +1,8 @@
 package adapter;
  
-import com.example.gui.R;
-import app.AppController;
-import model.Movie;
- 
 import java.util.List;
- 
+
+import model.Movie;
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,9 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
- 
+import app.AppController;
+
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.gui.R;
  
 public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
