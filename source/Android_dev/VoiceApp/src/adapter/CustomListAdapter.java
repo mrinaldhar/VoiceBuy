@@ -5,6 +5,7 @@ import java.util.List;
 import model.Movie;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,9 @@ public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Movie> movieItems;
+
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
- 
+
     public CustomListAdapter(Activity activity, List<Movie> movieItems) {
         this.activity = activity;
         this.movieItems = movieItems;
@@ -59,7 +61,9 @@ public class CustomListAdapter extends BaseAdapter {
         TextView rating = (TextView) convertView.findViewById(R.id.rating);
         TextView genre = (TextView) convertView.findViewById(R.id.genre);
         TextView year = (TextView) convertView.findViewById(R.id.releaseYear);
- 
+        Typeface tf = Typeface.createFromAsset(activity.getAssets(), "myriadpro.otf");
+      title.setTypeface(tf);
+      year.setTypeface(tf);
         // getting movie data for the row
         Movie m = movieItems.get(position);
  
@@ -70,13 +74,13 @@ public class CustomListAdapter extends BaseAdapter {
         title.setText(m.getTitle());
          
         // rating
-        rating.setText("Rating: " + String.valueOf(m.getRating()));
+       year.setText("Rs. " + String.valueOf(m.getRating()));
          
         // genre
        
          
         // release year
-        year.setText(String.valueOf(m.getYear()));
+//        year.setText(String.valueOf(m.getYear()));
  
         return convertView;
     }

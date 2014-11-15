@@ -54,7 +54,6 @@ public class VoiceRecognitionActivity extends Activity {
  private List<Movie> movieList = new ArrayList<Movie>();
  private ListView listView;
  private CustomListAdapter adapter;
- 
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
@@ -80,7 +79,7 @@ public class VoiceRecognitionActivity extends Activity {
 	            }				
 	         }
 	      });
-  
+
   listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 	  
 		@Override
@@ -705,6 +704,7 @@ void getsearchres(ArrayList<String> querylist) {
         	 System.out.println(ex);
     	 }
          adapter.notifyDataSetChanged();
+   
          saythis("Here is what I found.");
 //         searchresults.setText(teststring);
     }
