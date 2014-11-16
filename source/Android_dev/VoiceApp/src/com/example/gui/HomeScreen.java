@@ -14,6 +14,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -23,16 +24,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
+/*
+import android.app.Fragment;
+import android.app.Activity;
+import android.app.FragmentTransaction;*/
+import android.content.SharedPreferences;
+
+
+
+
 public class HomeScreen extends Fragment {
-		Button log_main,sign_main,log_in,sign_in;
+		Button log_main,sign_main,log_in,sign_in,twitter_button;
 		//AutoCompleteTextView country;
 		View logv;
 		TextView res,info;
@@ -60,6 +70,7 @@ public class HomeScreen extends Fragment {
 //	     sign_main=(Button) v.findViewById(R.id.signup);
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
+	     twitter_button=(Button) v.findViewById(R.id.twitter_button);
 	   //  sign_lname=(EditText) v.findViewById(R.id.signup_lname);
 	    // sign_lname.setTextColor(Color.parseColor("#000000"));
 	     log_email=(EditText) v.findViewById(R.id.login_email);
@@ -83,6 +94,30 @@ public class HomeScreen extends Fragment {
 
 //
 //	     .setImageDrawable(rightArrow);
+	     twitter_button.setOnClickListener(new View.OnClickListener() {
+	    	 
+				@Override
+				public void onClick(View v) {
+				
+			    
+			        
+			       /* SharedPreferences.Editor edit = pref.edit();
+			        edit.putString("CONSUMER_KEY", CONSUMER_KEY);
+			        edit.putString("CONSUMER_SECRET", CONSUMER_SECRET);
+			        edit.commit();
+			        Fragment login = new LoginFragment();
+			        FragmentTransaction ft = getFragmentManager().beginTransaction();
+			        ft.replace(R.id.content_frame, login);
+			        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			        ft.addToBackStack(null);
+			        ft.commit();*/
+				//public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent i = new Intent(getActivity(),Twitter.class);
+              startActivity(i);
+				}
+				
+			});
 	     log_in.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {

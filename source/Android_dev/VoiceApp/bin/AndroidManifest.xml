@@ -60,6 +60,10 @@
             android:label="@string/title_activity_shopping_cart" >
         </activity>
         <activity
+            android:name=".Twitter"
+            android:label="@string/title_activity_shopping_cart" >
+        </activity>
+        <activity
             android:name=".HomeScreen"
             android:label="@string/title_activity_home_screen"
             android:windowSoftInputMode="stateHidden" >

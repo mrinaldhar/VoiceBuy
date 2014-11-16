@@ -68,6 +68,16 @@
             android:text="Login" 
             android:visibility="visible"
             android:background="@drawable/shapes"/>
+        
+           <Button
+            android:id="@+id/twitter_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="login with others" 
+            android:visibility="visible"
+            android:background="@drawable/shapes"/>
+        
 	    
 	  <!--         <TextView
 	        android:id="@+id/textView2"

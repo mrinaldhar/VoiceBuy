@@ -31,7 +31,8 @@ public class SplashScreen extends Activity {
          
          /****** Create Thread that will sleep for 5 seconds *************/        
         Thread background = new Thread() {
-            public void run() {
+            @Override
+			public void run() {
                  
                 try {
                     // Thread will sleep for 3 seconds
