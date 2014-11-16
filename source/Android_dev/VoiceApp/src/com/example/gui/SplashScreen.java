@@ -1,12 +1,14 @@
 package com.example.gui;
 import java.util.Locale;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
  
 public class SplashScreen extends Activity {
@@ -57,6 +59,14 @@ public class SplashScreen extends Activity {
     }
      @Override 
      public boolean onCreateOptionsMenu(Menu menu) {
+    	 View decorView = getWindow().getDecorView();
+    	// Hide the status bar.
+    	int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+    	decorView.setSystemUiVisibility(uiOptions);
+    	// Remember that you should never show the action bar if the
+    	// status bar is hidden, so hide that too if necessary.
+    	ActionBar actionBar = getActionBar();
+    	actionBar.hide();
          TextView text = (TextView) findViewById(R.id.appname);
          TextView text2 = (TextView) findViewById(R.id.smart);
          TextView text3 = (TextView) findViewById(R.id.copyright);
