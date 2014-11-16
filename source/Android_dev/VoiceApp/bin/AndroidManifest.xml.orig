@@ -5,29 +5,31 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+<<<<<<< HEAD
+        android:minSdkVersion="19"
         android:targetSdkVersion="21" />
+=======
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+>>>>>>> f7e1beffb26384d6c8f3a04e399fa94fd98c65be
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+<uses-permission android:name="android.permission.GET_TASKS" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/appicon"
         android:label="@string/app_name"
-<<<<<<< HEAD
-        android:logo="@drawable/appicon"
-        android:theme="@style/AppTheme" >
-=======
         android:theme="@style/AppTheme" android:logo="@drawable/appicon"
         android:name="app.AppController" >
->>>>>>> b73756af39652f957734048167945d47f57e432f
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:label="@string/app_name" >	
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,10 +38,12 @@
         </activity>
         <activity
             android:name=".ScreenSlidePagerActivity"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_screen_slide_pager" >
         </activity>
         <activity
             android:name=".ScreenSlidePageFragment"
+            android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_screen_slide_page_fragment" >
         </activity>
         <activity
@@ -56,20 +60,16 @@
         </activity>
         <activity
             android:name=".HomeScreen"
-            android:label="@string/title_activity_home_screen" >
+            android:label="@string/title_activity_home_screen"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name=".StoresList"
             android:label="@string/title_activity_stores_list" >
         </activity>
-<<<<<<< HEAD
-        <!--
-<service android:name="com.tooleap.sdk.TooleapAppService"/>
-=======
   
         
 <!-- <service android:name="com.tooleap.sdk.TooleapAppService"/>
->>>>>>> b73756af39652f957734048167945d47f57e432f
 <service android:name="com.tooleap.sdk.TooleapUIService"
          android:process=":UIService"
          android:exported="true">
@@ -88,34 +88,16 @@
     <intent-filter>
         <action android:name="com.tooleap.sdk.TOOLEAP_ACTION"/>
     </intent-filter>
-</receiver>
-        -->
+</receiver> -->
 
-
-        <!--
-<activity android:name=".MyTooleapActivity"
+<!-- <activity android:name=".MyTooleapActivity"
           android:theme="@android:style/Theme.Translucent"
           android:launchMode="singleInstance"
           android:taskAffinity=".tooleap">
     <intent-filter>
         <action android:name="com.tooleap.sdk.TOOLEAP_SHOW"/>
     </intent-filter>
-</activity>
-        -->
-        <activity
-            android:name=".CustomListItems"
-            android:label="@string/title_activity_custom_list_items"
-            android:parentActivityName=".ShoppingCart" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ShoppingCart" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+</activity> -->
     </application>
 
 </manifest>

@@ -438,9 +438,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
+ Default screen margins, per the Android Design guidelines. 
          */
         public static final int activity_horizontal_margin=0x7f09000d;
         public static final int activity_vertical_margin=0x7f09000e;
+        public static final int circular_imageview_height=0x7f090014;
+        public static final int circular_imageview_width=0x7f090013;
         public static final int default_circle_indicator_radius=0x7f090000;
         public static final int default_circle_indicator_stroke_width=0x7f090001;
         public static final int default_line_indicator_gap_width=0x7f090003;
@@ -462,76 +465,78 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class drawable {
         public static final int above_shadow=0x7f020000;
         public static final int amazonlogo=0x7f020001;
-        public static final int appicon=0x7f020002;
-        public static final int background=0x7f020003;
-        public static final int below_shadow=0x7f020004;
-        public static final int flipkartlogo=0x7f020005;
-        public static final int ic_action=0x7f020006;
-        public static final int ic_action_cart=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int list_row_bg=0x7f020009;
-        public static final int list_row_bg_hover=0x7f02000a;
-        public static final int list_row_selector=0x7f02000b;
-        public static final int mic=0x7f02000c;
-        public static final int roundedbuttons=0x7f02000d;
-        public static final int shape2=0x7f02000e;
-        public static final int shapes=0x7f02000f;
-        public static final int vpi__tab_indicator=0x7f020010;
-        public static final int vpi__tab_selected_focused_holo=0x7f020011;
-        public static final int vpi__tab_selected_holo=0x7f020012;
-        public static final int vpi__tab_selected_pressed_holo=0x7f020013;
-        public static final int vpi__tab_unselected_focused_holo=0x7f020014;
-        public static final int vpi__tab_unselected_holo=0x7f020015;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f020016;
+        public static final int app_back=0x7f020002;
+        public static final int appicon=0x7f020003;
+        public static final int avatar=0x7f020004;
+        public static final int background=0x7f020005;
+        public static final int below_shadow=0x7f020006;
+        public static final int flipkartlogo=0x7f020007;
+        public static final int ic_action=0x7f020008;
+        public static final int ic_action_cart=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int list_row_bg=0x7f02000b;
+        public static final int list_row_bg_hover=0x7f02000c;
+        public static final int list_row_selector=0x7f02000d;
+        public static final int mic=0x7f02000e;
+        public static final int roundedbuttons=0x7f02000f;
+        public static final int shape2=0x7f020010;
+        public static final int shapes=0x7f020011;
+        public static final int vpi__tab_indicator=0x7f020012;
+        public static final int vpi__tab_selected_focused_holo=0x7f020013;
+        public static final int vpi__tab_selected_holo=0x7f020014;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020015;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020016;
+        public static final int vpi__tab_unselected_holo=0x7f020017;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f020018;
     }
     public static final class id {
         public static final int Layout1=0x7f05000a;
-        public static final int Layout2=0x7f050024;
+        public static final int Layout2=0x7f050022;
         public static final int action_cart=0x7f05002e;
         public static final int action_settings=0x7f05002d;
         public static final int anchored=0x7f050002;
-        public static final int applogo=0x7f05000b;
+        public static final int appavatar=0x7f05000b;
         public static final int bottom=0x7f050007;
-        public static final int btSpeak=0x7f050026;
-        public static final int btnbar=0x7f05000f;
-        public static final int button1=0x7f050022;
-        public static final int cart_list=0x7f050023;
+        public static final int btSpeak=0x7f050024;
+        public static final int btnbar=0x7f050010;
+        public static final int button1=0x7f050020;
+        public static final int cart_list=0x7f050021;
         public static final int collapsed=0x7f050001;
-        public static final int error_textfield=0x7f050015;
+        public static final int error_textfield=0x7f050013;
         public static final int expanded=0x7f050000;
-        public static final int gender=0x7f050018;
+        public static final int filter=0x7f050026;
+        public static final int gender=0x7f050016;
         public static final int genre=0x7f05002b;
         public static final int hidden=0x7f050003;
-        public static final int indicator=0x7f05001f;
+        public static final int indicator=0x7f05001d;
         public static final int list=0x7f050027;
-        public static final int listview=0x7f050025;
-        public static final int login=0x7f050010;
-        public static final int login_button=0x7f050014;
-        public static final int login_email=0x7f050012;
-        public static final int login_password=0x7f050013;
+        public static final int listview=0x7f050023;
+        public static final int login=0x7f050011;
+        public static final int login_button=0x7f05000e;
+        public static final int login_email=0x7f05000c;
+        public static final int login_password=0x7f05000d;
         public static final int none=0x7f050004;
-        public static final int panel=0x7f05000e;
+        public static final int panel=0x7f05000f;
+        public static final int pricefil=0x7f050025;
         public static final int rating=0x7f05002a;
         public static final int releaseYear=0x7f05002c;
-        public static final int search_bar=0x7f050020;
-        public static final int signup=0x7f050011;
-        public static final int signup_button=0x7f05001d;
-        public static final int signup_email=0x7f05001a;
-        public static final int signup_fname=0x7f050016;
-        public static final int signup_lname=0x7f050017;
-        public static final int signup_mobno=0x7f050019;
-        public static final int signup_password=0x7f05001b;
-        public static final int signup_password_confirm=0x7f05001c;
+        public static final int search_bar=0x7f05001e;
+        public static final int signup=0x7f050012;
+        public static final int signup_button=0x7f05001b;
+        public static final int signup_email=0x7f050018;
+        public static final int signup_fname=0x7f050014;
+        public static final int signup_lname=0x7f050015;
+        public static final int signup_mobno=0x7f050017;
+        public static final int signup_password=0x7f050019;
+        public static final int signup_password_confirm=0x7f05001a;
         public static final int sliding_layout=0x7f050009;
-        public static final int text1=0x7f050021;
-        public static final int textView1=0x7f05000d;
-        public static final int textView2=0x7f05000c;
+        public static final int text1=0x7f05001f;
         public static final int thumbnail=0x7f050028;
         public static final int title=0x7f050029;
         public static final int top=0x7f050008;
         public static final int triangle=0x7f050005;
         public static final int underline=0x7f050006;
-        public static final int viewPager=0x7f05001e;
+        public static final int viewPager=0x7f05001c;
     }
     public static final class integer {
         public static final int default_circle_indicator_orientation=0x7f080000;
@@ -566,22 +571,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int btSpeak=0x7f0b0009;
         public static final int description=0x7f0b0004;
         public static final int etSearchHint=0x7f0b000e;
+        public static final int filter=0x7f0b0011;
         public static final int hello_world=0x7f0b0001;
-        public static final int introstr=0x7f0b0013;
-        public static final int login=0x7f0b0012;
+        public static final int introstr=0x7f0b0014;
+        public static final int login=0x7f0b0013;
         public static final int menu_settings=0x7f0b000a;
         public static final int sNoOfMatches=0x7f0b000d;
         public static final int search_main=0x7f0b0007;
-        public static final int searchres=0x7f0b0015;
-        public static final int signup=0x7f0b0011;
+        public static final int searchres=0x7f0b0016;
+        public static final int signup=0x7f0b0012;
         public static final int start=0x7f0b0003;
-        public static final int swipe=0x7f0b0014;
-        public static final int title_activity_home_screen=0x7f0b0017;
+        public static final int swipe=0x7f0b0015;
+        public static final int title_activity_home_screen=0x7f0b0018;
         public static final int title_activity_screen_slide_page_fragment=0x7f0b0006;
         public static final int title_activity_screen_slide_pager=0x7f0b0005;
         public static final int title_activity_search=0x7f0b0008;
-        public static final int title_activity_shopping_cart=0x7f0b0016;
-        public static final int title_activity_stores_list=0x7f0b0018;
+        public static final int title_activity_shopping_cart=0x7f0b0017;
+        public static final int title_activity_stores_list=0x7f0b0019;
         public static final int title_activity_voice_recognition=0x7f0b000b;
         public static final int tvTextMatches=0x7f0b000c;
     }
@@ -591,11 +597,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
