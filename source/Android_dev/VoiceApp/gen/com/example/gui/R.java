@@ -478,16 +478,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int list_row_bg_hover=0x7f02000c;
         public static final int list_row_selector=0x7f02000d;
         public static final int mic=0x7f02000e;
-        public static final int roundedbuttons=0x7f02000f;
-        public static final int shape2=0x7f020010;
-        public static final int shapes=0x7f020011;
-        public static final int vpi__tab_indicator=0x7f020012;
-        public static final int vpi__tab_selected_focused_holo=0x7f020013;
-        public static final int vpi__tab_selected_holo=0x7f020014;
-        public static final int vpi__tab_selected_pressed_holo=0x7f020015;
-        public static final int vpi__tab_unselected_focused_holo=0x7f020016;
-        public static final int vpi__tab_unselected_holo=0x7f020017;
-        public static final int vpi__tab_unselected_pressed_holo=0x7f020018;
+        public static final int pricefilter=0x7f02000f;
+        public static final int roundedbuttons=0x7f020010;
+        public static final int seek_thumb_normal=0x7f020011;
+        public static final int seek_thumb_pressed=0x7f020012;
+        public static final int shape2=0x7f020013;
+        public static final int shapes=0x7f020014;
+        public static final int vpi__tab_indicator=0x7f020015;
+        public static final int vpi__tab_selected_focused_holo=0x7f020016;
+        public static final int vpi__tab_selected_holo=0x7f020017;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020018;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020019;
+        public static final int vpi__tab_unselected_holo=0x7f02001a;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f02001b;
     }
     public static final class id {
         public static final int Layout1=0x7f05000a;
@@ -517,7 +520,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int login_password=0x7f05000d;
         public static final int none=0x7f050004;
         public static final int panel=0x7f05000f;
-        public static final int pricefil=0x7f050025;
+        public static final int rangebar=0x7f050025;
         public static final int rating=0x7f05002a;
         public static final int releaseYear=0x7f05002c;
         public static final int search_bar=0x7f05001e;
