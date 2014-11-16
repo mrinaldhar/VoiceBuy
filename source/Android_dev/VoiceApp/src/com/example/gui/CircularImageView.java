@@ -39,6 +39,8 @@ paint.setAntiAlias(true);
 paintBorder = new Paint();
 setBorderColor(Color.WHITE);
 paintBorder.setAntiAlias(true);
+this.setLayerType(LAYER_TYPE_SOFTWARE, paintBorder);
+paintBorder.setShadowLayer(5.0f, 0.0f, 3.0f, Color.BLACK);
 }
 public void setBorderWidth(int borderWidth)
 {
@@ -51,7 +53,7 @@ if(paintBorder != null)
 paintBorder.setColor(borderColor);
 this.invalidate();
 this.setLayerType(LAYER_TYPE_SOFTWARE, paintBorder);
-paintBorder.setShadowLayer(4.0f, 0.0f, 2.0f, Color.BLACK);
+paintBorder.setShadowLayer(5.0f, 0.0f, 3.0f, Color.BLACK);
 }
 private void loadBitmap()
 {
