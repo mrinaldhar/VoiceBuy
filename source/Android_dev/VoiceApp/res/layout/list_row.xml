@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="?android:attr/listPreferredItemHeight">
+
+<RelativeLayout
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_row_selector"
-    android:padding="8dp" >
+    android:background="@drawable/card_background"
+    android:padding="8dp"
+        android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp" >
  
+    
     <!-- Thumbnail Image -->
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/thumbnail"
@@ -55,3 +65,5 @@
         android:textSize="@dimen/year" />
  
 </RelativeLayout>
+
+</FrameLayout>

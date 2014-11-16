@@ -9,6 +9,8 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import app.AppController;
@@ -21,12 +23,13 @@ public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Movie> movieItems;
-
+    private int lastPosition = -1;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public CustomListAdapter(Activity activity, List<Movie> movieItems) {
         this.activity = activity;
         this.movieItems = movieItems;
+        
     }
  
     @Override
@@ -47,6 +50,7 @@ public class CustomListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
  
+    	
         if (inflater == null)
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -81,7 +85,11 @@ public class CustomListAdapter extends BaseAdapter {
          
         // release year
 //        year.setText(String.valueOf(m.getYear()));
- 
+       Animation animation = AnimationUtils.loadAnimation(activity, (position > lastPosition) ? R.anim.up_from_bottom : R.anim.down_from_top);
+     
+       lastPosition = position;
+       convertView.startAnimation(animation);
+   	
         return convertView;
     }
  
