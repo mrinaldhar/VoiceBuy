@@ -26,51 +26,120 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gui.RangeSeekBar.OnRangeSeekBarChangeListener;
+
 public class VoiceRecognitionActivity extends Activity {
- private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
+ 
+private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
  TextToSpeech ttobj;
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
 // private TextView searchresults;
  public String storename;
  
+
+// private List<Movie> tempList = new ArrayList<Movie>();
  private List<Movie> movieList = new ArrayList<Movie>();
+ private List<Movie> tempList = new ArrayList<Movie>();
  private ListView listView;
+ 
+// Spinner dropdown = (Spinner)findViewById(R.id.pricefil);
+ 
  private CustomListAdapter adapter;
+ 
  @Override
  public void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_voice_recognition);
-//  Intent intent = new Intent(getApplicationContext(), MyTooleapActivity.class);
+  
+	 super.onCreate(savedInstanceState);
+	 setContentView(R.layout.activity_voice_recognition);
+	 listView = (ListView) findViewById(R.id.list);
+		adapter = new CustomListAdapter(this, movieList);
+      	
+  Button modfill = (Button)findViewById(R.id.filter);
+  modfill.setAlpha(0);
+ 
+//create RangeSeekBar as Integer range between 20 and 75
+  
+
+
+ 
+//  String[] items = new String[]{"0 - 500","500 - 1000","1000 - 2000","2000 - 5000","5000 and above"};
+//  ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, items);
+//  dropdown.setAdapter(adapter);
+
+//  OnClickListener filterlist = new OnClickListener() {
+//	
+//	@Override
+//	public void onClick(final View v){
+//		 	movieList.clear();
+//			movieList.addAll(tempList);
+//	         Spinner tmp = (Spinner)findViewById(R.id.pricefil);
+//	         
+//	         String myprice = new String(tmp.getItemAtPosition(0).toString());
+//	         for (Movie thismovie : tempList) {
+//	        	 if (myprice.equals("0 - 500")){
+////	        		 showToastMessage("0 - 500");
+//	        		 if (thismovie.getRating() > 500){
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        	 else if (myprice.equals("500 - 1000")){
+//	        		 if (thismovie.getRating() > 1000 && thismovie.getRating() <= 500){
 //
-//  TooleapNotificationMiniApp miniApp = new TooleapNotificationMiniApp(getApplicationContext(), intent);
-//   
-//  // An example for some customizations of a mini app. You can use your own...
-//  miniApp.notificationText = "I'm right here to help you out. Always.";
-//  miniApp.contentTitle = "VoiceBuy Search Bubble";
-//  Tooleap tooleap = Tooleap.getInstance(getApplicationContext());
-//  tooleap.addMiniApp(miniApp);
-  listView = (ListView) findViewById(R.id.list);
-  adapter = new CustomListAdapter(this, movieList);
-  listView.setAdapter(adapter);
-  ttobj=new TextToSpeech(getApplicationContext(), 
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        	 else if (myprice.equals("1000 - 2000")){
+//	        		 if (thismovie.getRating() > 2000 && thismovie.getRating() <= 1000){
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        	 else if (myprice.equals("2000 - 5000")){
+//	        		 if (thismovie.getRating() > 5000 && thismovie.getRating() <= 2000){
+//
+//	       	        	 showToastMessage("" + thismovie.getRating());
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//
+//	        	 else if (myprice.equals("5000 and above")){
+//	        		 if (thismovie.getRating() < 5000){
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        }
+//	          if (movieList.size() == 0)  
+//	         showToastMessage("No Item Match Selected Criteria");
+//
+//	}
+//
+//
+//};
+//Button filternow = (Button)findViewById(R.id.filter);
+//filternow.setOnClickListener(filterlist);
+
+ttobj=new TextToSpeech(getApplicationContext(), 
 	      new TextToSpeech.OnInitListener() {
 	      @Override
 	      public void onInit(int status) {
@@ -92,8 +161,14 @@ public class VoiceRecognitionActivity extends Activity {
 	          select.setThumbnailUrl(tid.getThumbnailUrl());
 	          select.setRating(Double.valueOf(tid.getRating()).doubleValue());
 	          select.setYear(tid.getYear());
+	          if (ShoppingCart.itemList.contains(select)){
+	        	  showToastMessage("You Already have this item in your cart");
+	       
+	          }
+	          else{
 	          ShoppingCart.itemList.add(select);
 	          showToastMessage(tid.getTitle() + " Added To Cart");
+	          }
 	          saythis("Okay, I'll add this item to your shopping cart.");
 //	    Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
 //	    String store_name = a.getItemAtPosition(position).toString();
@@ -103,6 +178,7 @@ public class VoiceRecognitionActivity extends Activity {
 	           }
 	       
 	   });
+
   Bundle extras = getIntent().getExtras();
 	String value = new String();
 	storename = new String();
@@ -112,10 +188,11 @@ public class VoiceRecognitionActivity extends Activity {
   storename = value;	
 	ActionBar action = getActionBar();
 	action.setTitle(value + " Products");
+	
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
 //  searchresults = (TextView) findViewById(R.id.searchresults);
-  checkVoiceRecognition();
+  	checkVoiceRecognition();
 	Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
 	metTextSearch.setTypeface(font);
 //	searchresults.setTypeface(font);
@@ -605,6 +682,8 @@ void getsearchres(ArrayList<String> querylist) {
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
  }
+ 
+ 
  public static String GET(String url){
 	 System.out.println("entered first func");
      InputStream inputStream = null;
@@ -657,10 +736,12 @@ void getsearchres(ArrayList<String> querylist) {
      // onPostExecute displays the results of the AsyncTask.
      @Override
      protected void onPostExecute(String result) {
+    	 
          Toast.makeText(getBaseContext(), "Received!", Toast.LENGTH_LONG).show();
 //         etResponse.setText(result);
          String teststring = "";
          try {
+        	
          final JSONObject obj = new JSONObject(result);
          System.out.println("1");
          final JSONArray items1 = obj.getJSONArray("findItemsByKeywordsResponse");
@@ -674,7 +755,9 @@ void getsearchres(ArrayList<String> querylist) {
          final JSONArray searchResObj = searchResObj3.getJSONArray("item");
          System.out.println("6");
          final int n = searchResObj.length();
+         tempList.clear();
          movieList.clear();
+         int max = 0;
          for (int i = 0; i < n; ++i) {
            final JSONObject searchItem = searchResObj.getJSONObject(i);
            JSONArray toPrint = searchItem.getJSONArray("title");
@@ -689,20 +772,51 @@ void getsearchres(ArrayList<String> querylist) {
            final String prodCurr = priceDet4.getString("@currencyId");
            String prodPrice = priceDet4.getString("__value__");
            
+           if ((int)Double.valueOf(prodPrice).doubleValue() > max){
+        	   max = (int)Double.valueOf(prodPrice).doubleValue();
+           }
            Movie movie = new Movie();
            movie.setTitle(prodTitle);
            movie.setThumbnailUrl(prodPic);
            movie.setRating(Double.valueOf(prodPrice).doubleValue());
            movie.setYear(prodCurr);
-
-           // adding movie to movies array
-           movieList.add(movie);
-           
+        	   movieList.add(movie);   
+        	   tempList.add(movie);
            
          }
+         
+         RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, max, getApplicationContext());
+         
+         seekBar.setOnRangeSeekBarChangeListener(new OnRangeSeekBarChangeListener<Integer>() {
+                @Override
+                public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue, Integer maxValue) {
+                	  
+//                	  listView.setAdapter(adapter);
+                	movieList.clear(); 
+                	for (Movie tempmov : tempList) {
+                    	 if (tempmov.getRating() < maxValue && tempmov.getRating() > minValue)
+                    		 movieList.add(tempmov);
+            		} 
+                  listView.setAdapter(adapter);
+                	// handle changed range values
+                	showToastMessage("List Filtered");
+                        Log.i("TAG", "User selected new range values: MIN=" + minValue + ", MAX=" + maxValue);
+                }
+         });
+        
+        
+         //add RangeSeekBar to pre-defined layout
+         Button modfil = (Button)findViewById(R.id.filter);
+         modfil.setAlpha(1);
+         modfil.setTextColor(Color.WHITE);
+         ViewGroup layout = (ViewGroup) findViewById(R.id.rangebar);
+         layout.addView(seekBar);   
+
+        
+         
          } catch (JSONException ex) {
         	 System.out.println(ex);
-    	 }
+         }
          adapter.notifyDataSetChanged();
    
          saythis("Here is what I found.");

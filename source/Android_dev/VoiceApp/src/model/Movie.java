@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class Movie {
     private String title, thumbnailUrl;
     private String year;
-    private double rating;
+    private double price;
  
     public Movie() {
     }
  
-    public Movie(String name, String thumbnailUrl, String year, double rating) {
+    public Movie(String name, String thumbnailUrl, String year, double price) {
         this.title = name;
         this.thumbnailUrl = thumbnailUrl;
         this.year = year;
-        this.rating = rating;
+        this.price = price;
     }
  
     public String getTitle() {
@@ -42,11 +42,11 @@ public class Movie {
     }
  
     public double getRating() {
-        return rating;
+        return price;
     }
  
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setRating(double price) {
+        this.price = price;
     }
  
 }

@@ -12,15 +12,15 @@
  
     <com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/indicator"
-        android:padding="5dip"
+        android:padding="4dip"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         app:radius="4dp"
-            android:background = "#812a15"
+       	android:background = "#50CC98"
         
         app:fillColor="#BBFFFFFF"
         app:pageColor="#888a8a8a"
-        app:strokeColor="#812a15"
+        app:strokeColor="#50CC98"
  />
  
 </LinearLayout>
