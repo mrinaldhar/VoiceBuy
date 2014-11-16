@@ -1,28 +1,29 @@
 package adapter;
  
-import com.example.gui.R;
-import app.AppController;
-import model.Movie;
- 
 import java.util.List;
- 
+
+import model.Movie;
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
- 
+import app.AppController;
+
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.gui.R;
  
 public class CustomListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<Movie> movieItems;
+
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
- 
+
     public CustomListAdapter(Activity activity, List<Movie> movieItems) {
         this.activity = activity;
         this.movieItems = movieItems;
@@ -60,7 +61,9 @@ public class CustomListAdapter extends BaseAdapter {
         TextView rating = (TextView) convertView.findViewById(R.id.rating);
         TextView genre = (TextView) convertView.findViewById(R.id.genre);
         TextView year = (TextView) convertView.findViewById(R.id.releaseYear);
- 
+        Typeface tf = Typeface.createFromAsset(activity.getAssets(), "myriadpro.otf");
+      title.setTypeface(tf);
+      year.setTypeface(tf);
         // getting movie data for the row
         Movie m = movieItems.get(position);
  
@@ -71,13 +74,17 @@ public class CustomListAdapter extends BaseAdapter {
         title.setText(m.getTitle());
          
         // rating
+<<<<<<< HEAD
         rating.setText("Price: " + String.valueOf(m.getRating()));
+=======
+       year.setText("Rs. " + String.valueOf(m.getRating()));
+>>>>>>> f7e1beffb26384d6c8f3a04e399fa94fd98c65be
          
         // genre
        
          
         // release year
-        year.setText(String.valueOf(m.getYear()));
+//        year.setText(String.valueOf(m.getYear()));
  
         return convertView;
     }

@@ -1,6 +1,7 @@
 package com.example.gui;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -8,6 +9,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
@@ -15,12 +17,22 @@ import android.widget.Toast;
 
 public class SearchActivity extends Activity implements OnClickListener{
 	
+	TextToSpeech ttobj;
 	protected static final int REQUEST_OK = 1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_search);
+		ttobj=new TextToSpeech(getApplicationContext(), 
+      	      new TextToSpeech.OnInitListener() {
+      	      @Override
+      	      public void onInit(int status) {
+      	         if(status != TextToSpeech.ERROR){
+      	             ttobj.setLanguage(Locale.UK);
+      	            }				
+      	         }
+      	      });
 		findViewById(R.id.button1).setOnClickListener((android.view.View.OnClickListener) this);
 	}
 
@@ -28,6 +40,8 @@ public class SearchActivity extends Activity implements OnClickListener{
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 	//	getMenuInflater().inflate(R.menu.search, menu);
+		 ttobj.speak("What would you like to search for?", TextToSpeech.QUEUE_FLUSH, null);
+
 		return true;
 	}
 	
