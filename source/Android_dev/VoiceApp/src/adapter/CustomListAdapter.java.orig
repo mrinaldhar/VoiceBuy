@@ -74,7 +74,11 @@ public class CustomListAdapter extends BaseAdapter {
         title.setText(m.getTitle());
          
         // rating
+<<<<<<< HEAD
+        rating.setText("Price: " + String.valueOf(m.getRating()));
+=======
        year.setText("Rs. " + String.valueOf(m.getRating()));
+>>>>>>> f7e1beffb26384d6c8f3a04e399fa94fd98c65be
          
         // genre
        

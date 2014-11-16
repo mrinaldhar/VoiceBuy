@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -22,6 +23,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +53,7 @@ public class HomeScreen extends Fragment {
 	     ArrayAdapter<String> adapter2 = 
 	             new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, countries);
 	     //textView.setAdapter(adapter2);
-	     info=(TextView) v.findViewById(R.id.textView2);
+//	     info=(TextView) v.findViewById(R.id.textView2);
 	     log_main=(Button) v.findViewById(R.id.login);
 	     res=(TextView) v.findViewById(R.id.error_textfield);
 	     logv=v.findViewById(R.id.login);
@@ -74,8 +76,13 @@ public class HomeScreen extends Fragment {
 	     sign_pass_conf=(EditText) v.findViewById(R.id.signup_password_confirm);
 	     sign_pass.setTextColor(Color.parseColor("#000000"));
 	     sign_pass_conf.setTextColor(Color.parseColor("#000000"));
+	     log_in.setTextColor(Color.WHITE);
 	     
-	   
+	     Drawable back = getResources().getDrawable(R.drawable.app_back);
+	     back.setAlpha(195);
+
+//
+//	     .setImageDrawable(rightArrow);
 	     log_in.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {

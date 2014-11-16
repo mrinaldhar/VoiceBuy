@@ -48,90 +48,89 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class VoiceRecognitionActivity extends Activity {
- private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
+ 
+private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
  TextToSpeech ttobj;
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
 // private TextView searchresults;
  public String storename;
  
-<<<<<<< HEAD
- private List<Movie> movieList = new ArrayList<Movie>		 ();
- private List<Movie> tempList = new ArrayList<Movie>		 ();
-=======
+
+// private List<Movie> tempList = new ArrayList<Movie>();
  private List<Movie> movieList = new ArrayList<Movie>();
->>>>>>> f7e1beffb26384d6c8f3a04e399fa94fd98c65be
  private ListView listView;
- Spinner dropdown = (Spinner)findViewById(R.id.pricefil);
+// Spinner dropdown = (Spinner)findViewById(R.id.pricefil);
  
  private CustomListAdapter adapter;
+ 
  @Override
  public void onCreate(Bundle savedInstanceState) {
-  super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_voice_recognition);
+  
+	 super.onCreate(savedInstanceState);
+	 setContentView(R.layout.activity_voice_recognition);
   listView = (ListView) findViewById(R.id.list);
   adapter = new CustomListAdapter(this, movieList);
   listView.setAdapter(adapter);
-<<<<<<< HEAD
  
     
  
-  String[] items = new String[]{"0 - 500","500 - 1000","1000 - 2000","2000 - 5000","5000 and above"};
-  ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, items);
-  dropdown.setAdapter(adapter);
+//  String[] items = new String[]{"0 - 500","500 - 1000","1000 - 2000","2000 - 5000","5000 and above"};
+//  ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, items);
+//  dropdown.setAdapter(adapter);
 
-  OnClickListener filterlist = new OnClickListener() {
-	
-	@Override
-	public void onClick(final View v){
-		 	movieList.clear();
-			movieList.addAll(tempList);
-	         Spinner tmp = (Spinner)findViewById(R.id.pricefil);
-	         
-	         String myprice = new String(tmp.getItemAtPosition(0).toString());
-	         for (Movie thismovie : tempList) {
-	        	 if (myprice.equals("0 - 500")){
-//	        		 showToastMessage("0 - 500");
-	        		 if (thismovie.getRating() > 500){
-	        			 movieList.remove(thismovie);
-	        		 }
-	        	 }
-	        	 else if (myprice.equals("500 - 1000")){
-	        		 if (thismovie.getRating() > 1000 && thismovie.getRating() <= 500){
+//  OnClickListener filterlist = new OnClickListener() {
+//	
+//	@Override
+//	public void onClick(final View v){
+//		 	movieList.clear();
+//			movieList.addAll(tempList);
+//	         Spinner tmp = (Spinner)findViewById(R.id.pricefil);
+//	         
+//	         String myprice = new String(tmp.getItemAtPosition(0).toString());
+//	         for (Movie thismovie : tempList) {
+//	        	 if (myprice.equals("0 - 500")){
+////	        		 showToastMessage("0 - 500");
+//	        		 if (thismovie.getRating() > 500){
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        	 else if (myprice.equals("500 - 1000")){
+//	        		 if (thismovie.getRating() > 1000 && thismovie.getRating() <= 500){
+//
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        	 else if (myprice.equals("1000 - 2000")){
+//	        		 if (thismovie.getRating() > 2000 && thismovie.getRating() <= 1000){
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        	 else if (myprice.equals("2000 - 5000")){
+//	        		 if (thismovie.getRating() > 5000 && thismovie.getRating() <= 2000){
+//
+//	       	        	 showToastMessage("" + thismovie.getRating());
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//
+//	        	 else if (myprice.equals("5000 and above")){
+//	        		 if (thismovie.getRating() < 5000){
+//	        			 movieList.remove(thismovie);
+//	        		 }
+//	        	 }
+//	        }
+//	          if (movieList.size() == 0)  
+//	         showToastMessage("No Item Match Selected Criteria");
+//
+//	}
+//
+//
+//};
+//Button filternow = (Button)findViewById(R.id.filter);
+//filternow.setOnClickListener(filterlist);
 
-	        			 movieList.remove(thismovie);
-	        		 }
-	        	 }
-	        	 else if (myprice.equals("1000 - 2000")){
-	        		 if (thismovie.getRating() > 2000 && thismovie.getRating() <= 1000){
-	        			 movieList.remove(thismovie);
-	        		 }
-	        	 }
-	        	 else if (myprice.equals("2000 - 5000")){
-	        		 if (thismovie.getRating() > 5000 && thismovie.getRating() <= 2000){
-
-	       	        	 showToastMessage("" + thismovie.getRating());
-	        			 movieList.remove(thismovie);
-	        		 }
-	        	 }
-
-	        	 else if (myprice.equals("5000 and above")){
-	        		 if (thismovie.getRating() < 5000){
-	        			 movieList.remove(thismovie);
-	        		 }
-	        	 }
-	        }
-	          if (movieList.size() == 0)  
-	         showToastMessage("No Item Match Selected Criteria");
-
-	}
-
-
-};
-Button filternow = (Button)findViewById(R.id.filter);
-filternow.setOnClickListener(filterlist);
-=======
-  ttobj=new TextToSpeech(getApplicationContext(), 
+ttobj=new TextToSpeech(getApplicationContext(), 
 	      new TextToSpeech.OnInitListener() {
 	      @Override
 	      public void onInit(int status) {
@@ -140,7 +139,6 @@ filternow.setOnClickListener(filterlist);
 	            }				
 	         }
 	      });
->>>>>>> f7e1beffb26384d6c8f3a04e399fa94fd98c65be
 
   listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 	  
@@ -161,11 +159,8 @@ filternow.setOnClickListener(filterlist);
 	          else{
 	          ShoppingCart.itemList.add(select);
 	          showToastMessage(tid.getTitle() + " Added To Cart");
-<<<<<<< HEAD
 	          }
-=======
 	          saythis("Okay, I'll add this item to your shopping cart.");
->>>>>>> f7e1beffb26384d6c8f3a04e399fa94fd98c65be
 //	    Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
 //	    String store_name = a.getItemAtPosition(position).toString();
 //	    System.out.println("Store:" + store_name);
@@ -174,6 +169,7 @@ filternow.setOnClickListener(filterlist);
 	           }
 	       
 	   });
+
   Bundle extras = getIntent().getExtras();
 	String value = new String();
 	storename = new String();
@@ -183,10 +179,11 @@ filternow.setOnClickListener(filterlist);
   storename = value;	
 	ActionBar action = getActionBar();
 	action.setTitle(value + " Products");
+	
   metTextSearch = (EditText) findViewById(R.id.search_bar);
   mbtSpeak = (ImageButton) findViewById(R.id.btSpeak);
 //  searchresults = (TextView) findViewById(R.id.searchresults);
-  checkVoiceRecognition();
+  	checkVoiceRecognition();
 	Typeface font = Typeface.createFromAsset(getAssets(), "myriadpro.otf");
 	metTextSearch.setTypeface(font);
 //	searchresults.setTypeface(font);
@@ -677,11 +674,6 @@ void getsearchres(ArrayList<String> querylist) {
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
  }
  
- //////////////////////////
-
-//
-
- //////////////////////////
  
  public static String GET(String url){
 	 System.out.println("entered first func");
@@ -735,6 +727,7 @@ void getsearchres(ArrayList<String> querylist) {
      // onPostExecute displays the results of the AsyncTask.
      @Override
      protected void onPostExecute(String result) {
+    	 
          Toast.makeText(getBaseContext(), "Received!", Toast.LENGTH_LONG).show();
 //         etResponse.setText(result);
          String teststring = "";
@@ -773,7 +766,7 @@ void getsearchres(ArrayList<String> querylist) {
            movie.setRating(Double.valueOf(prodPrice).doubleValue());
            movie.setYear(prodCurr);
         	   movieList.add(movie);   
-        	   tempList.add(movie);
+//        	   tempList.add(movie);
            
          }
          
