@@ -16,11 +16,11 @@
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         app:radius="4dp"
-       	android:background = "#50CC98"
+       	android:background = "#19b698"
         
         app:fillColor="#BBFFFFFF"
         app:pageColor="#888a8a8a"
-        app:strokeColor="#50CC98"
+        app:strokeColor="#19b698"
  />
  
 </LinearLayout>
