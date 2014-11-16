@@ -9,6 +9,7 @@ package com.example.gui;
 
 public final class R {
     public static final class anim {
+<<<<<<< HEAD
         public static final int down_from_top=0x7f040000;
         public static final int in_from_bottom=0x7f040001;
         public static final int in_from_left=0x7f040002;
@@ -16,6 +17,15 @@ public final class R {
         public static final int out_from_left=0x7f040004;
         public static final int out_from_right=0x7f040005;
         public static final int up_from_bottom=0x7f040006;
+=======
+        public static final int fade_in=0x7f040000;
+        public static final int fade_out=0x7f040001;
+        public static final int in_from_bottom=0x7f040002;
+        public static final int in_from_left=0x7f040003;
+        public static final int in_from_right=0x7f040004;
+        public static final int out_from_left=0x7f040005;
+        public static final int out_from_right=0x7f040006;
+>>>>>>> f7a40fcf0b1e156158b5621648109aa3a175c3c3
     }
     public static final class array {
         public static final int countries_array=0x7f0b0003;
@@ -519,6 +529,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int vpi__tab_unselected_pressed_holo=0x7f02001e;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int Layout1=0x7f05000d;
         public static final int Layout2=0x7f050025;
         public static final int action_cart=0x7f050030;
@@ -564,6 +575,55 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int text1=0x7f050022;
         public static final int thumbnail=0x7f05002a;
         public static final int title=0x7f05002b;
+=======
+        public static final int Layout1=0x7f05000a;
+        public static final int Layout2=0x7f050026;
+        public static final int LayoutSplash=0x7f050022;
+        public static final int action_cart=0x7f050032;
+        public static final int action_settings=0x7f050031;
+        public static final int anchored=0x7f050002;
+        public static final int appavatar=0x7f05000b;
+        public static final int appname=0x7f050023;
+        public static final int bottom=0x7f050007;
+        public static final int btSpeak=0x7f050028;
+        public static final int btnbar=0x7f050010;
+        public static final int button1=0x7f050020;
+        public static final int cart_list=0x7f050021;
+        public static final int collapsed=0x7f050001;
+        public static final int copyright=0x7f050024;
+        public static final int error_textfield=0x7f050013;
+        public static final int expanded=0x7f050000;
+        public static final int filter=0x7f05002a;
+        public static final int gender=0x7f050016;
+        public static final int genre=0x7f05002f;
+        public static final int hidden=0x7f050003;
+        public static final int indicator=0x7f05001d;
+        public static final int list=0x7f05002b;
+        public static final int listview=0x7f050027;
+        public static final int login=0x7f050011;
+        public static final int login_button=0x7f05000e;
+        public static final int login_email=0x7f05000c;
+        public static final int login_password=0x7f05000d;
+        public static final int none=0x7f050004;
+        public static final int panel=0x7f05000f;
+        public static final int rangebar=0x7f050029;
+        public static final int rating=0x7f05002e;
+        public static final int releaseYear=0x7f050030;
+        public static final int search_bar=0x7f05001e;
+        public static final int signup=0x7f050012;
+        public static final int signup_button=0x7f05001b;
+        public static final int signup_email=0x7f050018;
+        public static final int signup_fname=0x7f050014;
+        public static final int signup_lname=0x7f050015;
+        public static final int signup_mobno=0x7f050017;
+        public static final int signup_password=0x7f050019;
+        public static final int signup_password_confirm=0x7f05001a;
+        public static final int sliding_layout=0x7f050009;
+        public static final int smart=0x7f050025;
+        public static final int text1=0x7f05001f;
+        public static final int thumbnail=0x7f05002c;
+        public static final int title=0x7f05002d;
+>>>>>>> f7a40fcf0b1e156158b5621648109aa3a175c3c3
         public static final int top=0x7f050008;
         public static final int triangle=0x7f050005;
         public static final int underline=0x7f050006;
@@ -582,10 +642,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_main=0x7f030001;
         public static final int activity_search=0x7f030002;
         public static final int activity_shopping_cart=0x7f030003;
-        public static final int activity_stores_list=0x7f030004;
-        public static final int activity_voice_recognition=0x7f030005;
-        public static final int list_row=0x7f030006;
-        public static final int shape2=0x7f030007;
+        public static final int activity_splashscreen=0x7f030004;
+        public static final int activity_stores_list=0x7f030005;
+        public static final int activity_voice_recognition=0x7f030006;
+        public static final int list_row=0x7f030007;
+        public static final int shape2=0x7f030008;
     }
     public static final class menu {
         public static final int home_screen=0x7f0d0000;
