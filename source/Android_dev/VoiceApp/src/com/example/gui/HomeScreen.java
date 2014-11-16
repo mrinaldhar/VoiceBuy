@@ -41,11 +41,11 @@ public class HomeScreen extends Fragment {
 	   @Override
 	    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	        View v = inflater.inflate(R.layout.activity_home_screen, container, false);
-	        final Spinner spin_gender = (Spinner) v.findViewById(R.id.gender);
+	       // final Spinner spin_gender = (Spinner) v.findViewById(R.id.gender);
 	        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getActivity(),
 	                R.array.gender_array, android.R.layout.simple_spinner_item);
 	        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-	        spin_gender.setAdapter(adapter1);
+	       // spin_gender.setAdapter(adapter1);
 	      //  AutoCompleteTextView textView = (AutoCompleteTextView) v.findViewById(R.id.autocomplete_country);
 	     // Get the string array
 	     String[] countries = getResources().getStringArray(R.array.countries_array);
@@ -60,16 +60,16 @@ public class HomeScreen extends Fragment {
 //	     sign_main=(Button) v.findViewById(R.id.signup);
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
-	     sign_lname=(EditText) v.findViewById(R.id.signup_lname);
-	     sign_lname.setTextColor(Color.parseColor("#000000"));
+	   //  sign_lname=(EditText) v.findViewById(R.id.signup_lname);
+	    // sign_lname.setTextColor(Color.parseColor("#000000"));
 	     log_email=(EditText) v.findViewById(R.id.login_email);
 	     log_email.setTextColor(Color.parseColor("#000000"));
 	     log_pass=(EditText) v.findViewById(R.id.login_password);
 	     log_pass.setTextColor(Color.parseColor("#000000"));
 	     sign_fname=(EditText) v.findViewById(R.id.signup_fname);
 	     sign_fname.setTextColor(Color.parseColor("#000000"));
-	     sign_mobile=(EditText) v.findViewById(R.id.signup_mobno);
-	     sign_mobile.setTextColor(Color.parseColor("#000000"));
+	     //sign_mobile=(EditText) v.findViewById(R.id.signup_mobno);
+	    // sign_mobile.setTextColor(Color.parseColor("#000000"));
 	     sign_email=(EditText) v.findViewById(R.id.signup_email);
 	     sign_email.setTextColor(Color.parseColor("#000000"));
 	     sign_pass=(EditText) v.findViewById(R.id.signup_password);
@@ -99,9 +99,9 @@ public class HomeScreen extends Fragment {
 					// TODO Auto-generated method stub
 					StrictMode.enableDefaults();
 					String fname=sign_fname.getText().toString();
-					String lname=sign_lname.getText().toString();
-					String gen=spin_gender.getSelectedItem().toString();
-					String mobile=sign_mobile.getText().toString();
+					String lname="";
+					String gen="";
+					String mobile="";
 					String email=sign_email.getText().toString();
 					String mpass=sign_pass.getText().toString();
 					String rpass=sign_pass_conf.getText().toString();
@@ -131,42 +131,7 @@ public class HomeScreen extends Fragment {
 			});
 	     
 	     
-	     log_main.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				sign_fname.setVisibility(View.GONE);
-				sign_lname.setVisibility(View.GONE);
-				sign_mobile.setVisibility(View.GONE);
-				sign_email.setVisibility(View.GONE);
-				sign_pass.setVisibility(View.GONE);
-				sign_pass_conf.setVisibility(View.GONE);
-				spin_gender.setVisibility(View.GONE);
-				sign_in.setVisibility(View.GONE);
-				log_email.setVisibility(View.VISIBLE);
-				log_pass.setVisibility(View.VISIBLE);
-				log_in.setVisibility(View.VISIBLE);
-				//res.setVisibility(View.VISIBLE);
-			}
-		});
-//	     sign_main.setOnClickListener(new View.OnClickListener() {
-//				
-//				@Override
-//				public void onClick(View v) {
-//					// TODO Auto-generated method stub
-//					sign_fname.setVisibility(View.VISIBLE);
-//					sign_lname.setVisibility(View.VISIBLE);
-//					sign_mobile.setVisibility(View.VISIBLE);
-//					sign_email.setVisibility(View.VISIBLE);
-//					sign_pass.setVisibility(View.VISIBLE);
-//					sign_pass_conf.setVisibility(View.VISIBLE);
-//					sign_in.setVisibility(View.VISIBLE);
-//					res.setVisibility(View.GONE);
-//					spin_gender.setVisibility(View.VISIBLE);
-//					
-//				}
-//			});
-	     
+	
 	     return v;
 	        
 	    }
@@ -204,16 +169,18 @@ public class HomeScreen extends Fragment {
 	    		else{
 	    			s=json.getString("Password");
 	    		Log.e("string returned", s+"passs..");	
-	    		if(s.equals(passwd)){
+	    		String psswd=log_pass.getText().toString();
+	    		Log.e("actual",psswd);
+	    		if(s.equals(psswd)){
 					int duration = Toast.LENGTH_SHORT;
 					Context context = getActivity().getApplicationContext();
-					CharSequence text1 = "Login successful";
 					//sign_main.setVisibility(View.GONE);
 					//log_main.setVisibility(View.GONE);
-					String text="Hello there,"+" "+json.getString("Firstname")+" "+json.getString("Lastname")+" \n";		
-					info.setText(text);
-					
-					Toast toast = Toast.makeText(context, text1, duration);
+					String text="Hello there,"+" "+json.getString("Firstname")+" "+" \n";	
+					Log.e("name",text);
+				//	info.setText(text);
+					CharSequence text1 = "Login successful";
+					Toast toast = Toast.makeText(context, text, duration);
 		    		toast.show();	
 				}
 				else{
