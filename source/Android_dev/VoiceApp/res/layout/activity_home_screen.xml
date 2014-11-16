@@ -124,13 +124,13 @@
 	            android:paddingRight="50dp"
 	            android:text="@string/login"
 	            android:textStyle="bold"
-	            android:visibility="visible"
+	            android:visibility="gone"
 	            android:onClick="display_login" />
 
-	        <Button
+	        <TextView
 	            android:id="@+id/signup"
 	            style="?android:attr/buttonBarButtonStyle"
-	            android:layout_width="110dp"
+	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:layout_marginLeft="15dp"
 	            android:alpha="1"
@@ -141,8 +141,7 @@
 	            android:paddingRight="50dp"
 	            android:text="@string/signup"
 	            android:textStyle="bold"
-	            android:visibility="visible"
-	            android:onClick="display_signup" />
+	            android:visibility="visible" />
 </LinearLayout> 
 <!-- login fields-->
 		           <TextView 
@@ -163,18 +162,16 @@
         android:id="@+id/signup_fname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Firstname" 
-        android:visibility="gone"/>
+        android:hint="Firstname" />
         <EditText android:id="@+id/signup_lname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Lastname" 
-        android:visibility="gone"/>
+        />
    <Spinner
   	    android:id="@+id/gender"
    		android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	android:visibility="gone" />
+    	android:layout_height="wrap_content" />
     <!--  <AutoCompleteTextView  
     android:id="@+id/autocomplete_country"
     android:layout_width="match_parent"
@@ -185,37 +182,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mobile Number" 
-        android:inputType="phone" 
-        android:visibility="gone"/>
+        android:inputType="phone"/>
     <EditText android:id="@+id/signup_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email Address"
-        android:inputType="textEmailAddress" 
-        android:visibility="gone"/>
+        android:inputType="textEmailAddress" />
     <EditText
             android:id="@+id/signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Type Password"    
             android:textColor="#fff"
-            android:inputType="textPassword"
-            android:visibility="gone"/>
+            android:inputType="textPassword"/>
     <EditText
             android:id="@+id/signup_password_confirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Retype Password"    
             android:textColor="#fff"
-            android:inputType="textPassword"
-            android:visibility="gone"/>
+            android:inputType="textPassword"/>
         <Button 
             android:id="@+id/signup_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Signup"
-            android:visibility="gone"/>
+            android:text="Signup"/>
         
 </LinearLayout>	
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>

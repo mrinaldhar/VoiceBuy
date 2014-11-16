@@ -57,7 +57,7 @@ public class HomeScreen extends Fragment {
 	     log_main=(Button) v.findViewById(R.id.login);
 	     res=(TextView) v.findViewById(R.id.error_textfield);
 	     logv=v.findViewById(R.id.login);
-	     sign_main=(Button) v.findViewById(R.id.signup);
+//	     sign_main=(Button) v.findViewById(R.id.signup);
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
 	     sign_lname=(EditText) v.findViewById(R.id.signup_lname);
@@ -149,27 +149,23 @@ public class HomeScreen extends Fragment {
 				//res.setVisibility(View.VISIBLE);
 			}
 		});
-	     sign_main.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					res.setVisibility(View.GONE);
-					log_email.setVisibility(View.GONE);
-					log_pass.setVisibility(View.GONE);
-					log_in.setVisibility(View.GONE);
-					sign_fname.setVisibility(View.VISIBLE);
-					sign_lname.setVisibility(View.VISIBLE);
-					sign_mobile.setVisibility(View.VISIBLE);
-					sign_email.setVisibility(View.VISIBLE);
-					sign_pass.setVisibility(View.VISIBLE);
-					sign_pass_conf.setVisibility(View.VISIBLE);
-					sign_in.setVisibility(View.VISIBLE);
-					res.setVisibility(View.GONE);
-					spin_gender.setVisibility(View.VISIBLE);
-					
-				}
-			});
+//	     sign_main.setOnClickListener(new View.OnClickListener() {
+//				
+//				@Override
+//				public void onClick(View v) {
+//					// TODO Auto-generated method stub
+//					sign_fname.setVisibility(View.VISIBLE);
+//					sign_lname.setVisibility(View.VISIBLE);
+//					sign_mobile.setVisibility(View.VISIBLE);
+//					sign_email.setVisibility(View.VISIBLE);
+//					sign_pass.setVisibility(View.VISIBLE);
+//					sign_pass_conf.setVisibility(View.VISIBLE);
+//					sign_in.setVisibility(View.VISIBLE);
+//					res.setVisibility(View.GONE);
+//					spin_gender.setVisibility(View.VISIBLE);
+//					
+//				}
+//			});
 	     
 	     return v;
 	        
