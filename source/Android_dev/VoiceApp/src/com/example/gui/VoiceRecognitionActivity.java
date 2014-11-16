@@ -33,11 +33,15 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,25 +54,76 @@ public class VoiceRecognitionActivity extends Activity {
  public String storename;
  
  private List<Movie> movieList = new ArrayList<Movie>		 ();
+ private List<Movie> tempList = new ArrayList<Movie>		 ();
  private ListView listView;
+ Spinner dropdown = (Spinner)findViewById(R.id.pricefil);
+ 
  private CustomListAdapter adapter;
  
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_voice_recognition);
-//  Intent intent = new Intent(getApplicationContext(), MyTooleapActivity.class);
-//
-//  TooleapNotificationMiniApp miniApp = new TooleapNotificationMiniApp(getApplicationContext(), intent);
-//   
-//  // An example for some customizations of a mini app. You can use your own...
-//  miniApp.notificationText = "I'm right here to help you out. Always.";
-//  miniApp.contentTitle = "VoiceBuy Search Bubble";
-//  Tooleap tooleap = Tooleap.getInstance(getApplicationContext());
-//  tooleap.addMiniApp(miniApp);
   listView = (ListView) findViewById(R.id.list);
   adapter = new CustomListAdapter(this, movieList);
   listView.setAdapter(adapter);
+ 
+    
+ 
+  String[] items = new String[]{"0 - 500","500 - 1000","1000 - 2000","2000 - 5000","5000 and above"};
+  ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, items);
+  dropdown.setAdapter(adapter);
+
+  OnClickListener filterlist = new OnClickListener() {
+	
+	@Override
+	public void onClick(final View v){
+		 	movieList.clear();
+			movieList.addAll(tempList);
+	         Spinner tmp = (Spinner)findViewById(R.id.pricefil);
+	         
+	         String myprice = new String(tmp.getItemAtPosition(0).toString());
+	         for (Movie thismovie : tempList) {
+	        	 if (myprice.equals("0 - 500")){
+//	        		 showToastMessage("0 - 500");
+	        		 if (thismovie.getRating() > 500){
+	        			 movieList.remove(thismovie);
+	        		 }
+	        	 }
+	        	 else if (myprice.equals("500 - 1000")){
+	        		 if (thismovie.getRating() > 1000 && thismovie.getRating() <= 500){
+
+	        			 movieList.remove(thismovie);
+	        		 }
+	        	 }
+	        	 else if (myprice.equals("1000 - 2000")){
+	        		 if (thismovie.getRating() > 2000 && thismovie.getRating() <= 1000){
+	        			 movieList.remove(thismovie);
+	        		 }
+	        	 }
+	        	 else if (myprice.equals("2000 - 5000")){
+	        		 if (thismovie.getRating() > 5000 && thismovie.getRating() <= 2000){
+
+	       	        	 showToastMessage("" + thismovie.getRating());
+	        			 movieList.remove(thismovie);
+	        		 }
+	        	 }
+
+	        	 else if (myprice.equals("5000 and above")){
+	        		 if (thismovie.getRating() < 5000){
+	        			 movieList.remove(thismovie);
+	        		 }
+	        	 }
+	        }
+	          if (movieList.size() == 0)  
+	         showToastMessage("No Item Match Selected Criteria");
+
+	}
+
+
+};
+Button filternow = (Button)findViewById(R.id.filter);
+filternow.setOnClickListener(filterlist);
 
   listView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
 	  
@@ -82,8 +137,14 @@ public class VoiceRecognitionActivity extends Activity {
 	          select.setThumbnailUrl(tid.getThumbnailUrl());
 	          select.setRating(Double.valueOf(tid.getRating()).doubleValue());
 	          select.setYear(tid.getYear());
+	          if (ShoppingCart.itemList.contains(select)){
+	        	  showToastMessage("You Already have this item in your cart");
+	       
+	          }
+	          else{
 	          ShoppingCart.itemList.add(select);
 	          showToastMessage(tid.getTitle() + " Added To Cart");
+	          }
 //	    Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
 //	    String store_name = a.getItemAtPosition(position).toString();
 //	    System.out.println("Store:" + store_name);
@@ -582,6 +643,13 @@ void getsearchres(ArrayList<String> querylist) {
  void showToastMessage(String message){
   Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
  }
+ 
+ //////////////////////////
+
+//
+
+ //////////////////////////
+ 
  public static String GET(String url){
 	 System.out.println("entered first func");
      InputStream inputStream = null;
@@ -638,6 +706,7 @@ void getsearchres(ArrayList<String> querylist) {
 //         etResponse.setText(result);
          String teststring = "";
          try {
+        	
          final JSONObject obj = new JSONObject(result);
          System.out.println("1");
          final JSONArray items1 = obj.getJSONArray("findItemsByKeywordsResponse");
@@ -665,21 +734,21 @@ void getsearchres(ArrayList<String> querylist) {
            final JSONObject priceDet4 = priceDet3.getJSONObject(0);
            final String prodCurr = priceDet4.getString("@currencyId");
            String prodPrice = priceDet4.getString("__value__");
-           
            Movie movie = new Movie();
            movie.setTitle(prodTitle);
            movie.setThumbnailUrl(prodPic);
            movie.setRating(Double.valueOf(prodPrice).doubleValue());
            movie.setYear(prodCurr);
-
-           // adding movie to movies array
-           movieList.add(movie);
-           
+        	   movieList.add(movie);   
+        	   tempList.add(movie);
            
          }
+         
+        
+         
          } catch (JSONException ex) {
         	 System.out.println(ex);
-    	 }
+         }
          adapter.notifyDataSetChanged();
 //         searchresults.setText(teststring);
     }
