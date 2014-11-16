@@ -353,7 +353,7 @@ public class RangeSeekBar<T extends Number> extends ImageView {
                 if (MeasureSpec.UNSPECIFIED != MeasureSpec.getMode(heightMeasureSpec)) {
                         height = Math.min(height, MeasureSpec.getSize(heightMeasureSpec));
                 }
-                setMeasuredDimension(10*width/12, height);
+                setMeasuredDimension(10*width/11, height);
         }
 
         /**

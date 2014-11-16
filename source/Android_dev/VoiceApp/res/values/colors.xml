@@ -15,4 +15,9 @@
     <color name="list_row_end_color">#fdf7ef</color>
     <color name="list_row_hover_start_color">#ebeef0</color>
     <color name="list_row_hover_end_color">#ebeef0</color>
+	<color name="red">#FFC93437</color>
+	<color name="blue">#FF375BF1</color>
+	<color name="yellow">#FFF7D23E</color>
+	<color name="green">#FF34A350</color>
 </resources>
+
