@@ -24,7 +24,7 @@ public void onActivityCreated(Bundle savedInstanceState) {
      adapter.sort(null);
      ListView list = (ListView)getActivity().findViewById(R.id.listview);
      list.setAdapter(adapter);
-   list.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+     list.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
  
 	@Override
        public void onItemClick(AdapterView<?> a, View v, int position,
@@ -44,6 +44,7 @@ public void onActivityCreated(Bundle savedInstanceState) {
 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //	getActivity().getActionBar().show();
 	View v = inflater.inflate(R.layout.activity_stores_list, container, false);
+	
 //	ListView item = (ListView)getActivity().findViewById(R.id.listview);
 //    item.se
     return v;
