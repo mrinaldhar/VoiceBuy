@@ -9,9 +9,9 @@ int attr paralaxOffset 0x7f010002
 int attr shadowHeight 0x7f010001
 int drawable above_shadow 0x7f020000
 int drawable below_shadow 0x7f020001
-int id anchored 0x7f030002
+int id anchored 0x7f030000
 int id collapsed 0x7f030001
-int id expanded 0x7f030000
+int id expanded 0x7f030002
 int id hidden 0x7f030003
 int[] styleable SlidingUpPanelLayout { 0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007, 0x7f010008 }
 int styleable SlidingUpPanelLayout_anchorPoint 7

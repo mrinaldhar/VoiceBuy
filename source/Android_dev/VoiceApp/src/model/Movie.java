@@ -1,7 +1,5 @@
 package model;
  
-import java.util.ArrayList;
- 
 public class Movie {
     private String title, thumbnailUrl;
     private String year;
