@@ -1,7 +1,6 @@
 package com.example.gui;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 
 public class StoresList extends Fragment {
@@ -41,6 +39,7 @@ public void onActivityCreated(Bundle savedInstanceState) {
 }
 
 
+@Override
 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //	getActivity().getActionBar().show();
 	View v = inflater.inflate(R.layout.activity_stores_list, container, false);

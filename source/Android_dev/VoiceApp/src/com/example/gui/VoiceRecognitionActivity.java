@@ -26,7 +26,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -40,7 +39,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -55,16 +53,13 @@ private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
  TextToSpeech ttobj;
  private EditText metTextSearch;
  private ImageButton mbtSpeak;
-// private TextView searchresults;
  public String storename;
  
 
-// private List<Movie> tempList = new ArrayList<Movie>();
  private List<Movie> movieList = new ArrayList<Movie>();
  private List<Movie> tempList = new ArrayList<Movie>();
  private ListView listView;
  
-// Spinner dropdown = (Spinner)findViewById(R.id.pricefil);
  
  private CustomListAdapter adapter;
  
@@ -74,11 +69,10 @@ private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
 	 super.onCreate(savedInstanceState);
 	 setContentView(R.layout.activity_voice_recognition);
 	 listView = (ListView) findViewById(R.id.list);
-		adapter = new CustomListAdapter(this, movieList);
-      	
-  Button modfill = (Button)findViewById(R.id.filter);
-  modfill.setAlpha(0);
- 
+
+		
+	 adapter = new CustomListAdapter(this, movieList);
+
 //create RangeSeekBar as Integer range between 20 and 75
   
 
@@ -667,7 +661,7 @@ void getsearchres(ArrayList<String> querylist) {
 	   
 	        //Starting Search procedure
 	        
-
+	        
 	        new HttpAsyncTask().execute("http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=IIIT38ebc-682e-4421-9e85-afd72d6451e&GLOBAL-ID=EBAY-IN&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords="+URLEncoder.encode(prod_brand+" "+prod_cat+" "+prod_gender+" "+prod_type+" "+prod_subcat)+"&paginationInput.entriesPerPage=30");
             
             System.out.println("OKLOOPCLOSE");
@@ -758,6 +752,7 @@ void getsearchres(ArrayList<String> querylist) {
          tempList.clear();
          movieList.clear();
          int max = 0;
+         int min = 999999;
          for (int i = 0; i < n; ++i) {
            final JSONObject searchItem = searchResObj.getJSONObject(i);
            JSONArray toPrint = searchItem.getJSONArray("title");
@@ -775,6 +770,9 @@ void getsearchres(ArrayList<String> querylist) {
            if ((int)Double.valueOf(prodPrice).doubleValue() > max){
         	   max = (int)Double.valueOf(prodPrice).doubleValue();
            }
+           if ((int)Double.valueOf(prodPrice).doubleValue() < min){
+        	   min = (int)Double.valueOf(prodPrice).doubleValue();
+           }
            Movie movie = new Movie();
            movie.setTitle(prodTitle);
            movie.setThumbnailUrl(prodPic);
@@ -784,11 +782,13 @@ void getsearchres(ArrayList<String> querylist) {
         	   tempList.add(movie);
            
          }
-         
-         RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(0, max, getApplicationContext());
+
+         listView.setAdapter(adapter);
+         RangeSeekBar<Integer> seekBar = new RangeSeekBar<Integer>(min, max, getApplicationContext());
          
          seekBar.setOnRangeSeekBarChangeListener(new OnRangeSeekBarChangeListener<Integer>() {
                 @Override
+                
                 public void onRangeSeekBarValuesChanged(RangeSeekBar<?> bar, Integer minValue, Integer maxValue) {
                 	  
 //                	  listView.setAdapter(adapter);
@@ -797,7 +797,7 @@ void getsearchres(ArrayList<String> querylist) {
                     	 if (tempmov.getRating() < maxValue && tempmov.getRating() > minValue)
                     		 movieList.add(tempmov);
             		} 
-                  listView.setAdapter(adapter);
+                    listView.setAdapter(adapter);
                 	// handle changed range values
                 	showToastMessage("List Filtered");
                         Log.i("TAG", "User selected new range values: MIN=" + minValue + ", MAX=" + maxValue);
@@ -805,10 +805,6 @@ void getsearchres(ArrayList<String> querylist) {
          });
         
         
-         //add RangeSeekBar to pre-defined layout
-         Button modfil = (Button)findViewById(R.id.filter);
-         modfil.setAlpha(1);
-         modfil.setTextColor(Color.WHITE);
          ViewGroup layout = (ViewGroup) findViewById(R.id.rangebar);
          layout.addView(seekBar);   
 

@@ -3,6 +3,7 @@ package com.example.gui;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -45,7 +46,7 @@ public class MainActivity extends FragmentActivity{
         	      });
        	}
 
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -87,9 +88,8 @@ public class MainActivity extends FragmentActivity{
 
 //        	new RetrieveBrandsTask(MainActivity.this).execute();
         }
-
         @Override
-        public Fragment getItem(int pos) {
+        public  Fragment getItem(int pos) {
             switch(pos) {
 
             case 0: return HomeScreen.newInstance("HomeScreen");

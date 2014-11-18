@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LayoutSplash"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="70sp" >
+
+    <com.example.gui.CircularImageView
+        android:id="@+id/appavatar"
+        android:layout_width="@dimen/circular_imageview_width"
+        android:layout_height="@dimen/circular_imageview_height"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/appicon" />
+
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="0.76"
+        android:gravity="center_horizontal"
+        android:text="VoiceBuy"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#c75b7b"
+        android:textSize="70sp" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+           android:layout_marginTop="-50dp"
+         android:textColor="#3f3f3f"
+        android:textSize="14sp"
+        android:gravity="center_horizontal"
+        android:text="&#169; 2014 Akshar Speech Technologies.\nAll Rights Reserved."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/smart"
+        android:layout_marginTop="-250dp"
+         android:textColor="#3f3f3f"
+        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The smarter way of online shopping"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>

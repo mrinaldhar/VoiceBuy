@@ -9,16 +9,21 @@ package com.example.gui;
 
 public final class R {
     public static final class anim {
-        public static final int in_from_bottom=0x7f040000;
-        public static final int in_from_left=0x7f040001;
-        public static final int in_from_right=0x7f040002;
-        public static final int out_from_left=0x7f040003;
-        public static final int out_from_right=0x7f040004;
+        public static final int down_from_top=0x7f040000;
+        public static final int fade_in=0x7f040001;
+        public static final int fade_out=0x7f040002;
+        public static final int in_from_bottom=0x7f040003;
+        public static final int in_from_left=0x7f040004;
+        public static final int in_from_right=0x7f040005;
+        public static final int out_from_left=0x7f040006;
+        public static final int out_from_right=0x7f040007;
+        public static final int up_from_bottom=0x7f040008;
     }
     public static final class array {
-        public static final int countries_array=0x7f0c0002;
-        public static final int gender_array=0x7f0c0001;
-        public static final int saNoOfMatches=0x7f0c0000;
+        public static final int countries_array=0x7f0a0003;
+        public static final int gender_array=0x7f0a0002;
+        public static final int google_colors=0x7f0a0000;
+        public static final int saNoOfMatches=0x7f0a0001;
     }
     public static final class attr {
         /** <p>Must be a floating point value, such as "<code>1.2</code>".
@@ -48,6 +53,10 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int clipPadding=0x7f01001a;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int colors=0x7f010029;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -348,6 +357,18 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int topPadding=0x7f010024;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>folding_circles</code></td><td>0</td><td></td></tr>
+<tr><td><code>google_music_dices</code></td><td>1</td><td></td></tr>
+<tr><td><code>nexus_rotation_cross</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int type=0x7f010028;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -389,47 +410,51 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int vpiUnderlinePageIndicatorStyle=0x7f01000e;
     }
     public static final class bool {
-        public static final int default_circle_indicator_centered=0x7f070000;
-        public static final int default_circle_indicator_snap=0x7f070001;
-        public static final int default_line_indicator_centered=0x7f070002;
-        public static final int default_title_indicator_selected_bold=0x7f070003;
-        public static final int default_underline_indicator_fades=0x7f070004;
+        public static final int default_circle_indicator_centered=0x7f060000;
+        public static final int default_circle_indicator_snap=0x7f060001;
+        public static final int default_line_indicator_centered=0x7f060002;
+        public static final int default_title_indicator_selected_bold=0x7f060003;
+        public static final int default_underline_indicator_fades=0x7f060004;
     }
     public static final class color {
-        public static final int alizarin=0x7f060015;
-        public static final int briezel_blue=0x7f060014;
-        public static final int default_circle_indicator_fill_color=0x7f060008;
-        public static final int default_circle_indicator_page_color=0x7f060009;
-        public static final int default_circle_indicator_stroke_color=0x7f06000a;
-        public static final int default_line_indicator_selected_color=0x7f06000b;
-        public static final int default_line_indicator_unselected_color=0x7f06000c;
-        public static final int default_title_indicator_footer_color=0x7f06000d;
-        public static final int default_title_indicator_selected_color=0x7f06000e;
-        public static final int default_title_indicator_text_color=0x7f06000f;
-        public static final int default_underline_indicator_selected_color=0x7f060010;
-        public static final int genre=0x7f060019;
-        public static final int list_divider=0x7f06001b;
-        public static final int list_row_end_color=0x7f06001d;
-        public static final int list_row_hover_end_color=0x7f06001f;
-        public static final int list_row_hover_start_color=0x7f06001e;
-        public static final int list_row_start_color=0x7f06001c;
-        public static final int mdblue=0x7f060017;
-        public static final int mdblue2=0x7f060018;
-        public static final int pomegranate=0x7f060016;
-        public static final int sea_blue=0x7f060011;
-        public static final int sea_blue_dark=0x7f060012;
-        public static final int vpi__background_holo_dark=0x7f060000;
-        public static final int vpi__background_holo_light=0x7f060001;
-        public static final int vpi__bright_foreground_disabled_holo_dark=0x7f060004;
-        public static final int vpi__bright_foreground_disabled_holo_light=0x7f060005;
-        public static final int vpi__bright_foreground_holo_dark=0x7f060002;
-        public static final int vpi__bright_foreground_holo_light=0x7f060003;
-        public static final int vpi__bright_foreground_inverse_holo_dark=0x7f060006;
-        public static final int vpi__bright_foreground_inverse_holo_light=0x7f060007;
-        public static final int vpi__dark_theme=0x7f060020;
-        public static final int vpi__light_theme=0x7f060021;
-        public static final int white=0x7f060013;
-        public static final int year=0x7f06001a;
+        public static final int alizarin=0x7f050015;
+        public static final int blue=0x7f050021;
+        public static final int briezel_blue=0x7f050014;
+        public static final int default_circle_indicator_fill_color=0x7f050008;
+        public static final int default_circle_indicator_page_color=0x7f050009;
+        public static final int default_circle_indicator_stroke_color=0x7f05000a;
+        public static final int default_line_indicator_selected_color=0x7f05000b;
+        public static final int default_line_indicator_unselected_color=0x7f05000c;
+        public static final int default_title_indicator_footer_color=0x7f05000d;
+        public static final int default_title_indicator_selected_color=0x7f05000e;
+        public static final int default_title_indicator_text_color=0x7f05000f;
+        public static final int default_underline_indicator_selected_color=0x7f050010;
+        public static final int genre=0x7f050019;
+        public static final int green=0x7f050023;
+        public static final int list_divider=0x7f05001b;
+        public static final int list_row_end_color=0x7f05001d;
+        public static final int list_row_hover_end_color=0x7f05001f;
+        public static final int list_row_hover_start_color=0x7f05001e;
+        public static final int list_row_start_color=0x7f05001c;
+        public static final int mdblue=0x7f050017;
+        public static final int mdblue2=0x7f050018;
+        public static final int pomegranate=0x7f050016;
+        public static final int red=0x7f050020;
+        public static final int sea_blue=0x7f050011;
+        public static final int sea_blue_dark=0x7f050012;
+        public static final int vpi__background_holo_dark=0x7f050000;
+        public static final int vpi__background_holo_light=0x7f050001;
+        public static final int vpi__bright_foreground_disabled_holo_dark=0x7f050004;
+        public static final int vpi__bright_foreground_disabled_holo_light=0x7f050005;
+        public static final int vpi__bright_foreground_holo_dark=0x7f050002;
+        public static final int vpi__bright_foreground_holo_light=0x7f050003;
+        public static final int vpi__bright_foreground_inverse_holo_dark=0x7f050006;
+        public static final int vpi__bright_foreground_inverse_holo_light=0x7f050007;
+        public static final int vpi__dark_theme=0x7f050024;
+        public static final int vpi__light_theme=0x7f050025;
+        public static final int white=0x7f050013;
+        public static final int year=0x7f05001a;
+        public static final int yellow=0x7f050022;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -440,27 +465,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  Default screen margins, per the Android Design guidelines. 
          */
-        public static final int activity_horizontal_margin=0x7f09000d;
-        public static final int activity_vertical_margin=0x7f09000e;
-        public static final int circular_imageview_height=0x7f090014;
-        public static final int circular_imageview_width=0x7f090013;
-        public static final int default_circle_indicator_radius=0x7f090000;
-        public static final int default_circle_indicator_stroke_width=0x7f090001;
-        public static final int default_line_indicator_gap_width=0x7f090003;
-        public static final int default_line_indicator_line_width=0x7f090002;
-        public static final int default_line_indicator_stroke_width=0x7f090004;
-        public static final int default_title_indicator_clip_padding=0x7f090005;
-        public static final int default_title_indicator_footer_indicator_height=0x7f090007;
-        public static final int default_title_indicator_footer_indicator_underline_padding=0x7f090008;
-        public static final int default_title_indicator_footer_line_height=0x7f090006;
-        public static final int default_title_indicator_footer_padding=0x7f090009;
-        public static final int default_title_indicator_text_size=0x7f09000a;
-        public static final int default_title_indicator_title_padding=0x7f09000b;
-        public static final int default_title_indicator_top_padding=0x7f09000c;
-        public static final int genre=0x7f090011;
-        public static final int rating=0x7f090010;
-        public static final int title=0x7f09000f;
-        public static final int year=0x7f090012;
+        public static final int activity_horizontal_margin=0x7f08000d;
+        public static final int activity_vertical_margin=0x7f08000e;
+        public static final int circular_imageview_height=0x7f080014;
+        public static final int circular_imageview_width=0x7f080013;
+        public static final int default_circle_indicator_radius=0x7f080000;
+        public static final int default_circle_indicator_stroke_width=0x7f080001;
+        public static final int default_line_indicator_gap_width=0x7f080003;
+        public static final int default_line_indicator_line_width=0x7f080002;
+        public static final int default_line_indicator_stroke_width=0x7f080004;
+        public static final int default_title_indicator_clip_padding=0x7f080005;
+        public static final int default_title_indicator_footer_indicator_height=0x7f080007;
+        public static final int default_title_indicator_footer_indicator_underline_padding=0x7f080008;
+        public static final int default_title_indicator_footer_line_height=0x7f080006;
+        public static final int default_title_indicator_footer_padding=0x7f080009;
+        public static final int default_title_indicator_text_size=0x7f08000a;
+        public static final int default_title_indicator_title_padding=0x7f08000b;
+        public static final int default_title_indicator_top_padding=0x7f08000c;
+        public static final int genre=0x7f080011;
+        public static final int rating=0x7f080010;
+        public static final int title=0x7f08000f;
+        public static final int year=0x7f080012;
     }
     public static final class drawable {
         public static final int above_shadow=0x7f020000;
@@ -470,6 +495,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int avatar=0x7f020004;
         public static final int background=0x7f020005;
         public static final int below_shadow=0x7f020006;
+<<<<<<< HEAD
         public static final int flipkartlogo=0x7f020007;
         public static final int ic_action=0x7f020008;
         public static final int ic_action_cart=0x7f020009;
@@ -553,19 +579,116 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int upload_image=0x7f05001a;
         public static final int viewPager=0x7f05001c;
         public static final int webv=0x7f050029;
+=======
+        public static final int card_background=0x7f020007;
+        public static final int flipkartlogo=0x7f020008;
+        public static final int ic_action=0x7f020009;
+        public static final int ic_action_cart=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int list_row_bg=0x7f02000c;
+        public static final int list_row_bg_hover=0x7f02000d;
+        public static final int list_row_selector=0x7f02000e;
+        public static final int login_button=0x7f02000f;
+        public static final int mic=0x7f020010;
+        public static final int post_button=0x7f020011;
+        public static final int pricefilter=0x7f020012;
+        public static final int roundedbuttons=0x7f020013;
+        public static final int seek_thumb_normal=0x7f020014;
+        public static final int seek_thumb_pressed=0x7f020015;
+        public static final int shape2=0x7f020016;
+        public static final int shapes=0x7f020017;
+        public static final int signout_button=0x7f020018;
+        public static final int thumb=0x7f020019;
+        public static final int thumb_pressed=0x7f02001a;
+        public static final int tweet_button=0x7f02001b;
+        public static final int vpi__tab_indicator=0x7f02001c;
+        public static final int vpi__tab_selected_focused_holo=0x7f02001d;
+        public static final int vpi__tab_selected_holo=0x7f02001e;
+        public static final int vpi__tab_selected_pressed_holo=0x7f02001f;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020020;
+        public static final int vpi__tab_unselected_holo=0x7f020021;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f020022;
+    }
+    public static final class id {
+        public static final int Layout1=0x7f0d000d;
+        public static final int Layout2=0x7f0d002a;
+        public static final int LayoutSplash=0x7f0d0026;
+        public static final int action_cart=0x7f0d003e;
+        public static final int action_settings=0x7f0d003d;
+        public static final int anchored=0x7f0d0000;
+        public static final int appavatar=0x7f0d000e;
+        public static final int appname=0x7f0d0027;
+        public static final int bottom=0x7f0d0007;
+        public static final int btSpeak=0x7f0d002d;
+        public static final int btnbar=0x7f0d0015;
+        public static final int button1=0x7f0d0024;
+        public static final int cart_list=0x7f0d0025;
+        public static final int collapsed=0x7f0d0001;
+        public static final int content_frame=0x7f0d002c;
+        public static final int copyright=0x7f0d0028;
+        public static final int expanded=0x7f0d0002;
+        public static final int folding_circles=0x7f0d0009;
+        public static final int genre=0x7f0d0034;
+        public static final int google_music_dices=0x7f0d000a;
+        public static final int hidden=0x7f0d0003;
+        public static final int image_path=0x7f0d001c;
+        public static final int imgView=0x7f0d001d;
+        public static final int indicator=0x7f0d0021;
+        public static final int list=0x7f0d002f;
+        public static final int listview=0x7f0d002b;
+        public static final int login=0x7f0d0016;
+        public static final int login_button=0x7f0d0012;
+        public static final int login_email=0x7f0d0010;
+        public static final int login_password=0x7f0d0011;
+        public static final int nexus_rotation_cross=0x7f0d000b;
+        public static final int none=0x7f0d0004;
+        public static final int panel=0x7f0d0014;
+        public static final int pic_disp=0x7f0d000f;
+        public static final int post_tweet=0x7f0d003c;
+        public static final int prof_image=0x7f0d0037;
+        public static final int prof_name=0x7f0d0036;
+        public static final int rangebar=0x7f0d002e;
+        public static final int rating=0x7f0d0033;
+        public static final int releaseYear=0x7f0d0035;
+        public static final int search_bar=0x7f0d0022;
+        public static final int shop=0x7f0d003a;
+        public static final int signout=0x7f0d0039;
+        public static final int signup=0x7f0d0017;
+        public static final int signup_button=0x7f0d001f;
+        public static final int signup_email=0x7f0d0019;
+        public static final int signup_fname=0x7f0d0018;
+        public static final int signup_password=0x7f0d001a;
+        public static final int signup_password_confirm=0x7f0d001b;
+        public static final int sliding_layout=0x7f0d000c;
+        public static final int smart=0x7f0d0029;
+        public static final int text1=0x7f0d0023;
+        public static final int thumbnail=0x7f0d0031;
+        public static final int title=0x7f0d0032;
+        public static final int top=0x7f0d0008;
+        public static final int triangle=0x7f0d0005;
+        public static final int tweet=0x7f0d0038;
+        public static final int tweet_text=0x7f0d003b;
+        public static final int twitter_button=0x7f0d0013;
+        public static final int underline=0x7f0d0006;
+        public static final int upload_image=0x7f0d001e;
+        public static final int viewPager=0x7f0d0020;
+        public static final int webv=0x7f0d0030;
+>>>>>>> a123c542ded0172824a3e4fd2ee0f0a384561862
     }
     public static final class integer {
-        public static final int default_circle_indicator_orientation=0x7f080000;
-        public static final int default_title_indicator_footer_indicator_style=0x7f080001;
-        public static final int default_title_indicator_line_position=0x7f080002;
-        public static final int default_underline_indicator_fade_delay=0x7f080003;
-        public static final int default_underline_indicator_fade_length=0x7f080004;
+        public static final int default_circle_indicator_orientation=0x7f070000;
+        public static final int default_title_indicator_footer_indicator_style=0x7f070001;
+        public static final int default_title_indicator_line_position=0x7f070002;
+        public static final int default_type=0x7f070005;
+        public static final int default_underline_indicator_fade_delay=0x7f070003;
+        public static final int default_underline_indicator_fade_length=0x7f070004;
     }
     public static final class layout {
         public static final int activity_home_screen=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_search=0x7f030002;
         public static final int activity_shopping_cart=0x7f030003;
+<<<<<<< HEAD
         public static final int activity_stores_list=0x7f030004;
         public static final int activity_twitter=0x7f030005;
         public static final int activity_voice_recognition=0x7f030006;
@@ -575,14 +698,26 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int profile_fragment=0x7f03000a;
         public static final int shape2=0x7f03000b;
         public static final int tweet_dialog=0x7f03000c;
+=======
+        public static final int activity_splashscreen=0x7f030004;
+        public static final int activity_stores_list=0x7f030005;
+        public static final int activity_twitter=0x7f030006;
+        public static final int activity_voice_recognition=0x7f030007;
+        public static final int auth_dialog=0x7f030008;
+        public static final int list_row=0x7f030009;
+        public static final int login_fragment=0x7f03000a;
+        public static final int profile_fragment=0x7f03000b;
+        public static final int shape2=0x7f03000c;
+        public static final int tweet_dialog=0x7f03000d;
+>>>>>>> a123c542ded0172824a3e4fd2ee0f0a384561862
     }
     public static final class menu {
-        public static final int home_screen=0x7f0d0000;
-        public static final int main=0x7f0d0001;
-        public static final int screen_slide_page=0x7f0d0002;
-        public static final int screen_slide_pager=0x7f0d0003;
-        public static final int shopping_cart=0x7f0d0004;
-        public static final int stores_list=0x7f0d0005;
+        public static final int home_screen=0x7f0c0000;
+        public static final int main=0x7f0c0001;
+        public static final int screen_slide_page=0x7f0c0002;
+        public static final int screen_slide_pager=0x7f0c0003;
+        public static final int shopping_cart=0x7f0c0004;
+        public static final int stores_list=0x7f0c0005;
     }
     public static final class string {
         public static final int action_cart=0x7f0b0010;
@@ -614,7 +749,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int twitter_auth=0x7f0b001a;
     }
     public static final class style {
-        public static final int ActionBar=0x7f0a0007;
+        public static final int ActionBar=0x7f090007;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -631,16 +766,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0a0005;
+        public static final int AppBaseTheme=0x7f090005;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0a0006;
-        public static final int TextAppearance_TabPageIndicator=0x7f0a0003;
-        public static final int Theme_PageIndicatorDefaults=0x7f0a0000;
-        public static final int Widget=0x7f0a0001;
-        public static final int Widget_IconPageIndicator=0x7f0a0004;
-        public static final int Widget_TabPageIndicator=0x7f0a0002;
+        public static final int AppTheme=0x7f090006;
+        public static final int TextAppearance_TabPageIndicator=0x7f090003;
+        public static final int Theme_PageIndicatorDefaults=0x7f090000;
+        public static final int Widget=0x7f090001;
+        public static final int Widget_IconPageIndicator=0x7f090004;
+        public static final int Widget_TabPageIndicator=0x7f090002;
     }
     public static final class styleable {
         /** Attributes that can be used with a CirclePageIndicator.
@@ -811,6 +946,49 @@ containing a value of this type.
           @attr name com.example.gui:strokeWidth
         */
         public static final int CirclePageIndicator_strokeWidth = 3;
+        /** Attributes that can be used with a GoogleProgressBar.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #GoogleProgressBar_colors com.example.gui:colors}</code></td><td></td></tr>
+           <tr><td><code>{@link #GoogleProgressBar_type com.example.gui:type}</code></td><td></td></tr>
+           </table>
+           @see #GoogleProgressBar_colors
+           @see #GoogleProgressBar_type
+         */
+        public static final int[] GoogleProgressBar = {
+            0x7f010028, 0x7f010029
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.gui.R.attr#colors}
+          attribute's value can be found in the {@link #GoogleProgressBar} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.example.gui:colors
+        */
+        public static final int GoogleProgressBar_colors = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.gui.R.attr#type}
+          attribute's value can be found in the {@link #GoogleProgressBar} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>folding_circles</code></td><td>0</td><td></td></tr>
+<tr><td><code>google_music_dices</code></td><td>1</td><td></td></tr>
+<tr><td><code>nexus_rotation_cross</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name com.example.gui:type
+        */
+        public static final int GoogleProgressBar_type = 0;
         /** Attributes that can be used with a LinePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
