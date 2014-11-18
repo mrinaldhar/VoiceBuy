@@ -73,12 +73,10 @@
             android:text="Login" 
             android:visibility="visible"
             android:background="@drawable/shapes"/>
-<<<<<<< HEAD
-         <Button
-=======
+
+
         
            <Button
->>>>>>> a123c542ded0172824a3e4fd2ee0f0a384561862
             android:id="@+id/twitter_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,15 +202,14 @@
             android:layout_height="wrap_content"
             android:hint="Imagepath"    
             android:textColor="#fff"/>
-<<<<<<< HEAD
-=======
+
     <ImageView
 			android:id="@+id/imgView"
 			android:layout_weight="1" 
 			android:layout_width="100dp"
     		android:layout_height="100dp"
     		android:visibility="gone"></ImageView>
->>>>>>> a123c542ded0172824a3e4fd2ee0f0a384561862
+
     <Button
         android:id="@+id/upload_image"
 	            style="?android:attr/buttonBarButtonStyle"
@@ -230,11 +227,8 @@
 	            android:textColor="#fff"
 	            android:onClick="display_login" 
         />
-<<<<<<< HEAD
-        <Button 
-=======
-                <Button 
->>>>>>> a123c542ded0172824a3e4fd2ee0f0a384561862
+     <Button 
+
             android:id="@+id/signup_button"
             android:gravity="center"
             android:text="Signup"

@@ -13,7 +13,7 @@
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 <uses-permission android:name="android.permission.GET_TASKS" />
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/appicon"
@@ -59,10 +59,7 @@
             android:name=".ShoppingCart"
             android:label="@string/title_activity_shopping_cart" >
         </activity>
-        <activity
-            android:name=".Twitter"
-            android:label="@string/title_activity_shopping_cart" >
-        </activity>
+        
         <activity
             android:name=".HomeScreen"
             android:label="@string/title_activity_home_screen"
@@ -75,7 +72,6 @@
         <activity
             android:name=".Twitter"
             android:label="@string/twitter_auth" >
-            
         </activity>
   
         
