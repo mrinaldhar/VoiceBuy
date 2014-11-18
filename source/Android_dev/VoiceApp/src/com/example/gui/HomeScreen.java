@@ -12,13 +12,20 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
+/*
+import android.app.Fragment;
+import android.app.Activity;
+import android.app.FragmentTransaction;*/
+import android.content.SharedPreferences;
+import android.os.Bundle;
 
+import android.support.v4.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v4.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,12 +39,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeScreen extends Fragment {
-		Button log_main,sign_main,log_in,sign_in;
+		SharedPreferences pref;
+	    private static String CONSUMER_KEY = "Hy30sjRzcwwKAkwVvD3gvjXus";
+	    private static String CONSUMER_SECRET = "vzex5j4iqWwpNjDvofDl9DYQbTTqLhQCfFP86Qf4VEWE8HKvgf";
+	   
+        
+		Button log_main,sign_main,log_in,sign_in,twitter_button;
 		//AutoCompleteTextView country;
 		View logv;
 		TextView res,info;
 		InputStream is;
  		EditText sign_lname,log_email,log_pass,sign_fname,sign_mobile,sign_email,sign_pass,sign_pass_conf;
+ 		
 	   @Override
 	    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	        View v = inflater.inflate(R.layout.activity_home_screen, container, false);
@@ -60,6 +73,8 @@ public class HomeScreen extends Fragment {
 //	     sign_main=(Button) v.findViewById(R.id.signup);
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
+	     twitter_button=(Button) v.findViewById(R.id.twitter_button);
+	
 	   //  sign_lname=(EditText) v.findViewById(R.id.signup_lname);
 	    // sign_lname.setTextColor(Color.parseColor("#000000"));
 	     log_email=(EditText) v.findViewById(R.id.login_email);
@@ -80,6 +95,32 @@ public class HomeScreen extends Fragment {
 	     
 	     Drawable back = getResources().getDrawable(R.drawable.app_back);
 	     back.setAlpha(195);
+	     
+	     twitter_button.setOnClickListener(new View.OnClickListener() {
+	    	 
+				@Override
+				public void onClick(View v) {
+				
+			    
+			        
+			       /* SharedPreferences.Editor edit = pref.edit();
+			        edit.putString("CONSUMER_KEY", CONSUMER_KEY);
+			        edit.putString("CONSUMER_SECRET", CONSUMER_SECRET);
+			        edit.commit();
+			        Fragment login = new LoginFragment();
+			        FragmentTransaction ft = getFragmentManager().beginTransaction();
+			        ft.replace(R.id.content_frame, login);
+			        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			        ft.addToBackStack(null);
+			        ft.commit();*/
+				//public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent i = new Intent(getActivity(),Twitter.class);
+                    startActivity(i);
+				}
+				
+			});
+
 
 //
 //	     .setImageDrawable(rightArrow);
