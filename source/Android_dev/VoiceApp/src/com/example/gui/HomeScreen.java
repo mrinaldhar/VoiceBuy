@@ -14,9 +14,21 @@ import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
+/*
+import android.app.Fragment;
+import android.app.Activity;
+import android.app.FragmentTransaction;*/
+import android.content.SharedPreferences;
+import android.os.Bundle;
 
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.StrictMode;
+
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +40,7 @@ import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Base64;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,6 +52,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeScreen extends Fragment {
+
+		SharedPreferences pref;
+	    private static String CONSUMER_KEY = "Hy30sjRzcwwKAkwVvD3gvjXus";
+	    private static String CONSUMER_SECRET = "vzex5j4iqWwpNjDvofDl9DYQbTTqLhQCfFP86Qf4VEWE8HKvgf";
+	   
 	Button log_main,sign_main,log_in,sign_in,upload,twitter_button;
 	//AutoCompleteTextView country;
 	View logv;
@@ -49,6 +67,7 @@ public class HomeScreen extends Fragment {
 	EditText sign_lname,log_email,log_pass,sign_fname,sign_mobile,sign_email,sign_pass,sign_pass_conf;
 	private static int RESULT_LOAD_IMAGE = 1;
 	public static int RESULT_OK=-1;
+
 	   @Override
 	    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 	        View v = inflater.inflate(R.layout.activity_home_screen, container, false);
@@ -56,11 +75,17 @@ public class HomeScreen extends Fragment {
 	     log_in=(Button) v.findViewById(R.id.login_button);
 	     sign_in=(Button) v.findViewById(R.id.signup_button);
 	     twitter_button=(Button) v.findViewById(R.id.twitter_button);
+
+	
+	   //  sign_lname=(EditText) v.findViewById(R.id.signup_lname);
+	    // sign_lname.setTextColor(Color.parseColor("#000000"));
+
 	     upload=(Button) v.findViewById(R.id.upload_image);
 	     imageView = (ImageView) (v.findViewById(R.id.imgView));
 	     imgpath=(TextView)v.findViewById(R.id.image_path);
 	     imgpath.setText("No Image Selected");
 	     proPic=(ImageView) v.findViewById(R.id.pic_disp);
+
 	     log_email=(EditText) v.findViewById(R.id.login_email);
 	     log_email.setTextColor(Color.parseColor("#000000"));
 	     log_pass=(EditText) v.findViewById(R.id.login_password);
@@ -77,6 +102,34 @@ public class HomeScreen extends Fragment {
 	     Drawable back = getResources().getDrawable(R.drawable.app_back);
 	     back.setAlpha(195);
 	     
+
+	     twitter_button.setOnClickListener(new View.OnClickListener() {
+	    	 
+				@Override
+				public void onClick(View v) {
+				
+			    
+			        
+			       /* SharedPreferences.Editor edit = pref.edit();
+			        edit.putString("CONSUMER_KEY", CONSUMER_KEY);
+			        edit.putString("CONSUMER_SECRET", CONSUMER_SECRET);
+			        edit.commit();
+			        Fragment login = new LoginFragment();
+			        FragmentTransaction ft = getFragmentManager().beginTransaction();
+			        ft.replace(R.id.content_frame, login);
+			        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			        ft.addToBackStack(null);
+			        ft.commit();*/
+				//public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Intent i = new Intent(getActivity(),Twitter.class);
+                    startActivity(i);
+				}
+				
+			});
+
+
+
 //
 //	     .setImageDrawable(rightArrow);
 	     Log.e("lol","finished views");
@@ -123,18 +176,14 @@ public class HomeScreen extends Fragment {
 					String email=sign_email.getText().toString();
 					String mpass=sign_pass.getText().toString();
 					String rpass=sign_pass_conf.getText().toString();
-					
-				    
-				
-			           MultipartEntityBuilder multipartEntity =MultipartEntityBuilder.create();
-	 
-			            multipartEntity.addTextBody("Firstname", fname);
-			            multipartEntity.addTextBody("Email", email);
-			            multipartEntity.addTextBody("Password", mpass);
-			            multipartEntity.addPart("Image",  new FileBody(new File(picturePath)));
-	
+			        MultipartEntityBuilder multipartEntity =MultipartEntityBuilder.create(); 
+			        multipartEntity.addTextBody("Firstname", fname);
+			        multipartEntity.addTextBody("Email", email);
+			        multipartEntity.addTextBody("Password", mpass);
+			        multipartEntity.addPart("Image",  new FileBody(new File(picturePath)));
+			        Log.e("lol","created obj");
 					if(mpass.equals(rpass)){
-						
+						Log.e("lol","pass equal");
 						String url="http://rohithdb.besaba.com/signup_app.php";
 						postdata(url,multipartEntity);
 						

@@ -73,6 +73,8 @@
             android:text="Login" 
             android:visibility="visible"
             android:background="@drawable/shapes"/>
+
+
         
            <Button
             android:id="@+id/twitter_button"
@@ -201,12 +203,14 @@
             android:layout_height="wrap_content"
             android:hint="Imagepath"    
             android:textColor="#fff"/>
+
     <ImageView
 			android:id="@+id/imgView"
 			android:layout_weight="1" 
 			android:layout_width="100dp"
     		android:layout_height="100dp"
     		android:visibility="gone"></ImageView>
+
     <Button
         android:id="@+id/upload_image"
 	            style="?android:attr/buttonBarButtonStyle"
@@ -224,7 +228,8 @@
 	            android:textColor="#fff"
 	            android:onClick="display_login" 
         />
-                <Button 
+     <Button 
+
             android:id="@+id/signup_button"
             android:gravity="center"
             android:text="Signup"
