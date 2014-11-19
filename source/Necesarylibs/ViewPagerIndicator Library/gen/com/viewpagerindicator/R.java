@@ -377,47 +377,47 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int vpiUnderlinePageIndicatorStyle=0x7f01000e;
     }
     public static final class bool {
-        public static int default_circle_indicator_centered=0x7f040000;
-        public static int default_circle_indicator_snap=0x7f040001;
-        public static int default_line_indicator_centered=0x7f040002;
-        public static int default_title_indicator_selected_bold=0x7f040003;
-        public static int default_underline_indicator_fades=0x7f040004;
+        public static int default_circle_indicator_centered=0x7f050000;
+        public static int default_circle_indicator_snap=0x7f050001;
+        public static int default_line_indicator_centered=0x7f050002;
+        public static int default_title_indicator_selected_bold=0x7f050003;
+        public static int default_underline_indicator_fades=0x7f050004;
     }
     public static final class color {
-        public static int default_circle_indicator_fill_color=0x7f030008;
-        public static int default_circle_indicator_page_color=0x7f030009;
-        public static int default_circle_indicator_stroke_color=0x7f03000a;
-        public static int default_line_indicator_selected_color=0x7f03000b;
-        public static int default_line_indicator_unselected_color=0x7f03000c;
-        public static int default_title_indicator_footer_color=0x7f03000d;
-        public static int default_title_indicator_selected_color=0x7f03000e;
-        public static int default_title_indicator_text_color=0x7f03000f;
-        public static int default_underline_indicator_selected_color=0x7f030010;
-        public static int vpi__background_holo_dark=0x7f030000;
-        public static int vpi__background_holo_light=0x7f030001;
-        public static int vpi__bright_foreground_disabled_holo_dark=0x7f030004;
-        public static int vpi__bright_foreground_disabled_holo_light=0x7f030005;
-        public static int vpi__bright_foreground_holo_dark=0x7f030002;
-        public static int vpi__bright_foreground_holo_light=0x7f030003;
-        public static int vpi__bright_foreground_inverse_holo_dark=0x7f030006;
-        public static int vpi__bright_foreground_inverse_holo_light=0x7f030007;
-        public static int vpi__dark_theme=0x7f030011;
-        public static int vpi__light_theme=0x7f030012;
+        public static int default_circle_indicator_fill_color=0x7f040008;
+        public static int default_circle_indicator_page_color=0x7f040009;
+        public static int default_circle_indicator_stroke_color=0x7f04000a;
+        public static int default_line_indicator_selected_color=0x7f04000b;
+        public static int default_line_indicator_unselected_color=0x7f04000c;
+        public static int default_title_indicator_footer_color=0x7f04000d;
+        public static int default_title_indicator_selected_color=0x7f04000e;
+        public static int default_title_indicator_text_color=0x7f04000f;
+        public static int default_underline_indicator_selected_color=0x7f040010;
+        public static int vpi__background_holo_dark=0x7f040000;
+        public static int vpi__background_holo_light=0x7f040001;
+        public static int vpi__bright_foreground_disabled_holo_dark=0x7f040004;
+        public static int vpi__bright_foreground_disabled_holo_light=0x7f040005;
+        public static int vpi__bright_foreground_holo_dark=0x7f040002;
+        public static int vpi__bright_foreground_holo_light=0x7f040003;
+        public static int vpi__bright_foreground_inverse_holo_dark=0x7f040006;
+        public static int vpi__bright_foreground_inverse_holo_light=0x7f040007;
+        public static int vpi__dark_theme=0x7f040011;
+        public static int vpi__light_theme=0x7f040012;
     }
     public static final class dimen {
-        public static int default_circle_indicator_radius=0x7f060000;
-        public static int default_circle_indicator_stroke_width=0x7f060001;
-        public static int default_line_indicator_gap_width=0x7f060003;
-        public static int default_line_indicator_line_width=0x7f060002;
-        public static int default_line_indicator_stroke_width=0x7f060004;
-        public static int default_title_indicator_clip_padding=0x7f060005;
-        public static int default_title_indicator_footer_indicator_height=0x7f060007;
-        public static int default_title_indicator_footer_indicator_underline_padding=0x7f060008;
-        public static int default_title_indicator_footer_line_height=0x7f060006;
-        public static int default_title_indicator_footer_padding=0x7f060009;
-        public static int default_title_indicator_text_size=0x7f06000a;
-        public static int default_title_indicator_title_padding=0x7f06000b;
-        public static int default_title_indicator_top_padding=0x7f06000c;
+        public static int default_circle_indicator_radius=0x7f070000;
+        public static int default_circle_indicator_stroke_width=0x7f070001;
+        public static int default_line_indicator_gap_width=0x7f070003;
+        public static int default_line_indicator_line_width=0x7f070002;
+        public static int default_line_indicator_stroke_width=0x7f070004;
+        public static int default_title_indicator_clip_padding=0x7f070005;
+        public static int default_title_indicator_footer_indicator_height=0x7f070007;
+        public static int default_title_indicator_footer_indicator_underline_padding=0x7f070008;
+        public static int default_title_indicator_footer_line_height=0x7f070006;
+        public static int default_title_indicator_footer_padding=0x7f070009;
+        public static int default_title_indicator_text_size=0x7f07000a;
+        public static int default_title_indicator_title_padding=0x7f07000b;
+        public static int default_title_indicator_top_padding=0x7f07000c;
     }
     public static final class drawable {
         public static int above_shadow=0x7f020000;
@@ -431,29 +431,29 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int vpi__tab_unselected_pressed_holo=0x7f020008;
     }
     public static final class id {
-        public static int anchored=0x7f080000;
-        public static int bottom=0x7f080007;
-        public static int collapsed=0x7f080001;
-        public static int expanded=0x7f080002;
-        public static int hidden=0x7f080003;
-        public static int none=0x7f080004;
-        public static int top=0x7f080008;
-        public static int triangle=0x7f080005;
-        public static int underline=0x7f080006;
+        public static int anchored=0x7f030002;
+        public static int bottom=0x7f030007;
+        public static int collapsed=0x7f030001;
+        public static int expanded=0x7f030000;
+        public static int hidden=0x7f030003;
+        public static int none=0x7f030004;
+        public static int top=0x7f030008;
+        public static int triangle=0x7f030005;
+        public static int underline=0x7f030006;
     }
     public static final class integer {
-        public static int default_circle_indicator_orientation=0x7f050000;
-        public static int default_title_indicator_footer_indicator_style=0x7f050001;
-        public static int default_title_indicator_line_position=0x7f050002;
-        public static int default_underline_indicator_fade_delay=0x7f050003;
-        public static int default_underline_indicator_fade_length=0x7f050004;
+        public static int default_circle_indicator_orientation=0x7f060000;
+        public static int default_title_indicator_footer_indicator_style=0x7f060001;
+        public static int default_title_indicator_line_position=0x7f060002;
+        public static int default_underline_indicator_fade_delay=0x7f060003;
+        public static int default_underline_indicator_fade_length=0x7f060004;
     }
     public static final class style {
-        public static int TextAppearance_TabPageIndicator=0x7f070003;
-        public static int Theme_PageIndicatorDefaults=0x7f070000;
-        public static int Widget=0x7f070001;
-        public static int Widget_IconPageIndicator=0x7f070004;
-        public static int Widget_TabPageIndicator=0x7f070002;
+        public static int TextAppearance_TabPageIndicator=0x7f080003;
+        public static int Theme_PageIndicatorDefaults=0x7f080000;
+        public static int Widget=0x7f080001;
+        public static int Widget_IconPageIndicator=0x7f080004;
+        public static int Widget_TabPageIndicator=0x7f080002;
     }
     public static final class styleable {
         /** Attributes that can be used with a CirclePageIndicator.
@@ -495,7 +495,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static int CirclePageIndicator_android_background = 1;
+        public static final int CirclePageIndicator_android_background = 1;
         /**
           <p>
           @attr description
@@ -504,7 +504,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           resource symbol {@link android.R.attr#orientation}.
           @attr name android:orientation
         */
-        public static int CirclePageIndicator_android_orientation = 0;
+        public static final int CirclePageIndicator_android_orientation = 0;
         /**
           <p>
           @attr description
@@ -520,7 +520,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:centered
         */
-        public static int CirclePageIndicator_centered = 2;
+        public static final int CirclePageIndicator_centered = 2;
         /**
           <p>
           @attr description
@@ -537,7 +537,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:fillColor
         */
-        public static int CirclePageIndicator_fillColor = 4;
+        public static final int CirclePageIndicator_fillColor = 4;
         /**
           <p>
           @attr description
@@ -554,7 +554,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:pageColor
         */
-        public static int CirclePageIndicator_pageColor = 5;
+        public static final int CirclePageIndicator_pageColor = 5;
         /**
           <p>
           @attr description
@@ -572,7 +572,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:radius
         */
-        public static int CirclePageIndicator_radius = 6;
+        public static final int CirclePageIndicator_radius = 6;
         /**
           <p>
           @attr description
@@ -588,7 +588,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:snap
         */
-        public static int CirclePageIndicator_snap = 7;
+        public static final int CirclePageIndicator_snap = 7;
         /**
           <p>
           @attr description
@@ -605,7 +605,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:strokeColor
         */
-        public static int CirclePageIndicator_strokeColor = 8;
+        public static final int CirclePageIndicator_strokeColor = 8;
         /**
           <p>
           @attr description
@@ -623,7 +623,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:strokeWidth
         */
-        public static int CirclePageIndicator_strokeWidth = 3;
+        public static final int CirclePageIndicator_strokeWidth = 3;
         /** Attributes that can be used with a LinePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -658,7 +658,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static int LinePageIndicator_android_background = 0;
+        public static final int LinePageIndicator_android_background = 0;
         /**
           <p>
           @attr description
@@ -674,7 +674,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:centered
         */
-        public static int LinePageIndicator_centered = 1;
+        public static final int LinePageIndicator_centered = 1;
         /**
           <p>
           @attr description
@@ -692,7 +692,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:gapWidth
         */
-        public static int LinePageIndicator_gapWidth = 6;
+        public static final int LinePageIndicator_gapWidth = 6;
         /**
           <p>
           @attr description
@@ -710,7 +710,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:lineWidth
         */
-        public static int LinePageIndicator_lineWidth = 5;
+        public static final int LinePageIndicator_lineWidth = 5;
         /**
           <p>
           @attr description
@@ -727,7 +727,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:selectedColor
         */
-        public static int LinePageIndicator_selectedColor = 2;
+        public static final int LinePageIndicator_selectedColor = 2;
         /**
           <p>
           @attr description
@@ -745,7 +745,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:strokeWidth
         */
-        public static int LinePageIndicator_strokeWidth = 3;
+        public static final int LinePageIndicator_strokeWidth = 3;
         /**
           <p>
           @attr description
@@ -762,7 +762,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:unselectedColor
         */
-        public static int LinePageIndicator_unselectedColor = 4;
+        public static final int LinePageIndicator_unselectedColor = 4;
         /** Attributes that can be used with a SlidingUpPanelLayout.
            <p>Includes the following attributes:</p>
            <table>
@@ -807,7 +807,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:anchorPoint
         */
-        public static int SlidingUpPanelLayout_anchorPoint = 7;
+        public static final int SlidingUpPanelLayout_anchorPoint = 7;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#dragView}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -817,7 +817,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.viewpagerindicator:dragView
         */
-        public static int SlidingUpPanelLayout_dragView = 5;
+        public static final int SlidingUpPanelLayout_dragView = 5;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#fadeColor}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -832,7 +832,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:fadeColor
         */
-        public static int SlidingUpPanelLayout_fadeColor = 3;
+        public static final int SlidingUpPanelLayout_fadeColor = 3;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#flingVelocity}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -846,7 +846,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:flingVelocity
         */
-        public static int SlidingUpPanelLayout_flingVelocity = 4;
+        public static final int SlidingUpPanelLayout_flingVelocity = 4;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#initialState}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -865,7 +865,7 @@ containing a value of this type.
 </table>
           @attr name com.viewpagerindicator:initialState
         */
-        public static int SlidingUpPanelLayout_initialState = 8;
+        public static final int SlidingUpPanelLayout_initialState = 8;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#overlay}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -879,7 +879,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:overlay
         */
-        public static int SlidingUpPanelLayout_overlay = 6;
+        public static final int SlidingUpPanelLayout_overlay = 6;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#panelHeight}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -895,7 +895,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:panelHeight
         */
-        public static int SlidingUpPanelLayout_panelHeight = 0;
+        public static final int SlidingUpPanelLayout_panelHeight = 0;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#paralaxOffset}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -911,7 +911,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:paralaxOffset
         */
-        public static int SlidingUpPanelLayout_paralaxOffset = 2;
+        public static final int SlidingUpPanelLayout_paralaxOffset = 2;
         /**
           <p>This symbol is the offset where the {@link com.viewpagerindicator.R.attr#shadowHeight}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -927,7 +927,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.viewpagerindicator:shadowHeight
         */
-        public static int SlidingUpPanelLayout_shadowHeight = 1;
+        public static final int SlidingUpPanelLayout_shadowHeight = 1;
         /** Attributes that can be used with a TitlePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -980,7 +980,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static int TitlePageIndicator_android_background = 2;
+        public static final int TitlePageIndicator_android_background = 2;
         /**
           <p>
           @attr description
@@ -989,7 +989,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#textColor}.
           @attr name android:textColor
         */
-        public static int TitlePageIndicator_android_textColor = 1;
+        public static final int TitlePageIndicator_android_textColor = 1;
         /**
           <p>
           @attr description
@@ -998,7 +998,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#textSize}.
           @attr name android:textSize
         */
-        public static int TitlePageIndicator_android_textSize = 0;
+        public static final int TitlePageIndicator_android_textSize = 0;
         /**
           <p>
           @attr description
@@ -1016,7 +1016,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:clipPadding
         */
-        public static int TitlePageIndicator_clipPadding = 4;
+        public static final int TitlePageIndicator_clipPadding = 4;
         /**
           <p>
           @attr description
@@ -1033,7 +1033,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:footerColor
         */
-        public static int TitlePageIndicator_footerColor = 5;
+        public static final int TitlePageIndicator_footerColor = 5;
         /**
           <p>
           @attr description
@@ -1051,7 +1051,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:footerIndicatorHeight
         */
-        public static int TitlePageIndicator_footerIndicatorHeight = 8;
+        public static final int TitlePageIndicator_footerIndicatorHeight = 8;
         /**
           <p>
           @attr description
@@ -1071,7 +1071,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:footerIndicatorStyle
         */
-        public static int TitlePageIndicator_footerIndicatorStyle = 7;
+        public static final int TitlePageIndicator_footerIndicatorStyle = 7;
         /**
           <p>
           @attr description
@@ -1089,7 +1089,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:footerIndicatorUnderlinePadding
         */
-        public static int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
+        public static final int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
         /**
           <p>
           @attr description
@@ -1107,7 +1107,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:footerLineHeight
         */
-        public static int TitlePageIndicator_footerLineHeight = 6;
+        public static final int TitlePageIndicator_footerLineHeight = 6;
         /**
           <p>
           @attr description
@@ -1125,7 +1125,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:footerPadding
         */
-        public static int TitlePageIndicator_footerPadding = 10;
+        public static final int TitlePageIndicator_footerPadding = 10;
         /**
           <p>
           @attr description
@@ -1144,7 +1144,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:linePosition
         */
-        public static int TitlePageIndicator_linePosition = 11;
+        public static final int TitlePageIndicator_linePosition = 11;
         /**
           <p>
           @attr description
@@ -1160,7 +1160,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:selectedBold
         */
-        public static int TitlePageIndicator_selectedBold = 12;
+        public static final int TitlePageIndicator_selectedBold = 12;
         /**
           <p>
           @attr description
@@ -1177,7 +1177,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:selectedColor
         */
-        public static int TitlePageIndicator_selectedColor = 3;
+        public static final int TitlePageIndicator_selectedColor = 3;
         /**
           <p>
           @attr description
@@ -1195,7 +1195,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:titlePadding
         */
-        public static int TitlePageIndicator_titlePadding = 13;
+        public static final int TitlePageIndicator_titlePadding = 13;
         /**
           <p>
           @attr description
@@ -1213,7 +1213,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:topPadding
         */
-        public static int TitlePageIndicator_topPadding = 14;
+        public static final int TitlePageIndicator_topPadding = 14;
         /** Attributes that can be used with a UnderlinePageIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -1244,7 +1244,7 @@ containing a value of this type.
           resource symbol {@link android.R.attr#background}.
           @attr name android:background
         */
-        public static int UnderlinePageIndicator_android_background = 0;
+        public static final int UnderlinePageIndicator_android_background = 0;
         /**
           <p>
           @attr description
@@ -1260,7 +1260,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:fadeDelay
         */
-        public static int UnderlinePageIndicator_fadeDelay = 3;
+        public static final int UnderlinePageIndicator_fadeDelay = 3;
         /**
           <p>
           @attr description
@@ -1276,7 +1276,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:fadeLength
         */
-        public static int UnderlinePageIndicator_fadeLength = 4;
+        public static final int UnderlinePageIndicator_fadeLength = 4;
         /**
           <p>
           @attr description
@@ -1292,7 +1292,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:fades
         */
-        public static int UnderlinePageIndicator_fades = 2;
+        public static final int UnderlinePageIndicator_fades = 2;
         /**
           <p>
           @attr description
@@ -1309,7 +1309,7 @@ containing a value of this type.
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:selectedColor
         */
-        public static int UnderlinePageIndicator_selectedColor = 1;
+        public static final int UnderlinePageIndicator_selectedColor = 1;
         /** Attributes that can be used with a ViewPagerIndicator.
            <p>Includes the following attributes:</p>
            <table>
@@ -1345,7 +1345,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:vpiCirclePageIndicatorStyle
         */
-        public static int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
+        public static final int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
         /**
           <p>
           @attr description
@@ -1357,7 +1357,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:vpiIconPageIndicatorStyle
         */
-        public static int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
+        public static final int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
         /**
           <p>
           @attr description
@@ -1369,7 +1369,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:vpiLinePageIndicatorStyle
         */
-        public static int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
+        public static final int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
         /**
           <p>
           @attr description
@@ -1381,7 +1381,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:vpiTabPageIndicatorStyle
         */
-        public static int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
+        public static final int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
         /**
           <p>
           @attr description
@@ -1393,7 +1393,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:vpiTitlePageIndicatorStyle
         */
-        public static int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
+        public static final int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
         /**
           <p>
           @attr description
@@ -1405,6 +1405,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>This is a private symbol.
           @attr name com.viewpagerindicator:vpiUnderlinePageIndicatorStyle
         */
-        public static int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
+        public static final int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
     };
 }

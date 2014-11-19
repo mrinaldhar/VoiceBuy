@@ -95,9 +95,9 @@ containing a value of this type.
         public static int below_shadow=0x7f020001;
     }
     public static final class id {
-        public static int anchored=0x7f030000;
+        public static int anchored=0x7f030002;
         public static int collapsed=0x7f030001;
-        public static int expanded=0x7f030002;
+        public static int expanded=0x7f030000;
         public static int hidden=0x7f030003;
     }
     public static final class styleable {
@@ -145,7 +145,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:anchorPoint
         */
-        public static int SlidingUpPanelLayout_anchorPoint = 7;
+        public static final int SlidingUpPanelLayout_anchorPoint = 7;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#dragView}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -155,7 +155,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.sothree.slidinguppanel.library:dragView
         */
-        public static int SlidingUpPanelLayout_dragView = 5;
+        public static final int SlidingUpPanelLayout_dragView = 5;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#fadeColor}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -170,7 +170,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:fadeColor
         */
-        public static int SlidingUpPanelLayout_fadeColor = 3;
+        public static final int SlidingUpPanelLayout_fadeColor = 3;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#flingVelocity}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -184,7 +184,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:flingVelocity
         */
-        public static int SlidingUpPanelLayout_flingVelocity = 4;
+        public static final int SlidingUpPanelLayout_flingVelocity = 4;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#initialState}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -203,7 +203,7 @@ containing a value of this type.
 </table>
           @attr name com.sothree.slidinguppanel.library:initialState
         */
-        public static int SlidingUpPanelLayout_initialState = 8;
+        public static final int SlidingUpPanelLayout_initialState = 8;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#overlay}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -217,7 +217,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:overlay
         */
-        public static int SlidingUpPanelLayout_overlay = 6;
+        public static final int SlidingUpPanelLayout_overlay = 6;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#panelHeight}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -233,7 +233,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:panelHeight
         */
-        public static int SlidingUpPanelLayout_panelHeight = 0;
+        public static final int SlidingUpPanelLayout_panelHeight = 0;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#paralaxOffset}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -249,7 +249,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:paralaxOffset
         */
-        public static int SlidingUpPanelLayout_paralaxOffset = 2;
+        public static final int SlidingUpPanelLayout_paralaxOffset = 2;
         /**
           <p>This symbol is the offset where the {@link com.sothree.slidinguppanel.library.R.attr#shadowHeight}
           attribute's value can be found in the {@link #SlidingUpPanelLayout} array.
@@ -265,6 +265,6 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.sothree.slidinguppanel.library:shadowHeight
         */
-        public static int SlidingUpPanelLayout_shadowHeight = 1;
+        public static final int SlidingUpPanelLayout_shadowHeight = 1;
     };
 }
