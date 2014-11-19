@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_height="fill_parent"
@@ -12,23 +12,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"  >
 
-        	<LinearLayout
-        	    android:layout_width="match_parent"
-    			android:layout_height="wrap_content"
-        	    android:orientation="horizontal" >
-
     
-    <ImageButton
-        android:id="@+id/btSpeak"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:onClick="speak"
-        android:src="@drawable/appicon"
-        android:scaleType="fitCenter"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:background = "@drawable/roundedbuttons"
-        tools:context=".VoiceRecognitionActivity" />
 
   
                      <EditText
@@ -43,64 +27,18 @@
     				android:layout_height="wrap_content"
     				android:id="@+id/search_bar"
     				android:hint="@string/search_main" />
-                     </LinearLayout>
-                     
-                     <LinearLayout 
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-                         android:orientation="horizontal"
-                         android:paddingTop="15sp"
-                         >
+               
                      <LinearLayout 
                          android:id="@+id/rangebar"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
                          android:orientation="horizontal"
-                         android:layout_marginLeft="20sp"
-                         android:layout_marginRight="25sp">                       
-                     </LinearLayout>
-               <!--       <Button
-                         android:id="@+id/filter"
-                         android:layout_width="250sp"
-                         android:layout_height="wrap_content"
-                         android:background="@drawable/pricefilter"
-                         android:layout_weight="2"
-                         android:text="@string/filter"
-                         android:layout_marginRight="20sp" />  -->
+                         android:layout_marginTop="5sp"
+                         android:layout_gravity="center">                       
                      </LinearLayout>
  
-    <!--   <Spinner
-        android:id="@+id/sNoOfMatches"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/saNoOfMatches"
-        android:prompt="@string/sNoOfMatches"/>-->
  
- <!--    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tvTextMatches"
-        android:textStyle="bold" />
- 
-    <ListView
-        android:id="@+id/lvTextMatches"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" /> -->
- 
-</LinearLayout>
-
-<!-- <TextView
-    android:id="@+id/searchresults"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="50dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    android:gravity="center"
-    style="?android:attr/buttonBarButtonStyle"
-    android:text="@string/searchres" />
- --> 
- 
+  
  <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
@@ -108,14 +46,32 @@
         android:divider="@null"
         android:dividerHeight="1dp"
 		 />
-
-
-
-
-     <!-- <ProgressBar
-            android:id="@+id/google_progress"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"/>  -->
 </LinearLayout>
+
+
+       <ImageButton
+    android:id="@+id/btSpeak"
+    android:layout_width="50dp"
+    android:onClick="speak"
+    android:layout_height="50dp"
+     android:src="@drawable/appicon"
+        android:layout_gravity="right"
+        android:layout_marginTop="450sp"
+        android:scaleType="fitCenter"
+        android:background = "@drawable/roundedbuttons"
+        
+        tools:context=".VoiceRecognitionActivity"/> 
+  <!--    <ImageButton
+        android:id="@+id/btSpeak"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="speak"
+        android:src="@drawable/appicon"
+        android:layout_gravity="right"
+        android:layout_marginTop="400sp"
+        android:scaleType="fitCenter"
+        android:background = "@drawable/roundedbuttons"
+        tools:context=".VoiceRecognitionActivity" /> -->
+ 
+</FrameLayout>
     

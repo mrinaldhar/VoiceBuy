@@ -70,7 +70,7 @@ private static final int VOICE_RECOGNITION_REQUEST_CODE = 1001;
 	 setContentView(R.layout.activity_voice_recognition);
 	 listView = (ListView) findViewById(R.id.list);
 
-		
+
 	 adapter = new CustomListAdapter(this, movieList);
 
 //create RangeSeekBar as Integer range between 20 and 75
@@ -213,6 +213,8 @@ ttobj=new TextToSpeech(getApplicationContext(),
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
+		 getActionBar().setDisplayShowHomeEnabled(false);
+//		 item.setVisible(false);
 		getMenuInflater().inflate(R.menu.main, menu);
 		ttobj.speak("Okay, what should I search for in "+storename+"?", TextToSpeech.QUEUE_FLUSH, null);
 		while (ttobj.isSpeaking())

@@ -62,7 +62,7 @@ public class MainActivity extends FragmentActivity{
 		TextView signuptxt = (TextView) findViewById(R.id.signup);
 		signuptxt.setTypeface(font);
 		signuptxt.setTextColor(Color.WHITE);
-		 ttobj.speak("Welcome to Voice Buy, the smarter way of online shopping. Swipe right on the screen to pick a store.", TextToSpeech.QUEUE_FLUSH, null);
+//		 ttobj.speak("Welcome to Voice Buy, the smarter way of online shopping. Swipe right on the screen to pick a store.", TextToSpeech.QUEUE_FLUSH, null);
 
 		return true;
 	}

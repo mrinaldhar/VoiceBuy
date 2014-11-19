@@ -6,9 +6,14 @@ import java.util.List;
 import model.Movie;
 import adapter.CustomListAdapter;
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class ShoppingCart extends Activity {
@@ -25,15 +30,21 @@ public class ShoppingCart extends Activity {
 		cart = (ListView) findViewById(R.id.cart_list);
 		  adapter = new CustomListAdapter(this, itemList);
 		  cart.setAdapter(adapter);
-		  
-//          Movie movie = new Movie();
-//          movie.setTitle("Jeans");
-//          movie.setThumbnailUrl("pic");
-//          movie.setRating(Double.valueOf("1992").doubleValue());
-//          movie.setYear("1440");
+		  Button buy = (Button)findViewById(R.id.buy);
 
-          // adding movie to movies array
-//          itemList.add(movie);
+		  buy.setTextColor(Color.WHITE);
+		  Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-ThinItalic.ttf");
+			buy.setTypeface(font);
+		  
+		  cart.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+			  
+				@Override
+			       public void onItemClick(AdapterView<?> a, View v, int position,
+			               long id) {
+					itemList.remove(position);
+					adapter.notifyDataSetChanged();
+			           }
+			   });
 	}
 
 	@Override
