@@ -82,7 +82,9 @@ public class HomeScreen extends Fragment {
 
 	     upload=(Button) v.findViewById(R.id.upload_image);
 	     imageView = (ImageView) (v.findViewById(R.id.imgView));
+	    
 	     imgpath=(TextView)v.findViewById(R.id.image_path);
+	     imgpath.setTextColor(Color.BLACK);
 	     imgpath.setText("No Image Selected");
 	     proPic=(ImageView) v.findViewById(R.id.pic_disp);
 

@@ -529,7 +529,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class id {
         public static final int Layout1=0x7f05000d;
-<<<<<<< HEAD
         public static final int Layout2=0x7f05002b;
         public static final int LayoutSplash=0x7f050027;
         public static final int action_cart=0x7f05003f;
@@ -549,37 +548,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int expanded=0x7f050000;
         public static final int folding_circles=0x7f050009;
         public static final int genre=0x7f050035;
-=======
-        public static final int Layout2=0x7f05002a;
-        public static final int LayoutSplash=0x7f050026;
-        public static final int action_cart=0x7f05003e;
-        public static final int action_settings=0x7f05003d;
-        public static final int anchored=0x7f050002;
-        public static final int appavatar=0x7f05000e;
-        public static final int appname=0x7f050027;
-        public static final int bottom=0x7f050007;
-        public static final int btSpeak=0x7f05002d;
-        public static final int btnbar=0x7f050015;
-        public static final int button1=0x7f050024;
-        public static final int cart_list=0x7f050025;
-        public static final int collapsed=0x7f050001;
-        public static final int content_frame=0x7f05002c;
-        public static final int copyright=0x7f050028;
-        public static final int expanded=0x7f050000;
-        public static final int folding_circles=0x7f050009;
-        public static final int genre=0x7f050034;
->>>>>>> 83b65e00987de75ed223b3281a300cc5bc2e8f57
         public static final int google_music_dices=0x7f05000a;
         public static final int hidden=0x7f050003;
         public static final int image_path=0x7f05001c;
         public static final int imgView=0x7f05001d;
         public static final int indicator=0x7f050021;
         public static final int list=0x7f05002f;
-<<<<<<< HEAD
         public static final int listview=0x7f05002c;
-=======
-        public static final int listview=0x7f05002b;
->>>>>>> 83b65e00987de75ed223b3281a300cc5bc2e8f57
         public static final int login=0x7f050016;
         public static final int login_button=0x7f050012;
         public static final int login_email=0x7f050010;
@@ -588,7 +563,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int none=0x7f050004;
         public static final int panel=0x7f050014;
         public static final int pic_disp=0x7f05000f;
-<<<<<<< HEAD
         public static final int post_tweet=0x7f05003d;
         public static final int prof_image=0x7f050038;
         public static final int prof_name=0x7f050037;
@@ -598,17 +572,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int search_bar=0x7f050022;
         public static final int shop=0x7f05003b;
         public static final int signout=0x7f05003a;
-=======
-        public static final int post_tweet=0x7f05003c;
-        public static final int prof_image=0x7f050037;
-        public static final int prof_name=0x7f050036;
-        public static final int rangebar=0x7f05002e;
-        public static final int rating=0x7f050033;
-        public static final int releaseYear=0x7f050035;
-        public static final int search_bar=0x7f050022;
-        public static final int shop=0x7f05003a;
-        public static final int signout=0x7f050039;
->>>>>>> 83b65e00987de75ed223b3281a300cc5bc2e8f57
         public static final int signup=0x7f050017;
         public static final int signup_button=0x7f05001f;
         public static final int signup_email=0x7f050019;
@@ -616,7 +579,6 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int signup_password=0x7f05001a;
         public static final int signup_password_confirm=0x7f05001b;
         public static final int sliding_layout=0x7f05000c;
-<<<<<<< HEAD
         public static final int smart=0x7f05002a;
         public static final int text1=0x7f050023;
         public static final int thumbnail=0x7f050032;
@@ -625,25 +587,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int triangle=0x7f050005;
         public static final int tweet=0x7f050039;
         public static final int tweet_text=0x7f05003c;
-=======
-        public static final int smart=0x7f050029;
-        public static final int text1=0x7f050023;
-        public static final int thumbnail=0x7f050031;
-        public static final int title=0x7f050032;
-        public static final int top=0x7f050008;
-        public static final int triangle=0x7f050005;
-        public static final int tweet=0x7f050038;
-        public static final int tweet_text=0x7f05003b;
->>>>>>> 83b65e00987de75ed223b3281a300cc5bc2e8f57
         public static final int twitter_button=0x7f050013;
         public static final int underline=0x7f050006;
         public static final int upload_image=0x7f05001e;
         public static final int viewPager=0x7f050020;
-<<<<<<< HEAD
         public static final int webv=0x7f050031;
-=======
-        public static final int webv=0x7f050030;
->>>>>>> 83b65e00987de75ed223b3281a300cc5bc2e8f57
     }
     public static final class integer {
         public static final int default_circle_indicator_orientation=0x7f080000;
@@ -704,10 +652,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int title_activity_stores_list=0x7f0c0019;
         public static final int title_activity_voice_recognition=0x7f0c000b;
         public static final int tvTextMatches=0x7f0c000c;
-<<<<<<< HEAD
-=======
         public static final int twitter_auth=0x7f0c001a;
->>>>>>> 83b65e00987de75ed223b3281a300cc5bc2e8f57
     }
     public static final class style {
         public static final int ActionBar=0x7f0a0007;

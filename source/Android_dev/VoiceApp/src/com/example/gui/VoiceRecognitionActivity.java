@@ -26,6 +26,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -155,20 +156,20 @@ ttobj=new TextToSpeech(getApplicationContext(),
 	          select.setThumbnailUrl(tid.getThumbnailUrl());
 	          select.setRating(Double.valueOf(tid.getRating()).doubleValue());
 	          select.setYear(tid.getYear());
-	          if (ShoppingCart.itemList.contains(select)){
-	        	  showToastMessage("You Already have this item in your cart");
-	       
-	          }
-	          else{
-	          ShoppingCart.itemList.add(select);
+	          int check = 0;
+     		 for (Movie checkmov : ShoppingCart.itemList){
+    			 if (checkmov.getTitle().equals(select.getTitle()))
+    					 check = 1;
+    		 }
+	          if (check == 0){
+		          saythis("Okay, I'll add this item to your shopping cart.");
+	        	  ShoppingCart.itemList.add(select);
 	          showToastMessage(tid.getTitle() + " Added To Cart");
+	          
 	          }
-	          saythis("Okay, I'll add this item to your shopping cart.");
-//	    Intent intent = new Intent(getActivity().getApplicationContext(), VoiceRecognitionActivity.class);
-//	    String store_name = a.getItemAtPosition(position).toString();
-//	    System.out.println("Store:" + store_name);
-//	    intent.putExtra("getstore",store_name);
-//	    startActivity(intent);
+	          else
+	        	  saythis("You already have this, in your Cart");
+
 	           }
 	       
 	   });
@@ -801,8 +802,8 @@ void getsearchres(ArrayList<String> querylist) {
             		} 
                     listView.setAdapter(adapter);
                 	// handle changed range values
-                	showToastMessage("List Filtered");
                         Log.i("TAG", "User selected new range values: MIN=" + minValue + ", MAX=" + maxValue);
+                        showToastMessage("Showing Producs Ranging " + minValue + " - " + maxValue);
                 }
          });
         
