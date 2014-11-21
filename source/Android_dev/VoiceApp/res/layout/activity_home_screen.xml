@@ -29,7 +29,12 @@
     android:layout_height="@dimen/circular_imageview_height"
     android:layout_gravity="center_horizontal"
     android:src="@drawable/appicon"/> 
-	  
+	  <ImageView
+			android:id="@+id/pic_disp"
+			android:layout_weight="1" 
+			android:layout_width="100dp"
+    		android:layout_height="100dp"
+    		android:visibility="gone"></ImageView>
 	    
 	    <EditText
             android:id="@+id/login_email"
@@ -68,6 +73,19 @@
             android:text="Login" 
             android:visibility="visible"
             android:background="@drawable/shapes"/>
+
+
+        
+           <Button
+            android:id="@+id/twitter_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Others"
+            android:layout_marginTop="20sp"
+            android:visibility="visible"
+            android:background="@drawable/shapes"/>
+        
 	    
 	  <!--         <TextView
 	        android:id="@+id/textView2"
@@ -146,13 +164,7 @@
 	            android:visibility="visible" />
 </LinearLayout> 
 <!-- login fields-->
-		           <TextView 
-            android:id="@+id/error_textfield"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-        
-           android:visibility="visible" />
+		           
         <!-- signup form -->
        <!--      <TextView 
            android:layout_width="wrap_content"
@@ -165,26 +177,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name" />
-  <!--        <EditText android:id="@+id/signup_lname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Lastname" 
-        />
-     <Spinner
-  	    android:id="@+id/gender"
-   		android:layout_width="match_parent"
-    	android:layout_height="wrap_content" />-->
-    <!--  <AutoCompleteTextView  
-    android:id="@+id/autocomplete_country"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:visibility="gone"
-     />
-    <EditText android:id="@+id/signup_mobno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mobile Number" 
-        android:inputType="phone"/>-->
+  
     <EditText android:id="@+id/signup_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -204,12 +197,52 @@
             android:hint="Retype Password"    
             android:textColor="#fff"
             android:inputType="textPassword"/>
-        <Button 
-            android:id="@+id/signup_button"
-            android:layout_width="wrap_content"
+    <EditText 
+        android:id="@+id/image_path"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Imagepath"    
+            android:textColor="#fff"/>
+
+    <ImageView
+			android:id="@+id/imgView"
+			android:layout_weight="1" 
+			android:layout_width="100dp"
+    		android:layout_height="100dp"
+    		android:visibility="gone"></ImageView>
+
+    <Button
+        android:id="@+id/upload_image"
+	            style="?android:attr/buttonBarButtonStyle"
+	            android:layout_width="110dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="15dp"
+	            android:layout_marginBottom="4dp"
+	            android:alpha="1"
+	            android:background="@drawable/shapes"
+	            android:gravity="center"
+	            android:padding="15dp"
+	            android:paddingLeft="50dp"
+	            android:paddingRight="50dp"
+	            android:text="Upload"
+	            android:textStyle="bold"
+	            android:textColor="#fff"
+	            android:onClick="display_login" 
+        />
+     <Button 
+
+            android:id="@+id/signup_button"
             android:gravity="center"
-            android:text="Signup"/>
+            android:text="Signup"
+	            style="?android:attr/buttonBarButtonStyle"
+	            android:layout_width="110dp"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="15dp"
+	            android:layout_marginBottom="15dp"
+	            android:alpha="1"
+	            android:background="@drawable/shapes"
+	            android:textStyle="bold"
+	            android:textColor="#fff"/>
         
 </LinearLayout>	
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>
